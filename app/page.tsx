@@ -36,9 +36,16 @@ export default function Home() {
           <div className=""></div>
         </div>
       </div>
-      <div className="title mt-32">
-          <h1 className="font-bold text-4xl flex items-center justify-center"><span className="blue-text">WELCOME &nbsp;</span> TO &nbsp;<span className="green-text">&nbsp;GIFTED NATUS</span>&nbsp; FOUNDATION</h1>
+      <div id="aboutus">
+        <div className="title mt-32" id="aboutus">
+            <h1 className="font-bold text-4xl flex items-center justify-center"><span className="blue-text">WELCOME &nbsp;</span> TO &nbsp;<span className="green-text">&nbsp;GIFTED NATUS</span>&nbsp; FOUNDATION</h1>
+        </div>
+        <div className="w-screen relative h-auto">
+            <img src="/About1.png" alt="" className="w-1/3 ml-20 inline-block  mt-52" />
+            <div className="w-2/3 bg-slate-900 h-96 inline-block"><p className="text-left"> At Gifted Natus Foundation, the impact of our work in seen in the transformation of lives. Froom providing life-changing opportunities to individuals in need, to build stronger more resilient communities, our initiatives have been regnized for their far-reaching effects</p></div>
+        </div>
       </div>
+
     </main>
     <footer>
       
