@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        gobold: ['GoBold', 'sans-serif'],
+      },
       screens: {
         sm: { 'max': '480px' },
         md: { 'min': '481px', 'max': '768px' },
