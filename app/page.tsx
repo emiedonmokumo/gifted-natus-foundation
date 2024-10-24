@@ -42,6 +42,7 @@ export default function Home() {
             <div className=""></div>
           </div>
         </div>
+        {/* <TeamCarousel /> */}
       </main>
       <footer>
 
