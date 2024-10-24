@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -72,24 +60,5 @@ body {
     width: 100px;
     border-radius: 5px;
    }
-/* 
-  .silder{
-    width: calc(300px * 10);
-    height: 450px;
-    margin-bottom: 200px;
-  }
 
-  .slide{
-    height: 430px;
-    width: 300px;
-    margin-right:30px;
-    display: inline-block;
-  }
-
-  .blog-content{
-    padding: 1;
-    display: grid;
-    place-items: center;
-    overflow-x: auto;
-  } */
 }

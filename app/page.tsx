@@ -4,7 +4,6 @@ import Head from "next/head";
 export default function Home() {
 
   return (
-<<<<<<< HEAD
     <>
     <Head>
       <title>Gifted Natus foundation - Home</title>
@@ -36,15 +35,13 @@ export default function Home() {
           <div className=""></div>
         </div>
       </div>
+      <div className="title mt-32">
+          <h1 className="font-bold text-4xl flex items-center justify-center"><span className="blue-text">WELCOME &nbsp;</span> TO &nbsp;<span className="green-text">&nbsp;GIFTED NATUS</span>&nbsp; FOUNDATION</h1>
+      </div>
     </main>
     <footer>
       
     </footer>
     </>
-=======
-    <div className="h-screen flex justify-center items-center">
-      <h1 className="text-2xl font-bold">Site in Development Mode </h1>
-    </div>
->>>>>>> d409c3f8611c7b66926f71dfe7f3cd5686f15729
     );
 }
