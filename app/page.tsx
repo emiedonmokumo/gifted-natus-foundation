@@ -4,6 +4,7 @@ import Head from "next/head";
 export default function Home() {
 
   return (
+<<<<<<< HEAD
     <>
     <Head>
       <title>Gifted Natus foundation - Home</title>
@@ -40,5 +41,10 @@ export default function Home() {
       
     </footer>
     </>
+=======
+    <div className="h-screen flex justify-center items-center">
+      <h1 className="text-2xl font-bold">Site in Development Mode </h1>
+    </div>
+>>>>>>> d409c3f8611c7b66926f71dfe7f3cd5686f15729
     );
 }
