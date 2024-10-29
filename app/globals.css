@@ -6,14 +6,20 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  /* background-color: aqua; */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
   .h{
-    height: 80vh;
+    height: 80%;
+  }
+
+  .h2{
+    height: 40%;
   }
 
   .blue-text{
@@ -33,15 +39,8 @@ body {
   }
 
   .nav{
-    position: absolute;
-    right: 5px;
-    top: 5px;
-   }
-
-  /* .header{
-    position: relative;
-    padding: 10px;
-   } */
+    background-color: #00182f;
+   } 
 
    .header-text{
     position: absolute;
@@ -59,6 +58,14 @@ body {
    .donate{
     width: 100px;
     border-radius: 5px;
+   }
+
+   
+
+   @media screen and (max-width: 480px) {
+    .intro{
+      left: 19%;
+    }
    }
 
 }

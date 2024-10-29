@@ -1,57 +1,3 @@
-// export default function Slider(){
-
-//     return(
-//         <div className="bg-blue-900 py-16 relative h-80">
-//         <div className="flex justify-between items-center space-x-5 px-12 absolute -top-12">
-//             <div className="bg-[url('/slider.jpg')] bg-cover p-32 rounded-xl relative" id="">
-//                 <div>
-//                     post 1
-//                 </div>
-//             </div>
-//         </div>
-//         <div className="flex justify-between items-center space-x-5 px-12 absolute -top-12">
-//             <div className="bg-[url('/slider.jpg')] bg-cover p-32 rounded-xl relative" id="">
-//                 <div>
-//                     post 2
-//                 </div>
-//             </div>
-//         </div>
-//         <div className="flex justify-between items-center space-x-5 px-12 absolute -top-12">
-//             <div className="bg-[url('/slider.jpg')] bg-cover p-32 rounded-xl relative" id="">
-//                 <div>
-//                     post 3
-//                 </div>
-//             </div>
-//         </div>
-//         <div className="flex justify-between items-center space-x-5 px-12 absolute -top-12">
-//             <div className="bg-[url('/slider.jpg')] bg-cover p-32 rounded-xl relative" id="">
-//                 <div>
-//                     post 4
-//                 </div>
-//             </div>
-//         </div>
-//         <div className="flex justify-between items-center space-x-5 px-12 absolute -top-12">
-//             <div className="bg-[url('/slider.jpg')] bg-cover p-32 rounded-xl relative" id="">
-//                 <div>
-//                     post 5
-//                 </div>
-//             </div>
-//         </div>
-//         <div className="flex justify-between items-center space-x-5 px-12 absolute -top-12">
-//             <div className="bg-[url('/slider.jpg')] bg-cover p-32 rounded-xl relative" id="">
-//                 <div>
-//                     post 1
-//                 </div>
-//             </div>
-//         </div>
-//         </div>
-//     )
-// }
-
-
-import { title } from 'process';
-import React from 'react';
-
 const Slider = () => {
 
     var post:any[] = [
@@ -88,13 +34,13 @@ const Slider = () => {
     ]
     
   return (
-    <div className="max-w-6xl mx-auto py-10">
+    <div className="max-w-6xl mx-auto py-10" id="blog">
       {/* Slider Container */}
       <div className="flex overflow-x-scroll space-x-4 no-scrollbar">
         {/* Card 1 */}
         {post.map((article, index)=>(
             
-        <div className="min-w-[300px] bg-gray-900 text-white p-5 rounded-lg flex-shrink-0">
+        <div className="min-w-[300px] bg-gray-900 text-white p-5 rounded-lg flex-shrink-0" key={article.title+index}>
         <img
           className="rounded-lg w-full h-40 object-cover"
           src={article.img}

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const teamMembers = [
+const TeamMembers = [
   {
     id: 1,
     name: "Ogbomade Johnson Itutumeni",
@@ -49,17 +49,17 @@ const TeamCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % TeamMembers.length);
   };
 
   const goToPrev = () => {
     setCurrentIndex(
       (prevIndex) =>
-        (prevIndex - 1 + teamMembers.length) % teamMembers.length
+        (prevIndex - 1 + TeamMembers.length) % TeamMembers.length
     );
   };
 
-  const currentMember = teamMembers[currentIndex];
+  const currentMember = TeamMembers[currentIndex];
 
   return (
     <div className="bg-gray-900 text-white py-10 px-4">
@@ -110,7 +110,7 @@ const TeamCarousel = () => {
 
       {/* Thumbnail navigation */}
       <div className="flex justify-center mt-8 space-x-4">
-        {teamMembers.map((member, index) => (
+        {TeamMembers.map((member, index) => (
           <button
             key={member.id}
             className={`w-12 h-12 rounded-full overflow-hidden ${
