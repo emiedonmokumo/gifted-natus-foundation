@@ -34,7 +34,7 @@ export default function RootLayout({
         /> */}
       </Head>
       <body
-        className={`${montserrat.className} antialiased`}
+        className={`${montserrat.className} antialiased p-0 m-0`}
       >
         {children}
       </body>
