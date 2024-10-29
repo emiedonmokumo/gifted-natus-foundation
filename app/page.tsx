@@ -64,7 +64,7 @@ export default function Home() {
               alt=""
               className="  top-40 right-[20%] lg:top-44 md:top-24 w-[60%] lg:w-96 lg:right-[550px] mx-auto lg:ml-20 inline-block absolute z-10"
             />
-            <div className=" bg-[url('/rectangleLeaf.png')] text-white h-96 w-full lg:w-[600px] lg:h-[200px] p-14 md:p-36 lg:p-10 inline-block absolute top-72 lg:top-52  lg:right-0 z-0">
+            <div className=" bg-[url('/rectangleLeaf.png')] text-white h-96 w-full lg:w-[600px] lg:h-[200px] p-14 md:p-36 lg:p-14 inline-block absolute top-72 lg:top-52  lg:right-0 z-0">
               <p className="w-full text-center ">
                 {" "}
                 At Gifted Natus Foundation, the impact of our work in seen in
