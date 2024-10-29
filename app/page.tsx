@@ -37,6 +37,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+         
       </header>
       <main>
         <div className="title mt-32" id="about">
