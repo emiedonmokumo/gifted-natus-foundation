@@ -2,7 +2,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+<<<<<<< HEAD
 const TeamMembers = [
+=======
+const teamMembers = [
+>>>>>>> e2c426ef4d379c379b49ca7d9b2cf42c34e6f4aa
   {
     id: 1,
     name: "Ogbomade Johnson Itutumeni",
@@ -49,17 +53,29 @@ const TeamCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNext = () => {
+<<<<<<< HEAD
     setCurrentIndex((prevIndex) => (prevIndex + 1) % TeamMembers.length);
+=======
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
+>>>>>>> e2c426ef4d379c379b49ca7d9b2cf42c34e6f4aa
   };
 
   const goToPrev = () => {
     setCurrentIndex(
       (prevIndex) =>
+<<<<<<< HEAD
         (prevIndex - 1 + TeamMembers.length) % TeamMembers.length
     );
   };
 
   const currentMember = TeamMembers[currentIndex];
+=======
+        (prevIndex - 1 + teamMembers.length) % teamMembers.length
+    );
+  };
+
+  const currentMember = teamMembers[currentIndex];
+>>>>>>> e2c426ef4d379c379b49ca7d9b2cf42c34e6f4aa
 
   return (
     <div className="bg-gray-900 text-white py-10 px-4">
@@ -110,7 +126,11 @@ const TeamCarousel = () => {
 
       {/* Thumbnail navigation */}
       <div className="flex justify-center mt-8 space-x-4">
+<<<<<<< HEAD
         {TeamMembers.map((member, index) => (
+=======
+        {teamMembers.map((member, index) => (
+>>>>>>> e2c426ef4d379c379b49ca7d9b2cf42c34e6f4aa
           <button
             key={member.id}
             className={`w-12 h-12 rounded-full overflow-hidden ${
