@@ -13,9 +13,9 @@ export default function Home() {
       </Head>
       <header className="w-full p-0 m-0 h-[90vh] bg-[url('./assets/headerBG.png')]">
         <Nav />
-        <div className="lg:mt-20 pl-5">
+        <div className="lg:mt-10 pl-5">
           <div className=" w-full md:w-[70%] lg:w-[50%]">
-            <h1 className="text-white font-bold text-2xl w-full text-center md:text-6xl lg:text-6xl pb-3 font-gobold">
+            <h1 className="text-white font-bold text-4xl w-full text-center md:text-6xl lg:text-6xl pb-3 font-gobold">
               TOGETHER WE <span className="green-text">BUILD</span>{" "}
               <span className="blue-text">STRONGER</span> COMMUNITIES{" "}
             </h1>

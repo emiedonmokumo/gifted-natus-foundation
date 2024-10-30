@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function Footer() {
   return (
-    <div className=" bg-[url('/footerBackground.png')] w-screen h-[500px] pt-0 flex justify-evenly items-center flex-col lg:flex-roe">
+    <div className=" bg-[url('/footerBackground.png')] w-screen h-[500px] pt-0 flex justify-evenly items-center flex-col lg:flex-row">
       <div className="flex items-center justify-evenly flex-col">
         <img src="/logo.png" alt=" " className="h-auto w-[6rem]" />
         <p className="text-white">Gifted natus Foundation</p>
