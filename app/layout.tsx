@@ -21,6 +21,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} antialiased`}
       >
+        <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
         {children}
       </body>
     </html>
