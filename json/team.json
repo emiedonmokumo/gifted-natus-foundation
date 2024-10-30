@@ -1,0 +1,51 @@
+
+[
+   {
+    "id": 1,
+    "name": "Ogbomade Johnson Itutumeni",
+    "role": "Media Director",
+    "quote":
+      "At Gifted Natus Foundation, every story we share is a testament to the power of community and collective action. My role is to amplify those voices, ensuring that the impact we make is seen and felt beyond the boundaries of where we work.",
+    "image": "https://randomuser.me/api/portraits/women/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Amina Yusuf",
+    "role": "Content Strategist",
+    "quote":
+      "We craft narratives that resonate with our audience, empowering them to be a part of something larger than themselves.",
+    "image": "https://randomuser.me/api/portraits/women/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Dayo Adeyemi",
+    "role": "Operations Manager",
+    "quote":
+      "We streamline processes to ensure that our team can work efficiently, delivering impact where it is needed most.",
+    "image": "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Ngozi Chukwu",
+    "role": "Outreach Coordinator",
+    "quote":
+      "Every connection we build takes us a step closer to our goal. It's all about fostering relationships that matter.",
+    "image": "https://randomuser.me/api/portraits/women/3.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Chidi Anozie",
+    "role": "Project Lead",
+    "quote":
+      "We lead with passion and purpose, ensuring that each project speaks volumes about the work we do.",
+    "image": "https://randomuser.me/api/portraits/men/2.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Emiedonmokumo Dick-Boro",
+    "role": "Content Strategist",
+    "quote":
+      "We craft narratives that resonate with our audience, empowering them to be a part of something larger than themselves.",
+    "image": "https://randomuser.me/api/portraits/women/2.jpg"
+  }
+]
