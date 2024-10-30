@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        gobold: ['GoBold', 'sans-serif'],
+        gobold: ['Gobold', 'sans-serif'],
       },
       screens: {
         sm: { 'max': '480px' },

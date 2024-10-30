@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Montserrat } from 'next/font/google'
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 import Head from "next/head";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -17,24 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link
-          rel="preload"
-          href="/fonts/Gobold High Bold.otf"
-          as="font"
-          type="font/otf"
-          crossOrigin="anonymous"
-        />
-        {/* <link
-          rel="preload"
-          href="/fonts/GoBold-Bold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        /> */}
-      </Head>
       <body
-        className={`${montserrat.className} antialiased p-0 m-0`}
+        className={`${montserrat.className} antialiased`}
       >
         {children}
       </body>
