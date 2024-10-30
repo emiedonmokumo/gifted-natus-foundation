@@ -72,7 +72,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="sm:pt-12 bg-[url('/rectangleLeaf.png')] text-white md:h-96 w-full lg:w-[600px] lg:h-[200px] p-5 md:p-36 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
+            <div className="sm:py-12 sm:pt-32 bg-[url('/rectangleLeaf.png')] text-white md:h-96 w-full lg:w-[600px] lg:h-[200px] p-5 md:p-36 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
               <p className="lg:w-full text-center sm:text-sm">
                 At Gifted Natus Foundation, the impact of our work is seen in
                 the transformation of lives. From providing life-changing
