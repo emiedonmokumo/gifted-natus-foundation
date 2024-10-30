@@ -1,4 +1,3 @@
-"use client";
 import Nav from "./components/Nav";
 import Slider from "./components/Slider";
 import Link from "next/link";
