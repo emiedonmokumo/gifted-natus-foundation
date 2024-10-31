@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col space-y-2 ">
           <div className="flex space-x-8">
-            <FaLocationDot className="text-green-400 text-xl"/>
+            <FaLocationDot className="text-green-400 text-4xl"/>
             <p className="text-white">
               No 2, old Assembly Quarters,Ekeki Housing Estate, Yenagoa, Bayelsa
               state Nigeria
