@@ -83,7 +83,79 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
+        <div
+          id="statement"
+          className="mt-0 flex items-center space-y-52 justify-between flex-col md:h-auto lg:h-auto h-[calc(500px * 3)]"
+        >
+          <div className="w-screen  flex items-center justify-between flex-col lg:flex-row">
+            <img
+              src="/AboutOmission.png"
+              alt=" our mission"
+              className="w-96 h-auto"
+            />
+            <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%]">
+              <h1 className="font-bold text-4xl font-gobold">
+                OUR <span className="green-text">MISSION</span>
+              </h1>
+              <h2 className="font-bold text-center lg:text-right">
+                Making a difference, Ever day
+              </h2>
+              <p className="lg:text-right text-center">
+                Gifted Natus foundation is a non-profit Organization with a
+                vision to create lasting change through community and human
+                capacity development. At the heart of our mission is our belief
+                in empowering individuals and communities, helping them reach
+                thier full potential.
+              </p>
+            </div>
+          </div>
+          <div className="w-screen lg:h-[300px] flex items-center justify-between flex-col lg:flex-row clear-both lg:relative">
+            <img
+              src="/Aboutapproach.png"
+              alt=" our approach"
+              className="w-96 h-auto float-right lg:absolute lg:right-0 lg:top-0"
+            />
+            <div className="flex lg:items-left items-center h-96 justify-evenly flex-col p-10 lg:w-[60%] float-left lg:absolute lg:left-0 lg:top-0">
+              <h1 className="font-bold text-4xl font-gobold text-center lg:text-left ">
+                OUR <span className="blue-text">APPROACH</span>
+              </h1>
+              <h2 className="font-bold w-56 text-center lg:text-left">
+                Comprehensive Solutions for Lasting Impact
+              </h2>
+              <p className="lg:text-left text-center">
+                We take a holistic approach to development, understanding that
+                true change requires addressing multiple facets of human life.
+                Our initiative span across education, healthcare, sports,
+                economic empowerment with local communities, we implement
+                programs that noe only meet immediate programs that not only
+                meet immediate programs that not only meet immediate needs but
+                also create pathways for sustainable growth
+              </p>
+            </div>
+          </div>
+          <div className="w-screen h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
+            <img
+              src="/Aboutimpact.png"
+              alt=" our impact"
+              className="w-96 h-auto"
+            />
+            <div className="flex lg:items-end items-center h-80 justify-evenly flex-col p-10 lg:w-[60%]">
+              <h1 className="font-bold text-4xl font-gobold ">
+                OUR <span className="green-text">IMPACT</span>
+              </h1>
+              <h2 className="font-bold w-52">
+                Transforming lives, one community at a time
+              </h2>
+              <p className="text-center lg:text-right">
+                Gifted Natus foundation is a non-profit Organization with a
+                vision to create lasting change through community and human
+                capacity development. At the heart of our mission is our belief
+                in empowering individuals and communities, helping them reach
+                thier full potential.
+              </p>
+            </div>
+          </div>
+        </div>
         {/* <TeamCarousel /> */}
         <TeamCarousel />
       </main>
