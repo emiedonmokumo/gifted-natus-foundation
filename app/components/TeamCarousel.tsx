@@ -21,7 +21,7 @@ const TeamCarousel = () => {
   }, [memberIndex]);
 
   return (
-    <div className="bg-gray-900 text-white py-10 px-4">
+    <div className="lg:mt-32 lg:mb-20 lg:py-16 md:mb-28 sm:my-28 bg-gray-900 text-white py-10 px-4">
       <h2 className="text-3xl font-bold text-center mb-8">
         Meet the <span className="text-green-500">Team</span>
       </h2>
@@ -32,12 +32,12 @@ const TeamCarousel = () => {
           onClick={goToPrev}
           className="bg-gray-800 p-3 rounded-full focus:outline-none sm:hidden"
         >
-          <img src="/Previous Button.png" alt="Previous" className="w-16"/>
+          <img src="/Previous Button.png" alt="Previous" className="w-16 md:w-12"/>
         </button>
 
         {/* Animated Current Member */}
         <motion.div
-          className="flex sm:flex-col items-center lg:space-x-8 md:space-x-8"
+          className="flex sm:flex-col items-center lg:space-x-8 md:space-x-8 md:mx-5"
           key={currentMember.id}
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -51,12 +51,12 @@ const TeamCarousel = () => {
               alt={currentMember.name}
             />
           </div>
-          <div>
+          <div className="md:w-96">
             <h3 className="text-xl font-bold sm:my-3">{currentMember.name}</h3>
             <p className="text-sm font-semibold text-green-500">
               {currentMember.role}
             </p>
-            <p className="mt-4 lg:text-gray-300">{currentMember.quote}</p>
+            <p className="mt-4 lg:text-gray-300 md:text-justify">{currentMember.quote}</p>
           </div>
         </motion.div>
 
@@ -64,7 +64,7 @@ const TeamCarousel = () => {
           onClick={goToNext}
           className="bg-gray-800 p-3 rounded-full focus:outline-none sm:hidden"
         >
-          <img src="/Next button.png" alt="Next" className="w-16" />
+          <img src="/Next button.png" alt="Next" className="lg:w-16 md:w-12" />
         </button>
       </div>
 

@@ -19,8 +19,8 @@ export default function Home() {
           <div className=" md:w-[70%] lg:w-[70%]">
             <h1 className="sm:flex sm:flex-wrap text-white w-full md:text-5xl sm:text-4xl lg:text-6xl pb-3 font-gobold">
               TOGETHER WE <span className="text-[#07a034] sm:pl-2">BUILD</span>{" "}
-              <span className="lg:my-2 h-1 block"></span>{" "}
-              <span className="text-[#0156a9]">STRONGER</span> COMMUNITIES{" "}
+              <span className="lg:my-3 h-1 block"></span>{" "}
+              <span className="text-[#0156a9] sm:pr-2">STRONGER</span> COMMUNITIES{" "}
             </h1>                     
             <p className="text-white text-lg lg:text-justify md:text-left sm:text-sm lg:px-5 sm:text-justify mr-5 sm:leading-6">
               Empowering individuals through education, healthcare, and economic
@@ -61,7 +61,7 @@ export default function Home() {
               <span>FOUNDATION</span>
             </h1>
           </div>
-          <div className="h-[900px] w-screen relative mb-0 sm:flex sm:flex-col sm:justify-center">
+          <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center">
             {/* Center the image on mobile by using flexbox */}
             <div className="flex justify-center">
               <img
@@ -71,8 +71,8 @@ export default function Home() {
               />
             </div>
 
-            <div className="sm:py-12 sm:pt-40 bg-[url('/rectangleLeaf.png')] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
-              <p className="lg:w-full text-center sm:text-sm">
+            <div className="sm:py-12 sm:pt-40 bg-black text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:pt-48 md:px-8 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
+              <p className="lg:w-full text-center sm:text-sm md:pb-10">
                 At Gifted Natus Foundation, the impact of our work is seen in
                 the transformation of lives. From providing life-changing
                 opportunities to individuals in need, to building stronger, more
@@ -86,13 +86,13 @@ export default function Home() {
           id="statement"
           className="mt-0 flex items-center space-y-52 justify-between flex-col md:h-auto lg:h-auto h-[calc(500px * 3)]"
         >
-          <div className="w-screen  flex items-center justify-between flex-col lg:flex-row">
+          <div className="lg:px-10 flex items-center justify-between flex-col lg:flex-row">
             <img
               src="/AboutOmission.png"
               alt=" our mission"
-              className="w-96 h-auto"
+              className="w-96 sm:px-10"
             />
-            <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%]">
+            <div className="flex items-center lg:items-end h-80 justify-evenly flex-col lg:p-10 md:p-10 sm:px-5 lg:w-[60%]">
               <h1 className="font-bold text-4xl font-gobold">
                 OUR <span className="text-[#07a034]">MISSION</span>
               </h1>
@@ -108,17 +108,17 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-screen lg:h-[300px] flex items-center justify-between flex-col lg:flex-row clear-both lg:relative">
+          <div className="flex items-center justify-between flex-col lg:flex-row-reverse lg:px-10">
             <img
               src="/Aboutapproach.png"
               alt=" our approach"
-              className="w-96 h-auto float-right lg:absolute lg:right-0 lg:top-0"
+              className="w-96 sm:px-10"
             />
-            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col p-10 lg:w-[60%] float-left lg:absolute lg:left-0 lg:top-0">
-              <h1 className="font-bold text-4xl font-gobold text-center lg:text-left ">
+            <div className="flex lg:items-left md:items-center sm:items-center justify-evenly flex-col lg:p-10 lg:w-[60%] sm:px-5">
+              <h1 className="font-bold text-4xl font-gobold text-center lg:text-left sm:pb-3">
                 OUR <span className="text-[#0156a9]">APPROACH</span>
               </h1>
-              <h2 className="font-bold w-56 text-center lg:text-left">
+              <h2 className="font-bold text-center lg:text-left py-5">
                 Comprehensive Solutions for Lasting Impact
               </h2>
               <p className="lg:text-left text-center">
@@ -132,11 +132,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-screen h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
+          <div className="mb-14 flex items-center justify-evenly flex-col lg:flex-row lg:px-10">
             <img
               src="/Aboutimpact.png"
               alt=" our impact"
-              className="w-96 h-auto"
+              className="w-96 sm:px-10"
             />
             <div className="flex lg:items-end items-center h-80 justify-evenly flex-col p-10 lg:w-[60%]">
               <h1 className="font-bold text-4xl font-gobold ">
@@ -158,32 +158,32 @@ export default function Home() {
         {/* <TeamCarousel /> */}
         <TeamCarousel />
       </main>
-      <footer className="relative w-screen">
+      <footer className="relative">
         <div
-          className="w-screen h-96 flex items-center justify-start relative "
+          className="lg:px-16 flex items-center justify-between relative"
           id="donate"
         >
           <img
             src="/supportImage.png"
             alt=" "
-            className="w-96 h-full top-10 hidden lg:inline-block"
+            className="w-96 top-10 hidden lg:inline-block"
           />
-          <div className="flex lg:items-end lg:justify-start items-center justify-evenly flex-col lg:w-6/12 lg:h-2/4 w-full h-full" id="donate">
+          <div className="flex lg:items-end lg:justify-start items-center justify-evenly flex-col lg:w-6/12 lg:h-2/4 w-full h-full md:mb-28 md:px-32" id="donate">
             <h1 className="font-bold text-4xl font-gobold lg:text-right text-center">
               <span className="text-[#0156a9]">SUPPORT </span>OUR{" "}
               <span className="text-[#07a034]">MISSION</span>
             </h1>
-            <p className="lg:text-right text-center w-2/4">
+            <p className="lg:text-right text-center lg:w-2/4 sm:px-2 py-4 ">
               Every donation, big or small helps us continue our work and expand
               our reach, together we can build a brighter future
             </p>
-            <div className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
+            <div className="bg-[#07a034] rounded-xl py-3 w-40 text-white font-bold flex items-center justify-center">
               {" "}
               Donate Today!
             </div>
           </div>
         </div>
-        <div className="lg:h-52 h-[400px]  leading-7 bg-[#07a034] my-0 mx-auto lg:absolute  top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7">
+        <div className="sm:mt-16 lg:h-52 h-[400px]  leading-7 bg-[#07a034] my-0 mx-auto lg:absolute  top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7">
           <div className="w-full lg:w-2/4 md:w-2/4">
             <h1 className="font-gobold text-3xl text-center lg:text-5xl font-bold mb-5 ">
               <span className="text-white">STAY</span>{" "}
