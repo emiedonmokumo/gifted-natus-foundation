@@ -2,20 +2,20 @@ import Link from "next/link";
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
 export default function Footer() {
   return (
-    <div className="pt-40 pb-12 bg-[url('/footerBackground.png')] flex justify-evenly items-center flex-col lg:flex-row">
+    <div className="pt-40 pb-12 bg-[url('/footerBackground.png')] flex justify-evenly items-center flex-col lg:flex-row" id="contact">
       <div className="flex items-center justify-evenly flex-col">
         <img src="/logo.png" alt=" " className="h-auto w-[6rem]" />
         <p className="text-white">Gifted natus Foundation</p>
       </div>
       <div>
         <div className="flex flex-col">
-          <h1 className="text-3xl mb-5 pl-20 lg:text-3xl text-white font-gobold">
+          <h1 className="text-3xl mb-5 sm:pl-20 lg:text-3xl text-white font-gobold">
             VISIT US
           </h1>
         </div>
         <div className="flex flex-col space-y-2 ">
           <div className="flex space-x-8">
-            <FaLocationDot className="text-green-400 text-4xl"/>
+            <FaLocationDot className="text-green-400 text-2xl"/>
             <p className="text-white">
               No 2, old Assembly Quarters,Ekeki Housing Estate, Yenagoa, Bayelsa
               state Nigeria

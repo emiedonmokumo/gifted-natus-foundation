@@ -54,7 +54,7 @@ export default function Nav() {
 
       {/* Nav Items */}
       <nav
-        className={`nav fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-black text-white z-50 transition-transform duration-300 transform ${
+        className={`nav fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-black text-white z-50 transition-transform duration-300 transform ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

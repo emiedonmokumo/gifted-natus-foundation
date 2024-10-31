@@ -61,17 +61,17 @@ export default function Home() {
               <span>FOUNDATION</span>
             </h1>
           </div>
-          <div className="h-[700px] w-screen relative mb-0 sm:flex sm:flex-col sm:justify-center">
+          <div className="h-[900px] w-screen relative mb-0 sm:flex sm:flex-col sm:justify-center">
             {/* Center the image on mobile by using flexbox */}
             <div className="flex justify-center">
               <img
                 src="/About1.png"
                 alt=""
-                className="top-40 sm:top-20 md:right-[20%] lg:top-44 md:top-24 w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
+                className="top-0 sm:top-32 lg:top-44 md:top-24 w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
               />
             </div>
 
-            <div className="sm:py-12 sm:pt-32 bg-[url('/rectangleLeaf.png')] text-white md:h-96 w-full lg:w-[600px] lg:h-[200px] p-5 md:p-36 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
+            <div className="sm:py-12 sm:pt-40 bg-[url('/rectangleLeaf.png')] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
               <p className="lg:w-full text-center sm:text-sm">
                 At Gifted Natus Foundation, the impact of our work is seen in
                 the transformation of lives. From providing life-changing
@@ -168,7 +168,7 @@ export default function Home() {
             alt=" "
             className="w-96 h-full top-10 hidden lg:inline-block"
           />
-          <div className="flex lg:items-end lg:justify-start items-center justify-evenly flex-col lg:w-6/12 lg:h-2/4 w-full h-full">
+          <div className="flex lg:items-end lg:justify-start items-center justify-evenly flex-col lg:w-6/12 lg:h-2/4 w-full h-full" id="donate">
             <h1 className="font-bold text-4xl font-gobold lg:text-right text-center">
               <span className="text-[#0156a9]">SUPPORT </span>OUR{" "}
               <span className="text-[#07a034]">MISSION</span>
@@ -190,7 +190,7 @@ export default function Home() {
               <span className="to-blue-950">UPDATED!</span>
             </h1>
             <p className="text-white w-full text-center">
-              be the first to hear about our latest initiatives success stories
+              be the first to hear about our latest initiatives, success stories,
               and ways you can get involved
             </p>
           </div>
