@@ -95,7 +95,7 @@ export default function Home() {
             />
             <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%]">
               <h1 className="font-bold text-4xl font-gobold">
-                OUR <span className="green-text">MISSION</span>
+                OUR <span className="text-[#07a034]">MISSION</span>
               </h1>
               <h2 className="font-bold text-center lg:text-right">
                 Making a difference, Ever day
@@ -115,9 +115,9 @@ export default function Home() {
               alt=" our approach"
               className="w-96 h-auto float-right lg:absolute lg:right-0 lg:top-0"
             />
-            <div className="flex lg:items-left items-center h-96 justify-evenly flex-col p-10 lg:w-[60%] float-left lg:absolute lg:left-0 lg:top-0">
+            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col p-10 lg:w-[60%] float-left lg:absolute lg:left-0 lg:top-0">
               <h1 className="font-bold text-4xl font-gobold text-center lg:text-left ">
-                OUR <span className="blue-text">APPROACH</span>
+                OUR <span className="text-[#0156a9]">APPROACH</span>
               </h1>
               <h2 className="font-bold w-56 text-center lg:text-left">
                 Comprehensive Solutions for Lasting Impact
@@ -141,7 +141,7 @@ export default function Home() {
             />
             <div className="flex lg:items-end items-center h-80 justify-evenly flex-col p-10 lg:w-[60%]">
               <h1 className="font-bold text-4xl font-gobold ">
-                OUR <span className="green-text">IMPACT</span>
+                OUR <span className="text-[#07a034]">IMPACT</span>
               </h1>
               <h2 className="font-bold w-52">
                 Transforming lives, one community at a time
@@ -178,14 +178,14 @@ export default function Home() {
               Every donation, big or small helps us continue our work and expand
               our reach, together we can build a brighter future
             </p>
-            <div className="green-bg rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
+            <div className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
               {" "}
               Donate Today!
             </div>
           </div>
         </div>
         <div className="lg:h-52 h-[400px]  leading-7 bg-[#07a034] my-0 mx-auto lg:absolute  top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7">
-          <div className="w-2/4">
+          <div className="w-full lg:w-2/4 md:w-2/4">
             <h1 className="font-gobold text-3xl text-center lg:text-5xl font-bold mb-5 ">
               <span className="text-white">STAY</span>{" "}
               <span className="to-blue-950">UPDATED!</span>
