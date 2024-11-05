@@ -47,7 +47,7 @@ export default function Nav() {
       {/* White Background Overlay */}
       {isOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-screen bg-white z-40"
+          className="fixed top-0 left-0 w-full h-screen bg-black z-40"
           onClick={toggleMenu} // Close menu on overlay click
         ></div>
       )}
