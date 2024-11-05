@@ -11,7 +11,9 @@
 .font-gobold {
   font-family: 'GoBold', sans-serif;
 }
-
+*{
+  box-sizing: border-box;
+}
 
  body {
   color: var(--foreground);

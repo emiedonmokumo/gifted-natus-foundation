@@ -66,7 +66,7 @@ export default function Home() {
                 <span>FOUNDATION</span>
               </h1>
             </div>
-            <div className="h-[900px] w-screen relative mb-0 sm:flex sm:flex-col sm:justify-center">
+            <div className="h-[900px] w-[90w] relative mb-0 sm:flex sm:flex-col sm:justify-center">
               {/* Center the image on mobile by using flexbox */}
               <div className="flex justify-center">
                 <img
@@ -113,7 +113,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="w-screen lg:h-[300px] flex items-center justify-between flex-col lg:flex-row clear-both lg:relative">
+            <div className="w-[90vw] lg:h-[300px] flex items-center justify-between flex-col lg:flex-row clear-both lg:relative">
               <img
                 src="/Aboutapproach.png"
                 alt=" our approach"

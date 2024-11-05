@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { FaCalendar, FaEye } from "react-icons/fa6";
 import Link from "next/link"
 
@@ -68,39 +68,6 @@ export default function TopPost() {
     },
     // More posts...
   ];
-
-
-
-    // Create an array of refs for each slide
-    const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-    // Initialize refs only once
-    if (slideRefs.current.length !== posts.length) {
-        slideRefs.current = Array(posts.length).fill(null).map((_, i) => slideRefs.current[i] || null);
-    }
-
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("display");
-                } else {
-                    entry.target.classList.remove("display");
-                }
-            });
-        });
-
-        // Observe each slide using its individual ref
-        slideRefs.current.forEach((ref) => {
-            if (ref) observer.observe(ref);
-        });
-
-        return () => {
-            // Cleanup the observer on component unmount
-            observer.disconnect();
-        };
-    }, []);
-
     return (
         <div className="overflow-scroll h-[500px] w-screen flex items-center justify-center">
             {/* Top post slider track */}
@@ -108,7 +75,6 @@ export default function TopPost() {
                 {posts.map((post, index) => (
                     <div
                         key={post.id}
-                        ref={(el) => (slideRefs.current[index] = el)}
                         className="slide h-full  w-[40vw] sm:w-[80vw] relative rounded-2xl pt-[220px]"
                         style={{
                             backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(${post.img})`,
