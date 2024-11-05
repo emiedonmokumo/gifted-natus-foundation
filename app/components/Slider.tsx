@@ -58,7 +58,7 @@ const Slider = () => {
         </div>
         {/* See All */}
       <div className="mt-8 text-center">
-        <a href="/" className="text-lg text-green-500 font-semibold hover:underline">
+        <a href="/blog" className="text-lg text-green-500 font-semibold hover:underline">
           See all →
         </a>
       </div>
