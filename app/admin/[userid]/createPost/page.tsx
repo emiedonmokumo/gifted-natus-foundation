@@ -13,7 +13,7 @@ interface MyCustomModule {
 
 const BlogEditor: React.FC = () => {
   const editorRef = useRef<HTMLDivElement | null>(null);
-  const quillInstanceRef = useRef<Quill | null>(null); // Store the instance reference
+  const quillInstanceRef = useRef<Quill | null>(null); // Store the Quill instance
 
   const toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],
@@ -33,14 +33,13 @@ const BlogEditor: React.FC = () => {
   ];
 
   useEffect(() => {
-    // Ensure the editor is only initialized once
     if (quillInstanceRef.current || !editorRef.current) return;
 
     const quill = new Quill(editorRef.current, {
       theme: 'snow',
       modules: {
-        toolbar: toolbarOptions,
-      },
+        toolbar: toolbarOptions
+      }
     });
     quillInstanceRef.current = quill; // Store the instance
 
@@ -64,27 +63,69 @@ const BlogEditor: React.FC = () => {
               method: 'POST',
               body: formData,
             });
-            const result = await response.json();
-            const imageUrl = result.url;
 
-            // Insert image into the editor
+            if (!response.ok) {
+              throw new Error('Failed to upload image');
+            }
+
+            const result = await response.json();
+            const imageUrl = result.url; // Ensure this is the correct field in your API response
+
+            // Insert image into the editor at the current cursor position
             const range = quill.getSelection();
-            quill.insertEmbed(range?.index || 0, 'image', imageUrl);
+            if (range) {
+              quill.insertEmbed(range.index, 'image', imageUrl);
+              quill.setSelection(range.index + 1); // Move cursor to the next position
+            }
           } catch (error) {
             console.error('Image upload failed:', error);
           }
         }
       };
     });
-  }, []); // Empty dependency array ensures it runs only once
+  }, []); // Run once when the component mounts
+
+  // Function to handle sending the content to an API URL
+  const handleSendText = async () => {
+    if (!quillInstanceRef.current) return;
+
+    // Get the editor's contents as HTML
+    const content = quillInstanceRef.current.root.innerHTML;
+
+    try {
+      const response = await fetch('/api/submit-text', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send text to API');
+      }
+
+      const result = await response.json();
+      console.log('Response from server:', result);
+      alert('Text submitted successfully');
+    } catch (error) {
+      console.error('Error sending text:', error);
+      alert('Failed to submit text');
+    }
+  };
 
   return (
     <div>
       <header className='bg-slate-900'>
         <Nav />
       </header>
-      <div ref={editorRef} className="mt-4 border border-gray-300 rounded-md shadow-md h-screen"></div>
-      <div className="h-[50vh] w-screen bg-white"></div>
+      <div ref={editorRef} className="mt-4 border border-gray-300 rounded-md shadow-md h-screen" style={{ height: '500px' }}></div>
+      <button
+        onClick={handleSendText}
+        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md"
+      >
+        Update blog
+      </button>
       <Footer />
     </div>
   );
