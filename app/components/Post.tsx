@@ -18,7 +18,7 @@ export default function Post() {
   const filters: string[] = ["all", "Health", "Welfare", "Youth", "Events", "Environment"];
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const postsPerPage = 2; // Customize the number of posts per page
+  const postsPerPage = 4; // Customize the number of posts per page
 
   const posts: Post[] = [
     {

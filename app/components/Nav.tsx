@@ -23,16 +23,16 @@ export default function Nav() {
           </p>
         </div>
         <div className=" text-white w-full h2 flex-col md:flex-row lg:flex-row  md:w-6/12 lg:w-2/4 md:h-auto lg:h-auto  flex  items-center  justify-evenly md:items-center md:jusify-evenly lg:justify-evenly">
-          <Link className="font-medium" href="#about">
+          <Link className="font-medium" href="/#about">
             About us
           </Link>
-          <Link className="font-medium" href="#contact">
+          <Link className="font-medium" href="/#contact">
             Contact Us
           </Link>
-          <Link className="font-medium" href="#blog">
+          <Link className="font-medium" href="/blog">
             Blog
           </Link>
-          <Link className="font-medium text-green-300" href="#donate">
+          <Link className="font-medium text-green-300" href="/#donate">
             Donate &rarr;
           </Link>
         </div>

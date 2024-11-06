@@ -71,7 +71,7 @@ export default function TopPost() {
     return (
         <div className="overflow-scroll h-[500px] w-screen flex items-center justify-center">
             {/* Top post slider track */}
-            <div className={`w-[calc(30vw * ${posts.length + 1})] h-[80%] flex items-center space-x-5 pl-[0vw]`}>
+            <div className={`w-[calc(30vw * ${posts.length + 1})] h-[80%] flex items-center space-x-5`}>
                 {posts.map((post, index) => (
                     <div
                         key={post.id}
