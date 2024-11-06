@@ -1,6 +1,6 @@
-import Nav from "../components/Nav";
-import Post from "../components/Post"
-import TopPost from "../components/TopPost";
+import Nav from "@/app/components/Nav";
+import Post from "@/app/components/Post"
+import TopPost from "@/app/components/TopPost";
 
 export default function Blog(){
     return(

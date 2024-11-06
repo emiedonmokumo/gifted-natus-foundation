@@ -4,6 +4,7 @@ import Nav from '@/app/components/Nav';
 import Footer from '@/app/components/Footer';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
+import axios from 'axios';
 
 type HandlerFunction = (value: any) => void;
 
@@ -57,24 +58,31 @@ const BlogEditor: React.FC = () => {
         const file = input.files ? input.files[0] : null;
         if (file) {
           const formData = new FormData();
-          formData.append('image', file);
-
+          formData.append('image', file); // 'image' is the field name on the server
+      
           try {
-            const response = await fetch('/api/upload', {
-              method: 'POST',
-              body: formData,
+            const response = await axios.post('/api/upload/image', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data', // This is necessary for form data
+              },
             });
-            const result = await response.json();
-            const imageUrl = result.url;
-
-            // Insert image into the editor
-            const range = quill.getSelection();
-            quill.insertEmbed(range?.index || 0, 'image', imageUrl);
+      
+            if (response.status === 200) {
+              const { url } = response.data; // destructure the response
+      
+              // Insert image into the editor
+              const range = quill.getSelection();
+              quill.insertEmbed(range?.index || 0, 'image', url);
+            } else {
+              console.log('Error uploading image:', response);
+            }
           } catch (error) {
             console.error('Image upload failed:', error);
           }
         }
       };
+      
+
     });
   }, []); // Empty dependency array ensures it runs only once
 

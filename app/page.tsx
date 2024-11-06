@@ -6,13 +6,13 @@ import TeamCarousel from "./components/TeamCarousel";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import { Suspense } from "react";
+
+
 export default function Home() {
+  console.log(process.env.CLOUD_NAME)
   return (
     <div>
       <Suspense fallback={<Loader />}>
-        <Head>
-          <title>Gifted Natus foundation - Home</title>
-        </Head>
         <header
           className="p-0 m-0 h-screen bg-[url('./assets/headerBG.png')]"
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}
@@ -26,7 +26,7 @@ export default function Home() {
                 <span className="lg:my-2 h-1 block"></span>{" "}
                 <span className="text-[#0156a9]">STRONGER</span> COMMUNITIES{" "}
               </h1>
-              <p className="text-white text-lg lg:text-justify md:text-left sm:text-sm lg:px-5 sm:text-justify mr-5 sm:leading-6">
+              <p className="text-white text-lg lg:text-justify md:text-left sm:text-sm sm:text-justify mr-5 sm:leading-6">
                 Empowering individuals through education, healthcare, and
                 economic development to create a future filled with hope,
                 opporturnity, and sustainable growth
@@ -66,7 +66,7 @@ export default function Home() {
                 <span>FOUNDATION</span>
               </h1>
             </div>
-            <div className="h-[900px] w-[90w] relative mb-0 sm:flex sm:flex-col sm:justify-center">
+            <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center">
               {/* Center the image on mobile by using flexbox */}
               <div className="flex justify-center">
                 <img
@@ -91,7 +91,7 @@ export default function Home() {
             id="statement"
             className="mt-0 flex items-center space-y-52 justify-between flex-col md:h-auto lg:h-auto h-[calc(500px * 3)]"
           >
-            <div className="w-screen  flex items-center justify-between flex-col lg:flex-row">
+            <div className="flex items-center justify-between flex-col lg:flex-row">
               <img
                 src="/AboutOmission.png"
                 alt=" our mission"
@@ -137,7 +137,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="w-screen h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
+            <div className="h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
               <img
                 src="/Aboutimpact.png"
                 alt=" our impact"
@@ -191,7 +191,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="lg:h-52 h-[400px]  leading-7 bg-[#07a034] my-0 mx-auto lg:absolute  top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7">
+          <div className="lg:h-52 h-[400px]  leading-7 bg-[#07a034] lg:absolute top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7">
             <div className="w-full lg:w-2/4 md:w-2/4">
               <h1 className="font-gobold text-3xl text-center lg:text-5xl font-bold mb-5 ">
                 <span className="text-white">STAY</span>{" "}
