@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Nav from '@/app/components/Nav';
 import Footer from '@/app/components/Footer';
 import Quill from 'quill';
@@ -14,7 +14,8 @@ interface MyCustomModule {
 
 const BlogEditor: React.FC = () => {
   const editorRef = useRef<HTMLDivElement | null>(null);
-  const quillInstanceRef = useRef<Quill | null>(null); // Store the instance reference
+  const quillInstanceRef = useRef<Quill | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   const toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],
@@ -34,20 +35,20 @@ const BlogEditor: React.FC = () => {
   ];
 
   useEffect(() => {
-    // Ensure the editor is only initialized once
-    if (quillInstanceRef.current || !editorRef.current) return;
+    setIsClient(true); // Ensures the component only initializes on the client
+  }, []);
+
+  useEffect(() => {
+    if (!isClient || quillInstanceRef.current || !editorRef.current) return;
 
     const quill = new Quill(editorRef.current, {
       theme: 'snow',
-      modules: {
-        toolbar: toolbarOptions,
-      },
+      modules: { toolbar: toolbarOptions },
     });
-    quillInstanceRef.current = quill; // Store the instance
+    quillInstanceRef.current = quill;
 
     const toolbarModule = quill.getModule('toolbar') as MyCustomModule;
 
-    // Add custom image handler
     toolbarModule.addHandler('image', () => {
       const input = document.createElement('input');
       input.setAttribute('type', 'file');
@@ -58,19 +59,15 @@ const BlogEditor: React.FC = () => {
         const file = input.files ? input.files[0] : null;
         if (file) {
           const formData = new FormData();
-          formData.append('image', file); // 'image' is the field name on the server
-      
+          formData.append('image', file);
+
           try {
             const response = await axios.post('/api/upload/image', formData, {
-              headers: {
-                'Content-Type': 'multipart/form-data', // This is necessary for form data
-              },
+              headers: { 'Content-Type': 'multipart/form-data' },
             });
-      
+
             if (response.status === 200) {
-              const { url } = response.data; // destructure the response
-      
-              // Insert image into the editor
+              const { url } = response.data;
               const range = quill.getSelection();
               quill.insertEmbed(range?.index || 0, 'image', url);
             } else {
@@ -81,17 +78,17 @@ const BlogEditor: React.FC = () => {
           }
         }
       };
-      
-
     });
-  }, []); // Empty dependency array ensures it runs only once
+  }, [isClient]);
 
   return (
     <div>
       <header className='bg-slate-900'>
         <Nav />
       </header>
-      <div ref={editorRef} className="mt-4 border border-gray-300 rounded-md shadow-md h-screen"></div>
+      {isClient && (
+        <div ref={editorRef} className="mt-4 border border-gray-300 rounded-md shadow-md h-screen"></div>
+      )}
       <div className="h-[50vh] w-screen bg-white"></div>
       <Footer />
     </div>
