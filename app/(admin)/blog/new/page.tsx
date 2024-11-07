@@ -4,6 +4,7 @@ import Nav from '@/app/components/Nav';
 import Footer from '@/app/components/Footer';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
+import axios from 'axios';
 
 type HandlerFunction = (value: any) => void;
 
@@ -56,12 +57,13 @@ const BlogEditor: React.FC = () => {
         const file = input.files ? input.files[0] : null;
         if (file) {
           const formData = new FormData();
-          formData.append('image', file);
-
+          formData.append('image', file); // 'image' is the field name on the server
+      
           try {
-            const response = await fetch('/api/upload', {
-              method: 'POST',
-              body: formData,
+            const response = await axios.post('/api/upload/image', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data', // This is necessary for form data
+              },
             });
 
             if (!response.ok) {
@@ -82,6 +84,8 @@ const BlogEditor: React.FC = () => {
           }
         }
       };
+      
+
     });
   }, []); // Run once when the component mounts
 

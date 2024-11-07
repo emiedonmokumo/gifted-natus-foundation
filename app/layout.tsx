@@ -22,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <title>Gifted Natus foundation - Home</title>
         <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
       </Head>
       <body

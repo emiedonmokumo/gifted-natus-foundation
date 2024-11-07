@@ -1,4 +1,4 @@
-export default function Admin() {
+function page() {
   return (
     <div className="bg-gray-200 w-full h-screen flex justify-center items-center">
       <div className="w-full max-w-xs mx-auto mt-10 sm:max-w-sm md:max-w-md">
@@ -41,3 +41,5 @@ export default function Admin() {
     </div>
   );
 }
+
+export default page
