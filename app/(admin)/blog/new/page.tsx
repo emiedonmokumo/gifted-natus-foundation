@@ -34,8 +34,9 @@ const BlogEditor: React.FC = () => {
     ['clean']
   ];
 
+  // Ensures client-side only code runs in the useEffect
   useEffect(() => {
-    setIsClient(true); // Ensures the component only initializes on the client
+    setIsClient(true); // This flag will ensure we run the code only in the client
   }, []);
 
   useEffect(() => {
@@ -50,34 +51,37 @@ const BlogEditor: React.FC = () => {
     const toolbarModule = quill.getModule('toolbar') as MyCustomModule;
 
     toolbarModule.addHandler('image', () => {
-      const input = document.createElement('input');
-      input.setAttribute('type', 'file');
-      input.setAttribute('accept', 'image/*');
-      input.click();
+      // Ensure this is only executed on the client side (browser)
+      if (typeof window !== 'undefined') {
+        const input = document.createElement('input');
+        input.setAttribute('type', 'file');
+        input.setAttribute('accept', 'image/*');
+        input.click();
 
-      input.onchange = async () => {
-        const file = input.files ? input.files[0] : null;
-        if (file) {
-          const formData = new FormData();
-          formData.append('image', file);
+        input.onchange = async () => {
+          const file = input.files ? input.files[0] : null;
+          if (file) {
+            const formData = new FormData();
+            formData.append('image', file);
 
-          try {
-            const response = await axios.post('/api/upload/image', formData, {
-              headers: { 'Content-Type': 'multipart/form-data' },
-            });
+            try {
+              const response = await axios.post('/api/upload/image', formData, {
+                headers: { 'Content-Type': 'multipart/form-data' },
+              });
 
-            if (response.status === 200) {
-              const { url } = response.data;
-              const range = quill.getSelection();
-              quill.insertEmbed(range?.index || 0, 'image', url);
-            } else {
-              console.log('Error uploading image:', response);
+              if (response.status === 200) {
+                const { url } = response.data;
+                const range = quill.getSelection();
+                quill.insertEmbed(range?.index || 0, 'image', url);
+              } else {
+                console.log('Error uploading image:', response);
+              }
+            } catch (error) {
+              console.error('Image upload failed:', error);
             }
-          } catch (error) {
-            console.error('Image upload failed:', error);
           }
-        }
-      };
+        };
+      }
     });
   }, [isClient]);
 
