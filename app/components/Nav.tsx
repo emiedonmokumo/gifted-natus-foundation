@@ -23,16 +23,16 @@ export default function Nav() {
           </p>
         </div>
         <div className=" text-white w-full h2 flex-col md:flex-row lg:flex-row  md:w-6/12 lg:w-2/4 md:h-auto lg:h-auto  flex  items-center  justify-evenly md:items-center md:jusify-evenly lg:justify-evenly">
-          <Link className="font-medium" href="#about">
+          <Link className="font-medium" href="/#about">
             About us
           </Link>
-          <Link className="font-medium" href="#contact">
+          <Link className="font-medium" href="/#contact">
             Contact Us
           </Link>
-          <Link className="font-medium" href="#blog">
+          <Link className="font-medium" href="/blog">
             Blog
           </Link>
-          <Link className="font-medium text-green-300" href="#donate">
+          <Link className="font-medium text-green-300" href="/#donate">
             Donate &rarr;
           </Link>
         </div>
@@ -47,14 +47,14 @@ export default function Nav() {
       {/* White Background Overlay */}
       {isOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-screen bg-white z-40"
+          className="fixed top-0 left-0 w-full h-screen bg-black z-40"
           onClick={toggleMenu} // Close menu on overlay click
         ></div>
       )}
 
       {/* Nav Items */}
       <nav
-        className={`nav fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-black text-white z-50 transition-transform duration-300 transform ${
+        className={`nav fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center bg-black text-white z-50 transition-transform duration-300 transform ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

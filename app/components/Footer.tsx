@@ -2,20 +2,18 @@ import Link from "next/link";
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
 export default function Footer() {
   return (
-    <div className="pt-40 pb-12 bg-[url('/footerBackground.png')] flex justify-evenly items-center flex-col lg:flex-row">
-      <div className="flex items-center justify-evenly flex-col">
-        <img src="/logo.png" alt=" " className="h-auto w-[6rem]" />
-        <p className="text-white">Gifted natus Foundation</p>
-      </div>
-      <div>
-        <div className="flex flex-col">
-          <h1 className="text-3xl mb-5 pl-20 lg:text-3xl text-white font-gobold">
-            VISIT US
-          </h1>
+    <div className="lg:pt-52 lg:pb-12 sm:pt-10 sm:pb-5 md:pt-20 md:pb-8 bg-black flex-col lg:flex-row" id="contact">
+      <h1 className="text-3xl lg:my-5 sm:mb-5 lg:text-3xl text-center text-white font-gobold">
+        VISIT US
+      </h1>
+      <div className="flex md:flex-col sm:flex-col space-x-5 items-center sm:text-sm">
+        <div className="flex items-center justify-evenly flex-col md:my-8 w-60">
+          <img src="/logo.png" alt=" " className="h-auto w-[6rem]" />
+          <p className="text-white">Gifted natus Foundation</p>
         </div>
-        <div className="flex flex-col space-y-2 ">
+        <div className="flex flex-col md:mb-10 space-y-2 sm:space-y-5 md:space-y-5 sm:px-5 md:px-10 sm:py-10">
           <div className="flex space-x-8">
-            <FaLocationDot className="text-green-400 text-xl"/>
+            <FaLocationDot className="text-green-400 sm:text-4xl text-xl" />
             <p className="text-white">
               No 2, old Assembly Quarters,Ekeki Housing Estate, Yenagoa, Bayelsa
               state Nigeria
@@ -32,20 +30,20 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-evenly mt-5">
-          <Link href="#">
-            <img src="/facebook.png" alt="" />
-          </Link>
-          <Link href="#">
-            <img src="/x.png" alt="" />
-          </Link>
-          <Link href="#">
-            <img src="/instggram.png" alt="" />
-          </Link>
-          <Link href="#">
-            <img src="/WA.png" alt="" />
-          </Link>
-        </div>
+      </div>
+      <div className="flex items-center justify-center space-x-5 mt-5">
+        <Link href="#">
+          <img className="w-8" src="/facebook.png" alt="" />
+        </Link>
+        <Link href="#">
+          <img className="w-8" src="/x.png" alt="" />
+        </Link>
+        <Link href="#">
+          <img className="w-8" src="/instggram.png" alt="" />
+        </Link>
+        <Link href="#">
+          <img className="w-8" src="/WA.png" alt="" />
+        </Link>
       </div>
     </div>
   );
