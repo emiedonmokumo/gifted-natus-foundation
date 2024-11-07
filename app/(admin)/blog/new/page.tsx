@@ -1,10 +1,12 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
+// page.tsx
+'use client'
+import React from 'react';
 import Nav from '@/app/components/Nav';
 import Footer from '@/app/components/Footer';
 import Quill from 'quill';
-import 'quill/dist/quill.snow.css';
+import { useRef, useEffect } from 'react';
 import axios from 'axios';
+import dynamic from "next/dynamic";
 
 type HandlerFunction = (value: any) => void;
 
@@ -117,7 +119,6 @@ const BlogEditor: React.FC = () => {
       alert('Failed to submit text');
     }
   };
-
   return (
     <div>
       <header className='bg-slate-900'>
