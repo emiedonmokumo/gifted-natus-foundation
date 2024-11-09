@@ -79,13 +79,40 @@ const BlogEditor: React.FC = () => {
     });
   }, []);
 
+  const handleSubmit = async () => {
+    if (quillInstanceRef.current) {
+      const editorContent = quillInstanceRef.current.root.innerHTML; // Extract content as HTML
+
+      try {
+        const response = await axios.post('/api/blog/submit', { content: editorContent });
+
+        if (response.status === 200) {
+          console.log('Content submitted successfully:', response.data);
+          alert('Blog content submitted successfully!');
+        } else {
+          console.log('Error submitting content:', response);
+        }
+      } catch (error) {
+        console.error('Submission failed:', error);
+        alert('Failed to submit blog content.');
+      }
+    }
+  };
+
   return (
     <div>
       <header className='bg-slate-900'>
         <Nav />
       </header>
-      <div ref={editorRef} className="mt-4 border border-gray-300 rounded-md shadow-md h-screen"></div>
-      <div className="h-[50vh] w-screen bg-white"></div>
+      <div ref={editorRef} className="mt-4 border border-gray-300 rounded-md shadow-md" style={{ height: "500px" }}></div>
+      <div className="my-4 ml-11">
+        <button 
+          onClick={handleSubmit} 
+          className='w-40 h-9 mr-4 bg-green-600 text-white flex items-center justify-center'
+        >
+          Submit Blog
+        </button>
+      </div>
       <Footer />
     </div>
   );
