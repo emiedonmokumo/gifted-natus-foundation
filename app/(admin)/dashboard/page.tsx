@@ -2,6 +2,7 @@
 import { FaCalendar, FaEye, FaRegCopy } from "react-icons/fa6";
 import { BsBarChartFill } from "react-icons/bs";
 import { IoShareSocialSharp } from "react-icons/io5";
+import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
 import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
@@ -205,8 +206,8 @@ export default function Dashboard() {
                       <FaCalendar className="inline-block text-[#07a034]" />{" "}
                       {post.day}
                     </p>
-                    <Link href={`/edit/${post.id}`} className="w-28 text-white text-center rounded-md bg-[#07a034]">
-                      edit post
+                    <Link href={`/edit/${post.id}`} className="w-36 flex justify-evenly text-white text-center rounded-md bg-[#07a034]">
+                      edit post <FaEdit className="text-white"/>
                     </Link>
                   </div>
                   <div className="">

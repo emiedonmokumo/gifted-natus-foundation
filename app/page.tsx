@@ -1,3 +1,4 @@
+"use client"
 import Nav from "./components/Nav";
 import Slider from "./components/Slider";
 import Link from "next/link";
@@ -5,14 +6,19 @@ import Head from "next/head";
 import TeamCarousel from "./components/TeamCarousel";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
-import { Suspense } from "react";
+import { useEffect, useRef } from "react";
 
 
 export default function Home() {
-  console.log(process.env.CLOUD_NAME)
+  const loading = useRef<HTMLDivElement | undefined>()
+  useEffect(()=>{
+    if(document.readyState === "complete" && loading.current){
+      loading.current.style.display = "none"
+    }
+  },[])
   return (
     <div>
-      <Suspense fallback={<Loader />}>
+      <Loader refrence={loading}/>
         <header
           className="p-0 m-0 h-screen bg-[url('./assets/headerBG.png')]"
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}
@@ -225,7 +231,6 @@ export default function Home() {
           </div>
           <Footer />
         </footer>
-      </Suspense>
     </div>
   );
 }

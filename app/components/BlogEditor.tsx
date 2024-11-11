@@ -6,6 +6,7 @@ import Footer from '@/app/components/Footer';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 import axios from 'axios';
+import Loader from './Loader';
 
 type HandlerFunction = (value: any) => void;
 

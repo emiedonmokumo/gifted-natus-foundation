@@ -15,6 +15,7 @@ export default function Nav() {
           alt=""
           className=" absolute top-1 right-2 lg:hidden md:hidden"
         />
+        <Link href={"/"}>
         <div className="w-52 flex items-center justify-evenly">
           <img src="/logo.png" alt="logo" className="w-9" />
           <p className="text-white">
@@ -22,6 +23,7 @@ export default function Nav() {
             <br /> foundation
           </p>
         </div>
+        </Link>
         <div className=" text-white w-full h2 flex-col md:flex-row lg:flex-row  md:w-6/12 lg:w-2/4 md:h-auto lg:h-auto  flex  items-center  justify-evenly md:items-center md:jusify-evenly lg:justify-evenly">
           <Link className="font-medium" href="/#about">
             About us
@@ -64,11 +66,12 @@ export default function Nav() {
           className="absolute top-4 right-4 cursor-pointer"
           onClick={toggleMenu} // Close menu on close button click
         />
-
+        <Link href={"/"}>
         <div className="w-52 flex flex-col items-center justify-center mb-4 space-y-3">
           <img src="/logo.png" alt="logo" className="w-9" />
           <p className="text-white text-center">Gifted Natus Foundation</p>
         </div>
+        </Link>
         <div className="text-white flex flex-col items-center">
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
