@@ -51,7 +51,7 @@ const Slider = () => {
         <h3 className="mt-4 text-lg font-bold">{article.title}</h3>
         <div className="flex justify-between items-center text-sm mt-4">
           <span>{article.views}  views <FaEye className="text-[#07a034] text-1xl inline-block"/></span>
-          <span> <FaCalendar className="text-[#07a034] text-1xl inline-block"/> {article.posted}</span>
+          <span> FaStatis <FaCalendar className="text-[#07a034] text-1xl inline-block"/> {article.posted}</span>
         </div>
       </div>
         ))}

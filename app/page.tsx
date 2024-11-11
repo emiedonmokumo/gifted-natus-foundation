@@ -37,7 +37,7 @@ export default function Home() {
                 href="#donate"
                 className="w-[40%] md:w-auto lg:w-auto flex items-center justify-center bg-[#07a034] h-8 py-5 px-5 rounded-md font-medium text-white hover:bg-green-900"
               >
-                Donate
+                Get involved Today
               </Link>
               <Link href="#about" className="text-white hover:text-green-600">
                 See more &rarr;
