@@ -1,0 +1,32 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Run the workflow on push to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Check out the code from the repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Use Node.js version 18 (or your preferred version)
+
+      - name: Install dependencies
+        run: npm install  # Install project dependencies
+
+      - name: Run tests (optional)
+        run: npm run test  # Run tests (if you have them set up)
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Vercel token stored in GitHub secrets
+        run: |
+          npm install -g vercel  # Install Vercel CLI
+          vercel --prod --token $VERCEL_TOKEN  # Deploy to Vercel (change command as needed)
