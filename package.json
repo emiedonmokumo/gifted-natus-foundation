@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
     "axios": "^1.7.7",
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "ckeditor5": "^43.3.1",
     "ckeditor5-custom-build": "^0.0.6",
     "cloudinary": "^2.5.1",

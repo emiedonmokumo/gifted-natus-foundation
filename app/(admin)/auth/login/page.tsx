@@ -1,7 +1,7 @@
 "use client";
 import { useState, ChangeEvent } from "react";
 import { useRouter } from 'next/navigation';
-
+import { signIn } from "next-auth/react";
 
 type User = {
   email: string;
@@ -26,18 +26,24 @@ function Page() {
   const submitHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/user/login", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: user.email,
-          password: user.password,
-        }),
-      });
+      // const response = await fetch("/api/user/login", {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     username: user.email,
+      //     password: user.password,
+      //   }),
+      // });
+
+      const response = await signIn('credentials', {
+        email: user.email,
+        password: user.password,
+        redirect: false        
+      })
       
-      if (response.ok) {
+      if (response?.ok) {
         // Handle successful login
         console.log("Login successful");
         router.push("/dashboard")

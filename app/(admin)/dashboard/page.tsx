@@ -7,6 +7,7 @@ import Link from "next/link";
 import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 import { useEffect, useState } from "react";
+import { useSession } from 'next-auth/react'
 
 interface Post {
   img: string;
@@ -19,6 +20,7 @@ interface Post {
 }
 
 export default function Dashboard() {
+
   const [views, setViews] = useState<string>("34k");
   const [shares, setShares] = useState<string>("39k");
   const [growthRate, setGrowthrate] = useState<string>("28%");

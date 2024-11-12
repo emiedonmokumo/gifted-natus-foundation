@@ -23,10 +23,10 @@ export interface IUser extends Document {
 
 const userSchema = new Schema<IUser>({
   bio: {
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
+    firstName: { type: String },
+    lastName: { type: String },
     othernames: { type: String },
-    title: { type: String, required: true },
+    title: { type: String },
     phone: { type: String, },
     linkedIn: { type: String },
     x: { type: String },
@@ -48,6 +48,6 @@ const userSchema = new Schema<IUser>({
   role: { type: String, enum:["User", "Admin"], default: "User"}
 }, { timestamps: true });
 
-const User: Model<IUser> = mongoose.models.User || mongoose.model<IUser>('User', userSchema);
+const User: Model<IUser> = mongoose.models?.User || mongoose.model<IUser>('User', userSchema);
 
 export default User;
