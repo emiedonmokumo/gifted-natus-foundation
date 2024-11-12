@@ -28,6 +28,7 @@ const page = () => {
             });
             router.push('/auth/login');
         } catch (err) {
+            console.log(err)
             setError('Signup failed. Please try again.');
         }
     };
