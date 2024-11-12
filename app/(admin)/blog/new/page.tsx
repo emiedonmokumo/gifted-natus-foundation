@@ -9,7 +9,7 @@ const BlogEditor = dynamic(() => import("@/app/components/BlogEditor"), { ssr: f
 const Page: React.FC = () => {
   return (
     <div>
-      <BlogEditor />
+      <BlogEditor id={null}/>
     </div>
   );
 };

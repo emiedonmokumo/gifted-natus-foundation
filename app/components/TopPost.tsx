@@ -69,13 +69,13 @@ export default function TopPost() {
     // More posts...
   ];
     return (
-        <div className="overflow-scroll h-[500px] w-screen flex items-center justify-center">
+        <div className="overflow-scroll h-[500px] w-screen flex items-center">
             {/* Top post slider track */}
             <div className={`w-[calc(30vw * ${posts.length + 1})] h-[80%] flex items-center space-x-5`}>
                 {posts.map((post, index) => (
                     <div
                         key={post.id}
-                        className="slide h-full  w-[40vw] sm:w-[80vw] relative rounded-2xl pt-[220px]"
+                        className="slide h-full  w-[40vw] sm:w-[80vw] relative rounded-2xl pt-[220px] pl-[10px]"
                         style={{
                             backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(${post.img})`,
                             backgroundSize: "cover"

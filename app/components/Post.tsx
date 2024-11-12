@@ -112,7 +112,7 @@ export default function Post() {
           </div>
         ))}
       </div>
-      <div className="flex flex-wrap justify-between lg:w-[75%] mx-auto">
+      <div className="flex flex-wrap justify-between  lg:w-[75%] mx-auto">
         {currentPosts.map((post, id) => (
           <div
             className="flex flex-col items-center justify-evenly sm:h-[500px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[500px] md:w-[500px]"
@@ -120,7 +120,7 @@ export default function Post() {
           >
             <img src={post.img} alt={post.title} className="w-full h-[150px]" />
             <div>
-              <div className="flex items-center justify-between w-full lg:space-x-20">
+              <div className="flex items-center justify-between w-full sm:space-x-10 lg:space-x-20">
                 <div className="event bg-blue-800 rounded-md w-28 h-8 text-white flex items-center justify-center">
                   {post.category}
                 </div>
