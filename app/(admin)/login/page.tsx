@@ -1,6 +1,6 @@
 "use client";
 import { useState, ChangeEvent } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
 type User = {
