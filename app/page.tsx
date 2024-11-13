@@ -11,14 +11,8 @@ import { useEffect, useRef } from "react";
 
 export default function Home() {
   const loading = useRef<HTMLDivElement | undefined>()
-  useEffect(()=>{
-    if(document.readyState === "complete" && loading.current){
-      loading.current.style.display = "none"
-    }
-  },[])
   return (
     <div>
-      <Loader refrence={loading}/>
         <header
           className="p-0 m-0 h-screen bg-[url('./assets/headerBG.png')]"
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}

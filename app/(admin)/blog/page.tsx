@@ -8,15 +8,9 @@ import { useEffect, useRef } from "react";
 
 
 export default function Blog(){
-    const loading = useRef<HTMLDivElement | null>(null)
-  useEffect(()=>{
-    if(document.readyState === "complete" && loading.current){
-      loading.current.style.display = "none"
-    }
-  },[])
     return(
         <>
-          <Loader refrence={loading}/>
+          <Loader/>
             <header className="w-screen bg-black">
                 <Nav/>
             </header>

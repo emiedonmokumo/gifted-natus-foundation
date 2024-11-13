@@ -1,6 +1,6 @@
-export default function Loader({refrence}:{refrence: any}) {
+export default function Loader() {
   return (
-    <div ref={refrence} className="spinner-wrapper" >
+    <div className="spinner-wrapper" >
       <div className="spinner">
         <div className="sk-folding-cube">
           <div className="sk-cube1 sk-cube"></div>
