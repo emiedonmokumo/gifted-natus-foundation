@@ -178,26 +178,27 @@ export default function Dashboard() {
             ))}
           </div>
         </div>
-        {/* */}
-            <div className="w-[75%] h-[500px] bg-white absolute top-[300px] ">
-              <h1 className="font-gobold md:hidden sm:hidden">Explore Your Post</h1>
-              <div className="w-full h-70% overflow-y-scroll flex flex-col items-center justify-evenly">
+      {/* BLog post and subcribers in mobile */}
+            <div className="w-[75%] h-[700px] bg-white absolute top-[300px] flex flex-col items-center">
+              <h1 className="font-gobold md:hidden sm:hidden text-2xl text-center my-5">Explore Your Post</h1>
+              <div className="w-full h-70% flex md:flex-col sm:flex-col  justify-evenly overflow-scroll">
                 <div className="w-full" style={{
                   height:`calc(500px * ${posts.length + 1})`
                 }}>
                     {posts.map((post, id) => (
                       <div
-                        className="flex flex-col items-center justify-evenly sm:h-[500px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[500px] md:w-[500px]"
+                        className="flex sm:flex-col md:flex-col items-center justify-evenly sm:h-[500px] h-[400px] sm:w-[300px] mx-auto lg:w-[80%] space-x-3 md:w-[500px]"
                         key={id}
                       >
-                        <img src={post.img} alt={post.title} className="w-full h-[150px]" />
+                        <img src={post.img} alt={post.title} className="w-[50%] h-[150px]" />
                         <div>
                           <div className="flex items-center justify-between w-full sm:space-x-10 lg:space-x-20">
                             <div className="event bg-blue-800 rounded-md w-28 h-8 text-white flex items-center justify-center">
                               {post.category}
                             </div>
                             <p><FaEye className="inline-block text-[#07a034]" /> {post.veiws} views</p>
-                            <p><FaCalendar className="inline-block text-[#07a034]" /> {post.day} Lorem ipsum dolor sit amet cons</p>
+                            <p><FaCalendar className="inline-block text-[#07a034]" /> {post.day}</p>
+                            <p className="text-white bg-[#07a034] sm:hidden md:hidden w-[150px] text-center rounded-xl"><FaEdit className="inline-block" /> Edit post</p>
                           </div>
                           <div className="">
                             <h1 className="font-gobold text-4xl">{post.title}</h1>
