@@ -79,22 +79,7 @@ useEffect(() => {
       }
     };
   });
-
-  // Fetching blog data to edit page
-  fetch("../../json/blog.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Network response was not ok, status: ${response.status}`);
-      }
-      return response.json(); // Parse response as JSON
-    })
-    .then((data) => {
-      setEditBlog(data);
-      console.log(data) // Update state with the fetched data
-    })
-    .catch((error) => {
-      console.error("There is an error fetching the blog data:", error);
-    });
+  
 }, []);
 
   const handleSubmit = async () => {

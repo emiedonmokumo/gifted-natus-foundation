@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import team from "../../json/team.json";
+import team from "../../public/json/team.json";
 
 const TeamCarousel = () => {
   const [memberIndex, setMemberIndex] = useState<number>(0);
@@ -15,10 +15,6 @@ const TeamCarousel = () => {
   };
 
   const currentMember = team[memberIndex];
-
-  useEffect(() => {
-    console.log(memberIndex);
-  }, [memberIndex]);
 
   return (
     <div className="lg:mt-32 lg:mb-20 lg:py-16 md:mb-28 sm:my-28 bg-gray-900 text-white py-10 px-4">
