@@ -168,7 +168,7 @@ export default function Dashboard() {
             style={{ height: `calc(50px * ${subcribers.length + 1})` }}
           >
             {subcribers.map((sub, id) => (
-              <p className="h-[50px] flex items-center justify-evenly">
+              <p key={id} className="h-[50px] flex items-center justify-evenly">
                 {sub}{" "}
                 <FaRegCopy
                   onClick={() => window.navigator.clipboard.writeText(sub)}

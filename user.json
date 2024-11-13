@@ -1,0 +1,18 @@
+{
+    "bio": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "othernames": "JD",
+        "title": "Mr.",
+        "phone": "+1234567890",
+        "linkedIn": "https://www.linkedin.com/in/johndoe",
+        "X": "@johndoe",
+        "country": "Nigeria",
+        "city": "Lagos",
+        "address": "123 Street, Lagos"
+    },
+    "credentials": {
+        "email": "johndoe@example.com",
+        "password": "12345678"
+    }
+}
