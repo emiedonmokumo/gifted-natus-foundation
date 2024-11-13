@@ -5,12 +5,9 @@ import Link from "next/link";
 import Head from "next/head";
 import TeamCarousel from "./components/TeamCarousel";
 import Footer from "./components/Footer";
-import Loader from "./components/Loader";
-import { useEffect, useRef } from "react";
 
 
 export default function Home() {
-  const loading = useRef<HTMLDivElement | undefined>()
   return (
     <div>
         <header
