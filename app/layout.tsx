@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 import Head from "next/head";
+import { Session } from "@/context/Session";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} antialiased`}
       >
-        {children}
+        <Session>
+          {children}
+        </Session>
       </body>
     </html>
   );
