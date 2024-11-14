@@ -34,8 +34,6 @@ export const authOptions: NextAuthOptions = {
         }
 
         const hashedPassword = user.credentials.password;
-        console.log("Hashed password in DB:", hashedPassword); // Log the hashed password from DB for debugging
-
         const isPasswordValid = await bcrypt.compare(password, hashedPassword);
 
         if (!isPasswordValid) {
@@ -44,6 +42,9 @@ export const authOptions: NextAuthOptions = {
 
         const response = {
           id: user._id,
+          firstName: user.bio.firstName,
+          lastName: user.bio.lastName,
+          othernames: user.bio.othernames
         };
         return response;
       },
@@ -63,12 +64,18 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
+        token.firstName = user.firstName
+        token.lastName = user.lastName
+        token.othernames = user.othernames
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
         session.user.id = token.id;
+        session.user.firstName = token.firstName
+        session.user.lastName = token.lastName
+        session.user.othernames = token.othernames
       }
       return session;
     },

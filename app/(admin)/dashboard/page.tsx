@@ -7,7 +7,11 @@ import Link from "next/link";
 import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
 import { useEffect, useState } from "react";
-import { useSession } from 'next-auth/react'
+import getSession from "@/utils/getSession";
+import { useSession } from "next-auth/react";
+import { SubscriberInterface } from "@/models/Subscriber";
+import axios from "axios";
+import posts from "@/utils/blogPosts";
 
 interface Post {
   img: string;
@@ -20,90 +24,23 @@ interface Post {
 }
 
 export default function Dashboard() {
+  // Get session of user
+  const { data: session } = useSession();
+  useEffect(()=>{
+    const fetchSubscribers = async () =>{
+      const response = await axios.get('/api/subscriber')
+      
+      if(response.status == 200) setSubcribers(response.data)
+    }
 
+    fetchSubscribers()
+  },[session])
+
+  const [subcribers, setSubcribers] = useState<SubscriberInterface[]>([])
   const [views, setViews] = useState<string>("34k");
   const [shares, setShares] = useState<string>("39k");
   const [growthRate, setGrowthrate] = useState<string>("28%");
-
-  const posts: Post[] = [
-    {
-      img: "/post1.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Events",
-      id: 1,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post2.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Health",
-      id: 2,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post3.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Environment",
-      id: 3,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
-    },
-    {
-      img: "/post4.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Youth",
-      id: 4,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post1.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Welfare",
-      id: 5,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
-    },
-    // More posts...
-  ];
-
-  const subcribers: string[] = [
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-  ];
+  
 
   function subs() {
     subcribers.join();
@@ -118,10 +55,10 @@ export default function Dashboard() {
         <Nav />
       </header>
       {/*welcome section*/}
-      <div className="w-[90%] h-[200px] bg-white mx-auto flex items-center justify-between my-9 rounded-xl px-24 sm:flex-col-reverse sm:absolute sm:top-[150px] sm:left-[5%]">
+      <div className=" bg-white mx-auto flex items-center justify-between my-9 rounded-xl px-24 sm:flex-col-reverse sm:absolute sm:top-[150px] sm:left-[5%] sm:p-5">
         <div className="flex items-center justify-evenly flex-col">
-          <h2 className="text-slate-800 text-3xl text-center">Welcome back</h2>
-          <h1 className="text-[#07a034] text-5xl text-center">ADMIN</h1>
+          <h2 className="text-slate-800 text-3xl text-center sm:text-xl">Welcome back</h2>
+          <h1 className="text-[#07a034] text-4xl text-center md:text-3xl font-medium sm:text-xl">{`${session?.user.firstName} ${session?.user.lastName} ${session?.user.othernames}`}</h1>
         </div>
         <img src="/team1.png" alt="" className="rounded-full" />
       </div>
@@ -169,11 +106,11 @@ export default function Dashboard() {
             className="w-full"
             style={{ height: `calc(50px * ${subcribers.length + 1})` }}
           >
-            {subcribers.map((sub, id) => (
+            {subcribers.map((subscriber, id) => (
               <p key={id} className="h-[50px] flex items-center justify-evenly">
-                {sub}{" "}
+                {subscriber.email}{" "}
                 <FaRegCopy
-                  onClick={() => window.navigator.clipboard.writeText(sub)}
+                  onClick={() => window.navigator.clipboard.writeText(subscriber.email)}
                   className="hover:text-slate-700"
                 />
               </p>
