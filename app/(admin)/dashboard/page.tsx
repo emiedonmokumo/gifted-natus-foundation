@@ -168,13 +168,13 @@ export default function Dashboard() {
             style={{ height: `calc(50px * ${subcribers.length + 1})` }}
           >
             {subcribers.map((sub, id) => (
-              <p key={id} className="h-[50px] flex items-center justify-evenly">
-                {sub}{" "}
+              <div key={id} className="h-[50px] flex items-center justify-evenly">
+                <p className="w-[70%] overflow-hidden">{sub}</p>{" "}
                 <FaRegCopy
                   onClick={() => window.navigator.clipboard.writeText(sub)}
                   className="hover:text-slate-700"
                 />
-              </p>
+              </div>
             ))}
           </div>
         </div>

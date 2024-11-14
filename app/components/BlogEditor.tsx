@@ -6,7 +6,6 @@ import Footer from "@/app/components/Footer";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import axios from "axios";
-import Loader from "./Loader";
 
 type HandlerFunction = (value: any) => void;
 
@@ -18,6 +17,10 @@ const BlogEditor = ({ id }: { id: string | null }) => {
   const [editBlog, setEditBlog] = useState<any>({});
   const editorRef = useRef<HTMLDivElement | null>(null);
   const quillInstanceRef = useRef<Quill | null>(null); // Store the instance reference
+
+  const blogsRequest = await fetch("/json/blog.json")
+  const blogs = await blogsRequest.json()
+  console.log(blogs)
 
   const toolbarOptions = [
     ["bold", "italic", "underline", "strike"],
@@ -35,7 +38,7 @@ const BlogEditor = ({ id }: { id: string | null }) => {
     [{ align: [] }],
     ["clean"],
   ];
-// fetching blog to edit page
+
 useEffect(() => {
   if (quillInstanceRef.current || !editorRef.current) return;
 
