@@ -1,3 +1,4 @@
+// BlogEditor.tsx
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Nav from "@/app/components/Nav";
@@ -5,7 +6,6 @@ import Footer from "@/app/components/Footer";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import axios from "axios";
-import ImageUploadForm from "./Image";
 
 type HandlerFunction = (value: any) => void;
 
@@ -15,11 +15,10 @@ interface MyCustomModule {
 
 const BlogEditor = ({ id }: { id: string | null }) => {
   const [editBlog, setEditBlog] = useState<any>({});
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [tags, setTags] = useState<string[]>([]);
   const editorRef = useRef<HTMLDivElement | null>(null);
-  const quillInstanceRef = useRef<Quill | null>(null);
+  const quillInstanceRef = useRef<Quill | null>(null); // Store the instance reference
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [postImage, setPostImage] = useState<File | null>(null);
 
   const toolbarOptions = [
     ["bold", "italic", "underline", "strike"],
@@ -84,24 +83,31 @@ const BlogEditor = ({ id }: { id: string | null }) => {
   }, []);
 
   const handleTagChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked } = e.target;
-    if (checked) {
-      setTags((prev) => [...prev, value]);
-    } else {
-      setTags((prev) => prev.filter((tag) => tag !== value));
+    setSelectedTag(e.target.value);
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setPostImage(e.target.files[0]);
     }
   };
 
   const handleSubmit = async () => {
     if (quillInstanceRef.current) {
-      const editorContent = quillInstanceRef.current.root.innerHTML;
+      const editorContent = quillInstanceRef.current.root.innerHTML; // Extract content as HTML
+      const formData = new FormData();
+
+      formData.append("content", editorContent);
+      formData.append("title", editBlog.title);
+      formData.append("description", editBlog.description);
+      formData.append("tag", selectedTag || "");
+      if (postImage) {
+        formData.append("postImage", postImage);
+      }
 
       try {
-        const response = await axios.post("/api/blog/submit", {
-          title,
-          description,
-          tags,
-          content: editorContent,
+        const response = await axios.post("/api/blog/submit", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
         });
 
         if (response.status === 200) {
@@ -122,63 +128,57 @@ const BlogEditor = ({ id }: { id: string | null }) => {
       <header className="bg-slate-900">
         <Nav />
       </header>
-      <div className="p-4">
-        <form className="mb-4">
-          <div className="mb-2">
-            <ImageUploadForm/>
-            <label htmlFor="title" className="block mb-1">Title</label>
-            <input
-              type="text"
-              id="title"
-              className="w-full p-2 border border-gray-300 rounded"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="Enter the title of your blog"
-            />
-          </div>
-
-          <div className="mb-2">
-            <label htmlFor="description" className="block mb-1">Short Description</label>
-            <textarea
-              id="description"
-              className="w-full p-2 border border-gray-300 rounded"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="Enter a short description of your blog"
-            />
-          </div>
-
-          <div className="mb-2">
-            <label className="block mb-1">Tags</label>
-            <div className="flex gap-4">
-              {["event", "environment", "welfare", "health", "youth"].map((tag) => (
-                <label key={tag} className="flex items-center">
-                  <input
-                    type="checkbox"
-                    value={tag}
-                    checked={tags.includes(tag)}
-                    onChange={handleTagChange}
-                    className="mr-1"
-                  />
-                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
-                </label>
-              ))}
-            </div>
-          </div>
-        </form>
-        <div
-          ref={editorRef}
-          className="mt-4 border border-gray-300 rounded-md shadow-md"
-          style={{ height: "500px" }}
-        ></div>
-        <div className="my-4">
-          <button
-            onClick={handleSubmit}
-            className="w-40 h-9 bg-green-600 text-white flex items-center justify-center"
-          >
-            Submit Blog
-          </button>
+      <div className="my-4 ml-11">
+        <label className="block mb-2">Post Image:</label>
+        <input
+          type="file"
+          accept="image/*"
+          className="border border-gray-300 p-2 w-full mb-4"
+          onChange={handleImageChange}
+        />
+        <label className="block mb-2">Title:</label>
+        <input
+          type="text"
+          className="border border-gray-300 p-2 w-full mb-4"
+          placeholder="Enter blog title"
+          value={editBlog.title || ""}
+          onChange={(e) => setEditBlog({ ...editBlog, title: e.target.value })}
+        />
+        <label className="block mb-2">Short Description:</label>
+        <textarea
+          className="border border-gray-300 p-2 w-full mb-4"
+          placeholder="Enter short description"
+          value={editBlog.description || ""}
+          onChange={(e) => setEditBlog({ ...editBlog, description: e.target.value })}
+        ></textarea>
+        <label className="block mb-2">Tag:</label>
+        <div className="mb-4">
+          {['event', 'environment', 'welfare', 'health', 'youth'].map((tag) => (
+            <label key={tag} className="block">
+              <input
+                type="radio"
+                name="tag"
+                value={tag}
+                checked={selectedTag === tag}
+                onChange={handleTagChange}
+              />
+              {tag.charAt(0).toUpperCase() + tag.slice(1)}
+            </label>
+          ))}
         </div>
+      </div>
+      <div
+        ref={editorRef}
+        className="mt-4 border border-gray-300 rounded-md shadow-md"
+        style={{ height: "500px" }}
+      ></div>
+      <div className="my-4 ml-11">
+        <button
+          onClick={handleSubmit}
+          className="w-40 h-9 mr-4 bg-green-600 text-white flex items-center justify-center"
+        >
+          Submit Blog
+        </button>
       </div>
       <Footer />
     </div>

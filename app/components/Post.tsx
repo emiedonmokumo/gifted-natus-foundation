@@ -115,10 +115,12 @@ export default function Post() {
       <div className="flex flex-wrap justify-between  lg:w-[75%] mx-auto">
         {currentPosts.map((post, id) => (
           <div
-            className="flex flex-col items-center justify-evenly sm:h-[500px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[500px] md:w-[500px]"
+            className="flex flex-col items-center justify-evenly overflow-hidden sm:h-[500px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[360px] md:w-[500px]"
             key={id}
           >
-            <img src={post.img} alt={post.title} className="w-full h-[150px]" />
+           <div className="w-full h-[150px] overflow-hidden">
+           <img src={post.img} alt={post.title} className="" />
+           </div>
             <div>
               <div className="flex items-center justify-between w-full sm:space-x-10 lg:space-x-20">
                 <div className="event bg-blue-800 rounded-md w-28 h-8 text-white flex items-center justify-center">
