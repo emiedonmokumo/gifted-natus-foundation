@@ -6,16 +6,12 @@ import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
 import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
-<<<<<<< HEAD
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import getSession from "@/utils/getSession";
 import { useSession } from "next-auth/react";
 import { SubscriberInterface } from "@/models/Subscriber";
 import axios from "axios";
 import posts from "@/utils/blogPosts";
-=======
-import { useState, useRef } from "react";
->>>>>>> 27c6998b0ea2baa20a681f81b11e4fa912277375
 
 interface Post {
   img: string;
@@ -30,6 +26,16 @@ interface Post {
 export default function Dashboard() {
   // Get session of user
   const { data: session } = useSession();
+
+
+  const [subcribers, setSubcribers] = useState<SubscriberInterface[]>([])
+  const [views, setViews] = useState<string>("34k");
+  const [shares, setShares] = useState<string>("39k");
+  const [growthRate, setGrowthrate] = useState<string>("28%");
+
+  const blog = useRef<HTMLDivElement | null>(null);
+  const subcribe = useRef<HTMLDivElement | null>(null);
+
   useEffect(()=>{
     const fetchSubscribers = async () =>{
       const response = await axios.get('/api/subscriber')
@@ -39,17 +45,6 @@ export default function Dashboard() {
 
     fetchSubscribers()
   },[session])
-
-  const [subcribers, setSubcribers] = useState<SubscriberInterface[]>([])
-  const [views, setViews] = useState<string>("34k");
-  const [shares, setShares] = useState<string>("39k");
-  const [growthRate, setGrowthrate] = useState<string>("28%");
-<<<<<<< HEAD
-  
-=======
-
-  const blog = useRef<HTMLDivElement | null>(null);
-  const subcribe = useRef<HTMLDivElement | null>(null);
 
   const posts: Post[] = [
     {
@@ -105,32 +100,31 @@ export default function Dashboard() {
     // More posts...
   ];
 
-  const subcribers: string[] = [
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-  ];
->>>>>>> 27c6998b0ea2baa20a681f81b11e4fa912277375
+  // const subcribers: string[] = [
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  // ];
 
   function subs() {
     subcribers.join();
@@ -224,23 +218,14 @@ export default function Dashboard() {
             className="w-full"
             style={{ height: `calc(50px * ${subcribers.length + 1})` }}
           >
-<<<<<<< HEAD
             {subcribers.map((subscriber, id) => (
               <p key={id} className="h-[50px] flex items-center justify-evenly">
                 {subscriber.email}{" "}
-=======
-            {subcribers.map((sub, id) => (
-              <div
-                key={id}
-                className="h-[50px] flex items-center justify-evenly"
-              >
-                <p className="w-[70%] overflow-hidden">{sub}</p>{" "}
->>>>>>> 27c6998b0ea2baa20a681f81b11e4fa912277375
                 <FaRegCopy
                   onClick={() => window.navigator.clipboard.writeText(subscriber.email)}
                   className="hover:text-slate-700"
                 />
-              </div>
+              </p>
             ))}
           </div>
         </div>
@@ -316,9 +301,9 @@ export default function Dashboard() {
                     key={id}
                     className="h-[50px] flex items-center justify-evenly"
                   >
-                    <p className="w-[70%] overflow-hidden">{sub}</p>{" "}
+                    <p className="w-[70%] overflow-hidden">{sub.email}</p>{" "}
                     <FaRegCopy
-                      onClick={() => window.navigator.clipboard.writeText(sub)}
+                      onClick={() => window.navigator.clipboard.writeText(sub.email)}
                       className="hover:text-slate-700"
                     />
                   </div>

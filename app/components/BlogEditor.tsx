@@ -13,7 +13,7 @@ interface MyCustomModule {
   addHandler: (eventName: string, handler: HandlerFunction) => void;
 }
 
-const BlogEditor = ({ id }: { id: string | null }) => {
+const BlogEditor = ({ id }: { id: string | any }) => {
   const [editBlog, setEditBlog] = useState<any>({});
   const editorRef = useRef<HTMLDivElement | null>(null);
   const quillInstanceRef = useRef<Quill | null>(null); // Store the instance reference
@@ -129,13 +129,13 @@ const BlogEditor = ({ id }: { id: string | null }) => {
         <Nav />
       </header>
       <div className="my-4 ml-11">
-        <label className="block mb-2">Post Image:</label>
+        {/* <label className="block mb-2">Post Image:</label>
         <input
           type="file"
           accept="image/*"
           className="border border-gray-300 p-2 w-full mb-4"
           onChange={handleImageChange}
-        />
+        /> */}
         <label className="block mb-2">Title:</label>
         <input
           type="text"
