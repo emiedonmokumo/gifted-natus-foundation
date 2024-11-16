@@ -2,7 +2,6 @@
 import Nav from "./components/Nav";
 import Slider from "./components/Slider";
 import Link from "next/link";
-import Head from "next/head";
 import TeamCarousel from "./components/TeamCarousel";
 import Footer from "./components/Footer";
 
@@ -31,7 +30,7 @@ export default function Home() {
             </div>
             <div className="md:mb-20 flex items-center md:justify-start lg:justify-start space-x-4 py-5 mt-5">
               <Link
-                href="/getInvoved"
+                href="/getInvolved"
                 className="w-[40%] md:w-auto lg:w-auto flex items-center justify-center bg-[#07a034] h-8 py-5 px-5 rounded-md font-medium text-white hover:bg-green-900 sm:w-[280px]"
               >
                 Get involved Today
