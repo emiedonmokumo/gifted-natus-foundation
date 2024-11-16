@@ -22,22 +22,30 @@ const blogSchema = new Schema<BlogInterface>(
     {
         user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
         title: { type: String, required: true },
-        slug: { type: String, required: true, unique: true },
+        slug: { type: String, unique: true }, // Slug remains unique
         content: { type: String, required: true },
         description: { type: String, required: true },
         tags: { type: [String], required: true },
         metaTitle: { type: String },
         metaDescription: { type: String },
-        image: { type: String },
-        altText: { type: String }
     },
     { timestamps: true }
 );
 
-// Middleware to generate slug before saving
-blogSchema.pre("save", function (next) {
+// Middleware to generate a unique slug before saving
+blogSchema.pre("save", async function (next) {
     if (this.isModified("title")) {
-        this.slug = slugify(this.title, { lower: true, strict: true });
+        let baseSlug = slugify(this.title, { lower: true, strict: true });
+        let uniqueSlug = baseSlug;
+
+        // Check for existing slugs and add a suffix if necessary
+        let count = 1;
+        while (await mongoose.models.Blog.exists({ slug: uniqueSlug })) {
+            uniqueSlug = `${baseSlug}-${count}`;
+            count++;
+        }
+
+        this.slug = uniqueSlug;
     }
     next();
 });

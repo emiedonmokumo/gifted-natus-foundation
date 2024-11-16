@@ -1,10 +1,10 @@
 "use client"
-import Nav from "./components/Nav";
-import Slider from "./components/Slider";
+import Nav from "../components/Nav";
+import Slider from "../components/Slider";
 import Link from "next/link";
 import Head from "next/head";
-import TeamCarousel from "./components/TeamCarousel";
-import Footer from "./components/Footer";
+import TeamCarousel from "../components/TeamCarousel";
+import Footer from "../components/Footer";
 // import Loader from "./components/Loader";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";

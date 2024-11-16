@@ -1,7 +1,7 @@
 "use client"
-import Nav from "@/app/components/Nav";
-import Post from "@/app/components/Post"
-import TopPost from "@/app/components/TopPost";
+import Nav from "@/components/Nav";
+import Post from "@/components/Post"
+import TopPost from "@/components/TopPost";
 
 export default function Blog(){
     return(

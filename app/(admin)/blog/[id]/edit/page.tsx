@@ -1,4 +1,4 @@
-import BlogEditor from "@/app/components/BlogEditor";
+import BlogEditor from "@/components/BlogEditor";
 export default function EditBlog ({ params }: { params: { id: string };
 }){
     return(
