@@ -3,7 +3,7 @@ export default function EditBlog ({ params }: { params: { id: string };
 }){
     return(
         <div>
-            <BlogEditor id={"2"}/>
+            <BlogEditor id={params.id}/>
         </div>
     )
 }

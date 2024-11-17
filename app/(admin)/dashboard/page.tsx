@@ -6,7 +6,8 @@ import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
 import Nav from "@/app/components/Nav";
 import Footer from "@/app/components/Footer";
-import { useState, useRef } from "react";
+import { useEffect, useState,useRef } from "react";
+import { useSession } from 'next-auth/react'
 
 interface Post {
   img: string;
@@ -27,6 +28,7 @@ interface Ivolunteer {
 }
 
 export default function Dashboard() {
+
   const [views, setViews] = useState<string>("34k");
   const [shares, setShares] = useState<string>("39k");
   const [growthRate, setGrowthrate] = useState<string>("28%");
@@ -238,7 +240,7 @@ export default function Dashboard() {
   ];
 
   function subs() {
-    console.log(subcribers);
+    window.navigator.clipboard.writeText(subcribers.join(", "))
   }
 
   function showSubcriber(e: any) {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
 export default function Footer() {
   return (
-    <div className="lg:pt-52 lg:pb-12 sm:pt-10 sm:pb-5 md:pt-20 md:pb-8 bg-black flex-col lg:flex-row" id="contact">
+    <footer className="lg:pt-52 lg:pb-12 sm:pt-10 sm:pb-5 md:pt-20 md:pb-8 bg-black flex-col lg:flex-row" id="contact">
       <h1 className="text-3xl lg:my-5 sm:mb-5 lg:text-3xl text-center text-white font-gobold">
         VISIT US
       </h1>
@@ -45,6 +45,6 @@ export default function Footer() {
           <img className="w-8" src="/WA.png" alt="" />
         </Link>
       </div>
-    </div>
+    </footer>
   );
 }
