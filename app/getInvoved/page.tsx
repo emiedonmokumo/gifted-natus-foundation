@@ -1,6 +1,7 @@
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
-export default function GetInvoved() {
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+
+export default function page() {
   return (
     <div className="">
       <header className="bg-slate-900">
