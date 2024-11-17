@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
-import Nav from "@/app/components/Nav";
-import Footer from "@/app/components/Footer";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import blog from "../../../../public/json/blog.json"
 import {useEffect, useState, useRef} from "react"
 import { div } from "framer-motion/client";

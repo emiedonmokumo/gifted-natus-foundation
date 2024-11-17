@@ -1,31 +1,30 @@
-"use client"
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import {useState} from "react"
+"use client";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import { FaRegCopy } from "react-icons/fa6";
+import { useState } from "react";
 
 export default function GetInvoved() {
-  const [volunteer, setVolunteer] = useState<any>()
+  const [volunteer, setVolunteer] = useState<any>();
 
-  const handleChange = (e:any) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setVolunteer({
       ...volunteer,
-      [name]: value
+      [name]: value,
     });
   };
 
-  async function submit(){
-    fetch("/api/route/volunteer", 
-      {
-        method: "POST",
-        headers:{
-          "contentType":"application/json"
-        },
-        body:JSON.stringify({
-          ...volunteer
-        })
-      }
-    )
+  async function submit() {
+    fetch("/api/route/volunteer", {
+      method: "POST",
+      headers: {
+        contentType: "application/json",
+      },
+      body: JSON.stringify({
+        ...volunteer,
+      }),
+    });
   }
 
   return (
@@ -113,7 +112,77 @@ export default function GetInvoved() {
           </div>
         </div>
         {/*donate section*/}
-        <div className=""></div>
+        <div className="relative h-[600px] mb-11 md:h-[900px] sm:h-[700px]">
+          <img
+            src="/background.png"
+            alt=""
+            className="absolute left-0 bottom-0 h-[60%] w-full  md:hidden sm:hidden"
+          />
+          <div className="bg-[#113152] text-white space-y-6 w-[400px] h-[100%] absolute top-0 right-[100px] md:w-full sm:w-full md:relative sm:relative md:right-0 sm:right-0 ">
+            <h1 className="text-4xl text-center mt-8">
+              Donate <span className="text-[#07a034]">Today</span>
+            </h1>
+            <p className="text-center">Your contribution makes a difference</p>
+            <div className="">
+              <div className="flex items-center justify-evenly">
+                <img
+                  src="/bank fcmb.png"
+                  alt="fcmb bank logo"
+                  className="rounded-full w-[50px] h-[50px]"
+                />
+                <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">
+                  <h1 className="text-md">Acc. No: 0000048493</h1>
+                  <p className="text-xs">Acc. Name: Gifted natus foundation</p>
+                </div>
+                <FaRegCopy className="text-xl"  onClick={() => window.navigator.clipboard.writeText("Account Numebr: 0000048493, Account Name: Gifted Natus Foundation")}/>
+              </div>
+              <div className="h-[1px] bg-gray-400 w-[60%] mx-auto my-7"></div>
+              <div className="flex items-center justify-evenly">
+                <img
+                  src="/bank wema.png"
+                  alt="fcmb bank logo"
+                  className="rounded-full w-[50px] h-[50px]"
+                />
+                <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">
+                  <h1 className="text-md">Acc. No: 0000048493</h1>
+                  <p className="text-xs">Acc. Name: Gifted natus foundation</p>
+                </div>
+                <FaRegCopy className="text-xl" onClick={() => window.navigator.clipboard.writeText("Account Numebr: 0000048493, Account Name: Gifted Natus Foundation")}/>
+              </div>
+              <div className="h-[1px] bg-gray-400 w-[60%] mx-auto my-7"></div>
+              <div className="flex items-center justify-evenly">
+                <img
+                  src="/bank firstbank.png"
+                  alt="fcmb bank logo"
+                  className="rounded-full w-[50px] h-[50px]"
+                />
+                <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">
+                  <h1 className="text-md">Acc. No: 0000048493</h1>
+                  <p className="text-xs">Acc. Name: Gifted natus foundation</p>
+                </div>
+                <FaRegCopy className="text-xl" onClick={() => window.navigator.clipboard.writeText("Account Numebr: 0000048493, Account Name: Gifted Natus Foundation")}/>
+              </div>
+              <div className="h-[1px] bg-gray-400 w-[60%] mx-auto my-7"></div>
+              <div className="flex items-center justify-evenly">
+                <img
+                  src="/bank gtb.png"
+                  alt="fcmb bank logo"
+                  className="rounded-full w-[50px] h-[50px]"
+                />
+                <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">
+                  <h1 className="text-md">Acc. No: 0000048493</h1>
+                  <p className="text-xs">Acc. Name: Gifted natus foundation</p>
+                </div>
+                <FaRegCopy className="text-xl" onClick={() => window.navigator.clipboard.writeText("Account Numebr: 0000048493, Account Name: Gifted Natus Foundation")}/>
+              </div>
+            </div>
+          </div>
+          <img
+            src="/man.png"
+            alt=""
+            className="absolute w-[500px] bottom-0 right-[490px] md:hidden sm:hidden"
+          />
+        </div>
         {/*volunteer*/}
         <div className=" flex items-center justify-evenly sm:justify-center md:justify-center">
           <img
@@ -171,7 +240,7 @@ export default function GetInvoved() {
                 onChange={handleChange}
               />
 
-              <button className="bg-[#07a034] w-32 h-9 rounded-2xl text-white" >
+              <button className="bg-[#07a034] w-32 h-9 rounded-2xl text-white">
                 JOIN NOW
               </button>
             </form>

@@ -12,7 +12,7 @@ export default function Nav() {
 
   // Check for the authenticated User
   const { data: session } = useSession();
-  console.log(session?.user)
+  // console.log(session?.user)
 
   return (
     <div>

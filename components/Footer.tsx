@@ -36,7 +36,7 @@ export default function Footer() {
           <img className="w-8" src="/facebook.png" alt="" />
         </Link>
         <Link href="#">
-          <img className="w-8" src="/x.png" alt="" />
+          <img className="w-8" src="/tweeter.png" alt="" />
         </Link>
         <Link href="#">
           <img className="w-8" src="/instggram.png" alt="" />

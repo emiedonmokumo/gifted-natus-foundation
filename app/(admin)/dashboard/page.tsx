@@ -4,10 +4,14 @@ import { BsBarChartFill } from "react-icons/bs";
 import { IoShareSocialSharp } from "react-icons/io5";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
-import Nav from "@/app/components/Nav";
-import Footer from "@/app/components/Footer";
-import { useEffect, useState,useRef } from "react";
-import { useSession } from 'next-auth/react'
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
+import getSession from "@/utils/getSession";
+import { useSession } from "next-auth/react";
+import { SubscriberInterface } from "@/models/Subscriber";
+import axios from "axios";
+import posts from "@/utils/blogPosts";
 
 interface Post {
   img: string;
@@ -28,7 +32,11 @@ interface Ivolunteer {
 }
 
 export default function Dashboard() {
+  // Get session of user
+  const { data: session } = useSession();
 
+
+  const [subcribers, setSubcribers] = useState<SubscriberInterface[]>([])
   const [views, setViews] = useState<string>("34k");
   const [shares, setShares] = useState<string>("39k");
   const [growthRate, setGrowthrate] = useState<string>("28%");
@@ -36,6 +44,16 @@ export default function Dashboard() {
   const blog = useRef<HTMLDivElement | null>(null);
   const subcribe = useRef<HTMLDivElement | null>(null);
   const volunt = useRef<HTMLDivElement | null>(null);
+
+  useEffect(()=>{
+    const fetchSubscribers = async () =>{
+      const response = await axios.get('/api/subscriber')
+      
+      if(response.status == 200) setSubcribers(response.data)
+    }
+
+    fetchSubscribers()
+  },[session])
 
   const posts: Post[] = [
     {
@@ -91,31 +109,31 @@ export default function Dashboard() {
     // More posts...
   ];
 
-  const subcribers: string[] = [
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-    "joe@gmail.com",
-  ];
+  // const subcribers: string[] = [
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  //   "joe@gmail.com",
+  // ];
 
   const volunteers: Ivolunteer[] = [
     {
@@ -304,10 +322,10 @@ export default function Dashboard() {
         <Nav />
       </header>
       {/*welcome section*/}
-      <div className="w-[90%] h-[200px] bg-white mx-auto flex items-center justify-between my-9 rounded-xl px-24 sm:flex-col-reverse sm:absolute sm:top-[150px] sm:left-[5%]">
+      <div className=" bg-white mx-auto flex items-center justify-between my-9 rounded-xl px-24 sm:flex-col-reverse sm:absolute sm:top-[150px] sm:left-[5%] sm:p-5">
         <div className="flex items-center justify-evenly flex-col">
-          <h2 className="text-slate-800 text-3xl text-center">Welcome back</h2>
-          <h1 className="text-[#07a034] text-5xl text-center">ADMIN</h1>
+          <h2 className="text-slate-800 text-3xl text-center sm:text-xl">Welcome back</h2>
+          <h1 className="text-[#07a034] text-4xl text-center md:text-3xl font-medium sm:text-xl">{`${session?.user.firstName} ${session?.user.lastName} ${session?.user.othernames}`}</h1>
         </div>
         <img src="/team1.png" alt="" className="rounded-full" />
       </div>
@@ -355,17 +373,14 @@ export default function Dashboard() {
             className="w-full"
             style={{ height: `calc(50px * ${subcribers.length + 1})` }}
           >
-            {subcribers.map((sub, id) => (
-              <div
-                key={id}
-                className="h-[50px] flex items-center justify-evenly"
-              >
-                <p className="w-[70%] overflow-hidden">{sub}</p>{" "}
+            {subcribers.map((subscriber, id) => (
+              <p key={id} className="h-[50px] flex items-center justify-evenly">
+                {subscriber.email}{" "}
                 <FaRegCopy
-                  onClick={() => window.navigator.clipboard.writeText(sub)}
+                  onClick={() => window.navigator.clipboard.writeText(subscriber.email)}
                   className="hover:text-slate-700"
                 />
-              </div>
+              </p>
             ))}
           </div>
         </div>
@@ -467,9 +482,9 @@ export default function Dashboard() {
                   key={id}
                   className="h-[50px] flex items-center justify-evenly"
                 >
-                  <p className="w-[70%] overflow-hidden">{sub}</p>{" "}
+                  <p className="w-[70%] overflow-hidden">{sub.email}</p>{" "}
                   <FaRegCopy
-                    onClick={() => window.navigator.clipboard.writeText(sub)}
+                    onClick={() => window.navigator.clipboard.writeText(sub.email)}
                     className="hover:text-slate-700"
                   />
                 </div>
