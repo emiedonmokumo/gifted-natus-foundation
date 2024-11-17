@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import team from "../../public/json/team.json";
+import team from "../public/json/team.json";
 
 const TeamCarousel = () => {
   const [memberIndex, setMemberIndex] = useState<number>(0);
