@@ -44,7 +44,8 @@ export const authOptions: NextAuthOptions = {
           id: user._id,
           firstName: user.bio.firstName,
           lastName: user.bio.lastName,
-          othernames: user.bio.othernames
+          othernames: user.bio.othernames,
+          role: user.role
         };
         return response;
       },
@@ -67,6 +68,7 @@ export const authOptions: NextAuthOptions = {
         token.firstName = user.firstName
         token.lastName = user.lastName
         token.othernames = user.othernames
+        token.role = user.role
       }
       return token;
     },
@@ -76,6 +78,7 @@ export const authOptions: NextAuthOptions = {
         session.user.firstName = token.firstName
         session.user.lastName = token.lastName
         session.user.othernames = token.othernames
+        session.user.role = token.role
       }
       return session;
     },

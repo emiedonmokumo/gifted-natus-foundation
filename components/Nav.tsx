@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from 'next-auth/react'
+import BlogLink from "./BlogLink";
 
 export default function Nav() {
   const pathname = usePathname()
@@ -34,6 +35,7 @@ export default function Nav() {
         <div className=" text-white w-full h2 flex-col md:flex-row lg:flex-row  md:w-6/12 lg:w-2/4 md:h-auto lg:h-auto  flex  items-center  justify-evenly md:items-center md:jusify-evenly lg:justify-evenly">
           {session && pathname === '/dashboard' ? (
             <>
+            <BlogLink />
               <Link className="font-medium" href="/#about">
                 Profile
               </Link>

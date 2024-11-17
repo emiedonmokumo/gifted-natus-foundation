@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-export default function page() {
+function page() {
   return (
     <div className="">
       <header className="bg-slate-900">
@@ -16,3 +16,5 @@ export default function page() {
     </div>
   );
 }
+
+export default page;

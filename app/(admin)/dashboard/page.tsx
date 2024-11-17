@@ -55,60 +55,6 @@ export default function Dashboard() {
     fetchSubscribers()
   },[session])
 
-  const posts: Post[] = [
-    {
-      img: "/post1.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Events",
-      id: 1,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post2.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Health",
-      id: 2,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post3.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Environment",
-      id: 3,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
-    },
-    {
-      img: "/post4.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Youth",
-      id: 4,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post1.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Welfare",
-      id: 5,
-      shortText:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
-    },
-    // More posts...
-  ];
-
   // const subcribers: string[] = [
   //   "joe@gmail.com",
   //   "joe@gmail.com",
@@ -463,30 +409,6 @@ export default function Dashboard() {
                 </div>
               ))}
             </div>
-<<<<<<< HEAD
-            <div className="bg-white h-[780px] w-full overflow-y-scroll hidden " ref={subcribe}>
-              <h1 className=" text-2xl my-4 flex justify-evenly font-gobold">
-                Your Subcribers{" "}
-                <FaRegCopy onClick={subs} className="hover:text-slate-700" />
-              </h1>
-              <div
-                className="w-full"
-                style={{ height: `calc(50px * ${subcribers.length + 1})` }}
-              >
-                {subcribers.map((sub, id) => (
-                  <div
-                    key={id}
-                    className="h-[50px] flex items-center justify-evenly"
-                  >
-                    <p className="w-[70%] overflow-hidden">{sub.email}</p>{" "}
-                    <FaRegCopy
-                      onClick={() => window.navigator.clipboard.writeText(sub.email)}
-                      className="hover:text-slate-700"
-                    />
-                  </div>
-                ))}
-              </div>
-=======
           </div>
           {/*SUBCRIBERS MOBILE */}
           <div
@@ -506,9 +428,9 @@ export default function Dashboard() {
                   key={id}
                   className="h-[50px] flex items-center justify-evenly"
                 >
-                  <p className="w-[70%] overflow-hidden">{sub}</p>{" "}
+                  <p className="w-[70%] overflow-hidden">{sub.email}</p>{" "}
                   <FaRegCopy
-                    onClick={() => window.navigator.clipboard.writeText(sub)}
+                    onClick={() => window.navigator.clipboard.writeText(sub.email)}
                     className="hover:text-slate-700"
                   />
                 </div>
@@ -561,7 +483,6 @@ export default function Dashboard() {
                   <p className=" w-[80%]">{volun.address}</p>
                 </div>
               ))}
->>>>>>> d71cefaf3cf76e4e8500fae7ab7ad6b409c12e7e
             </div>
           </div>
         </div>

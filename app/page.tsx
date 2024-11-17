@@ -2,18 +2,10 @@
 import Nav from "../components/Nav";
 import Slider from "../components/Slider";
 import Link from "next/link";
-<<<<<<< HEAD
-import Head from "next/head";
-import TeamCarousel from "../components/TeamCarousel";
-import Footer from "../components/Footer";
-// import Loader from "./components/Loader";
-import { useEffect, useRef, useState } from "react";
+import TeamCarousel from "@/components/TeamCarousel";
+import Footer from "@/components/Footer";
+import { useRef, useState } from "react";
 import axios from "axios";
-=======
-import TeamCarousel from "./components/TeamCarousel";
-import Footer from "./components/Footer";
->>>>>>> d71cefaf3cf76e4e8500fae7ab7ad6b409c12e7e
-
 
 export default function Home() {
   const [email, setEmail] = useState<string>()
@@ -25,12 +17,14 @@ export default function Home() {
     }
 
     try {
-      const response = await axios.post('/api/subscriber', { email })
+      const response = await axios.post('/api/newsletter', { email })
       if (response.status == 201) {
         setEmail('')
         alert(response.data.message)
-      }
-    } catch (error) {
+      } 
+
+    } catch (error: any) {
+      alert(error.response.data.message)
       console.log(error)
     }
 
@@ -38,26 +32,6 @@ export default function Home() {
   const loading = useRef<HTMLDivElement | undefined>()
   return (
     <div>
-<<<<<<< HEAD
-      <header
-        className="p-0 m-0 h-screen bg-[url('./assets/headerBG.png')]"
-        style={{ backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <Nav />
-        <div className="lg:mt-20 md:mt-20 sm:pt-16 pl-5">
-          <div className=" md:w-[70%] lg:w-[70%]">
-            <h1 className="sm:flex sm:flex-wrap text-white w-full md:text-5xl sm:text-4xl lg:text-6xl pb-3 font-gobold">
-              TOGETHER WE{" "}
-              <span className="text-[#07a034] sm:pl-2">BUILD</span>{" "}
-              <span className="lg:my-2 h-1 block"></span>{" "}
-              <span className="text-[#0156a9]">STRONGER</span> COMMUNITIES{" "}
-            </h1>
-            <p className="text-white text-lg lg:text-justify md:text-left sm:text-sm sm:text-justify mr-5 sm:leading-6">
-              Empowering individuals through education, healthcare, and
-              economic development to create a future filled with hope,
-              opporturnity, and sustainable growth
-            </p>
-=======
         <header
           className="p-0 m-0 h-screen bg-[url('./assets/headerBG.png')]"
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}
@@ -88,20 +62,7 @@ export default function Home() {
                 See more &rarr;
               </Link>
             </div>
->>>>>>> d71cefaf3cf76e4e8500fae7ab7ad6b409c12e7e
           </div>
-          <div className="md:mb-20 flex items-center md:justify-start lg:justify-start space-x-4 py-5 mt-5">
-            <Link
-              href="#donate"
-              className="w-[40%] md:w-auto lg:w-auto flex items-center justify-center bg-[#07a034] h-8 py-5 px-5 rounded-md font-medium text-white hover:bg-green-900"
-            >
-              Get involved Today
-            </Link>
-            <Link href="#about" className="text-white hover:text-green-600">
-              See more &rarr;
-            </Link>
-          </div>
-        </div>
       </header>
       <main>
         <div className="title mt-32" id="about">
@@ -267,6 +228,7 @@ export default function Home() {
             <div className="">
               <input
                 onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 type="email"
                 name="email"
                 id="email"
@@ -284,6 +246,6 @@ export default function Home() {
         </div>
         <Footer />
       </footer>
-    </div>
+    </div >
   );
 }

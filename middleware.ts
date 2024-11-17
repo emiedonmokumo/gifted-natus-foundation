@@ -9,7 +9,7 @@ export default withAuth(
 		} = req;
 
 		if (pathname.startsWith("/auth") && token) {
-			return NextResponse.redirect(new URL("/dashbord", req.url));
+			return NextResponse.redirect(new URL("/dashboard", req.url));
 		}
 		return NextResponse.next();
 	},
