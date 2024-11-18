@@ -89,7 +89,7 @@ export default function Home() {
             {/* Center the image on mobile by using flexbox */}
             <div className="flex justify-center">
               <img
-                src="/About1.png"
+                src="/ourMission.jpeg"
                 alt=""
                 className="top-0 sm:top-32 lg:top-44 md:top-24 w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
               />
@@ -204,10 +204,10 @@ export default function Home() {
               Every donation, big or small helps us continue our work and
               expand our reach, together we can build a brighter future
             </p>
-            <div className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
+            <Link href={"/getInvolved"} className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
               {" "}
               Donate Today!
-            </div>
+            </Link>
           </div>
         </div>
         <div className="lg:h-52 h-[400px]  leading-7 bg-[#07a034] lg:absolute top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7">

@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
 export async function GET(req: NextRequest) {
     await connectDB()
     const session = await getSession()
-    if (!session || session.user.role !== "Admin") return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+    if (!session || !session.user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
 
     try {
         const subscribers = await Subscriber.find({ user: session?.user.id })
