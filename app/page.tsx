@@ -4,11 +4,32 @@ import Slider from "../components/Slider";
 import Link from "next/link";
 import TeamCarousel from "@/components/TeamCarousel";
 import Footer from "@/components/Footer";
-import { useState } from "react";
-
+import { useRef, useState } from "react";
+import axios from "axios";
 
 export default function Home() {
   const [email, setEmail] = useState<string>()
+
+  const handleSubscription = async () => {
+    if (!email || email === '') {
+      alert("Email is required")
+      return
+    }
+
+    try {
+      const response = await axios.post('/api/newsletter', { email })
+      if (response.status == 201) {
+        setEmail('')
+        alert(response.data.message)
+      } 
+
+    } catch (error: any) {
+      alert(error.response.data.message)
+      console.log(error)
+    }
+
+  }
+  const loading = useRef<HTMLDivElement | undefined>()
   return (
     <div>
         <header
@@ -207,6 +228,7 @@ export default function Home() {
             <div className="">
               <input
                 onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 type="email"
                 name="email"
                 id="email"
@@ -225,6 +247,6 @@ export default function Home() {
         </div>
         <Footer />
       </footer>
-    </div>
+    </div >
   );
 }

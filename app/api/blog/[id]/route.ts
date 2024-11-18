@@ -3,16 +3,25 @@ import Blog from "@/models/Blog"
 import { NextRequest, NextResponse } from "next/server"
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
-    await connectDB()
+    await connectDB();
 
     try {
-        const blog = await Blog.findById(params.id)
-        if(!blog) return NextResponse.json({ message: 'Blog not found'}, { status: 404 })
-        return NextResponse.json(blog, { status: 200 })
+        // Find and update the blog views
+        const blog = await Blog.findByIdAndUpdate(
+            params.id,
+            { $inc: { views: 1 } }, // Increment views by 1
+            { new: true } // Return the updated document
+        );
 
-    } catch (error) {
-        console.log(error)
-        return NextResponse.json({ error: error }, { status: 500 })
+        if (!blog) {
+            return NextResponse.json({ message: "Blog not found" }, { status: 404 });
+        }
+
+        return NextResponse.json(blog, { status: 200 });
+    } catch (error: any) {
+        console.error(error);
+        return NextResponse.json({ error: error }, { status: 500 });
     }
 }
+
 
