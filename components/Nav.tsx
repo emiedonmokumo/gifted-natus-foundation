@@ -101,7 +101,7 @@ export default function Nav() {
             <p className="text-white text-center">Gifted Natus Foundation</p>
           </div>
         </Link>
-        <div className="text-white flex flex-col items-center h-[60vh] justify-between">
+        <div className="text-white flex flex-col items-center h-[40vh] justify-between">
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
               className="font-medium py-2 hover:text-green-500"
@@ -130,9 +130,9 @@ export default function Nav() {
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
               className="font-medium py-2 hover:text-green-500"
-              href="#donate"
+              href="/getInvolved"
             >
-              Donate &rarr;
+              getInvolved
             </Link>
           </button>
         </div>
@@ -140,3 +140,25 @@ export default function Nav() {
     </div >
   );
 }
+
+// export default function Nav() {
+
+//   return (
+//     <>
+//       <div className="sm:pl-5 md:hidden lg:hidden flex pt-4 sm:px-5 pb-8 items-center justify-between">
+//         <img src="/logo.png" alt="logo" className="w-9" />
+//         <button onClick={menuOpen}><img src="/menu.png" alt="" className="" /></button>
+//       </div>
+//       <nav className=" nav w-0 h-screen overflow-hidden z-50 lg:w-full md:w-full md:h-28 lg:h-28 flex items-center justify-evenly md:justify-between lg:justify-between nav md:bg-transparent lg:bg-transparent flex-col md:flex-row lg:flex-row fixed top-0 left-0 md:static lg:static ">
+//         <img src="/close.png" alt="" className=" absolute top-1 right-2 lg:hidden md:hidden"/>
+//         <div className="w-52 flex items-center justify-evenly">
+//           <img src="/logo.png" alt="logo" className="w-9" />
+//           <p className="text-white">
+//             Gifted Natus
+//             <br /> foundation
+//           </p>
+//         </div>
+//         <div className=" text-white w-full h2 flex-col md:flex-row lg:flex-row  md:w-6/12 lg:w-2/4 md:h-auto lg:h-auto  flex  items-center  justify-evenly md:items-center md:jusify-evenly lg:justify-evenly">
+//           <Link className="font-medium" href="#about">About us</Link>
+//           <Link className="font-medium" href="#contact">Contact Us</Link>
+//           <Link className="font-medium" href="#blog">Blog</Link>

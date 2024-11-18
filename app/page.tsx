@@ -132,7 +132,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-[90vw] lg:h-[300px] flex items-center justify-between flex-col lg:flex-row clear-both lg:relative">
+          <div className="w-[90vw] lg:h-[500px] flex items-center justify-between flex-col lg:flex-row clear-both lg:relative">
             <img
               src="/Aboutapproach.png"
               alt=" our approach"
