@@ -456,9 +456,9 @@ export default function Dashboard() {
                         </Link>
                       </p>
                     </div>
-                    <p className="text-white bg-[#07a034] lg:hidden w-[150px] text-center rounded-xl">
+                    <Link href={`/blog`} className="text-white bg-[#07a034] lg:hidden w-[150px] text-center rounded-xl">
                       <FaEdit className="inline-block" /> Edit post
-                    </p>
+                    </Link>
                   </div>
                 </div>
               ))}

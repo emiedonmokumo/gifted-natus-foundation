@@ -16,7 +16,7 @@ export default function Nav() {
 
   return (
     <div>
-      <nav className=" nav w-0 h-screen overflow-hidden z-50 lg:w-full md:w-full md:h-28 lg:h-28 flex items-center justify-evenly md:justify-between lg:justify-between nav md:bg-transparent lg:bg-transparent flex-col md:flex-row lg:flex-row fixed top-0 left-0 md:static lg:static ">
+      <nav className=" nav w-0 h-screen overflow-hidden z-50 lg:w-full md:w-full md:h-28 lg:h-28 flex items-center justify-evenly md:justify-between lg:justify-between nav md:bg-transparent lg:bg-transparent flex-col md:flex-row lg:flex-row fixed top-0 left-0 md:static lg:static">
         <img
           src="/close.png"
           alt=""
@@ -27,7 +27,7 @@ export default function Nav() {
             <img src="/logo.png" alt="logo" className="w-9" />
             <p className="text-white">
               Gifted Natus
-              <br /> foundation
+              <br /> Foundation
             </p>
           </div>
         </Link>
@@ -99,7 +99,7 @@ export default function Nav() {
             <p className="text-white text-center">Gifted Natus Foundation</p>
           </div>
         </Link>
-        <div className="text-white flex flex-col items-center">
+        <div className="text-white flex flex-col items-center h-[60vh] justify-between">
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
               className="font-medium py-2 hover:text-green-500"

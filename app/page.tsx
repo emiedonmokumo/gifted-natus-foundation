@@ -18,13 +18,13 @@ export default function Home() {
           <Nav />
           <div className="lg:mt-20 md:mt-20 sm:pt-16 pl-5">
             <div className=" md:w-[70%] lg:w-[70%]">
-              <h1 className="sm:flex sm:flex-wrap text-white w-full md:text-5xl sm:text-4xl lg:text-6xl pb-3 font-gobold">
+              <h1 className="sm:flex sm:flex-wrap text-white w-full md:text-5xl sm:text-4xl lg:text-6xl pb-3 font-gobold px-">
                 TOGETHER WE{" "}
                 <span className="text-[#07a034] sm:pl-2">BUILD</span>{" "}
                 <span className="lg:my-2 h-1 block"></span>{" "}
-                <span className="text-[#0156a9]">STRONGER</span> COMMUNITIES{" "}
+                <span className="text-[#0156a9]">STRONGER</span>  COMMUNITIES{" "}
               </h1>
-              <p className="text-white text-lg lg:text-justify md:text-left sm:text-sm sm:text-justify mr-5 sm:leading-6">
+              <p className="w-[80%] text-white text-lg lg:text-justify md:text-left sm:text-sm sm:text-justify mr-5 sm:leading-6">
                 Empowering individuals through education, healthcare, and
                 economic development to create a future filled with hope,
                 opporturnity, and sustainable growth
@@ -64,7 +64,7 @@ export default function Home() {
               <span>FOUNDATION</span>
             </h1>
           </div>
-          <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center">
+          <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center sm:h-[800px]">
             {/* Center the image on mobile by using flexbox */}
             <div className="flex justify-center">
               <img
@@ -87,7 +87,7 @@ export default function Home() {
         </div>
         <div
           id="statement"
-          className="mt-0 flex items-center space-y-52 justify-between flex-col md:h-auto lg:h-auto h-[calc(500px * 3)]"
+          className="mt-0 flex items-center space-y-36 justify-between flex-col md:h-auto lg:h-auto h-[calc(500px * 3)]"
         >
           <div className="flex items-center justify-between flex-col lg:flex-row">
             <img
@@ -95,7 +95,7 @@ export default function Home() {
               alt=" our mission"
               className="w-96 h-auto"
             />
-            <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%]">
+            <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
               <h1 className="font-bold text-4xl font-gobold">
                 OUR <span className="text-[#07a034]">MISSION</span>
               </h1>
@@ -117,7 +117,7 @@ export default function Home() {
               alt=" our approach"
               className="w-96 h-auto float-right lg:absolute lg:right-0 lg:top-0"
             />
-            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col p-10 lg:w-[60%] float-left lg:absolute lg:left-0 lg:top-0">
+            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col p-10 lg:w-[60%] float-left lg:absolute lg:left-0 lg:top-0 space-y-4">
               <h1 className="font-bold text-4xl font-gobold text-center lg:text-left ">
                 OUR <span className="text-[#0156a9]">APPROACH</span>
               </h1>
@@ -141,7 +141,7 @@ export default function Home() {
               alt=" our impact"
               className="w-96 h-auto"
             />
-            <div className="flex lg:items-end items-center h-80 justify-evenly flex-col p-10 lg:w-[60%]">
+            <div className="flex lg:items-end items-center h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
               <h1 className="font-bold text-4xl font-gobold ">
                 OUR <span className="text-[#07a034]">IMPACT</span>
               </h1>

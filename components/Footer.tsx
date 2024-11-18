@@ -9,24 +9,24 @@ export default function Footer() {
       <div className="flex md:flex-col sm:flex-col space-x-5 items-center sm:text-sm">
         <div className="flex items-center justify-evenly flex-col md:my-8 w-60">
           <img src="/logo.png" alt=" " className="h-auto w-[6rem]" />
-          <p className="text-white">Gifted natus Foundation</p>
+          <p className="text-white">Gifted Natus Foundation</p>
         </div>
         <div className="flex flex-col md:mb-10 space-y-2 sm:space-y-5 md:space-y-5 sm:px-5 md:px-10 sm:py-10">
           <div className="flex space-x-8">
             <FaLocationDot className="text-green-400 sm:text-4xl text-xl" />
             <p className="text-white">
-              No 2, old Assembly Quarters,Ekeki Housing Estate, Yenagoa, Bayelsa
-              state Nigeria
+              No 2, Old Assembly Quarters,Ekeki Housing Estate, Yenagoa, Bayelsa
+              State, Nigeria. 
             </p>
           </div>
           <div className="flex space-x-8">
             <FaPhone className="text-xl text-green-500" />
-            <p className="text-white text-left">+2348162473903</p>
+            <p className="text-white text-left">+2349056572025</p>
           </div>
           <div className="flex space-x-8">
             <FaEnvelope className="text-green-400 text-xl" />
             <p className="text-white text-left">
-              info@giftednatusfoundation.Org
+              info@giftednatusfoundation.org
             </p>
           </div>
         </div>
