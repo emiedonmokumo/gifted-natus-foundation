@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import team from "../public/json/team.json";
 
 const TeamCarousel = () => {
@@ -49,6 +50,7 @@ const TeamCarousel = () => {
             <p className="mt-4 lg:text-gray-300 md:text-justify text-center">{currentMember.quote}</p>
           </div>
         </motion.div>
+        <Link href={"#"} className="text-center text-[#07a034]">see more &rarr;</Link>
       </div>
     </div>
   );

@@ -132,13 +132,13 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-[90vw] lg:h-[500px] flex items-center justify-between flex-col lg:flex-row clear-both lg:relative">
+          <div className="w-[90vw] lg:h-[500px] flex items-center justify-between flex-col lg:flex-row-reverse clear-both lg:relative">
             <img
               src="/Aboutapproach.png"
               alt=" our approach"
-              className="w-96 h-auto float-right lg:absolute lg:right-0 lg:top-0"
+              className="w-96 h-auto"
             />
-            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col p-10 lg:w-[60%] float-left lg:absolute lg:left-0 lg:top-0 space-y-4">
+            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col p-10 lg:w-[60%]">
               <h1 className="font-bold text-4xl font-gobold text-center lg:text-left ">
                 OUR <span className="text-[#0156a9]">APPROACH</span>
               </h1>
