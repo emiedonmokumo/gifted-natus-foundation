@@ -6,12 +6,12 @@ import bcrypt from 'bcryptjs'
 export async function POST(req: NextRequest) {
     try {
         const { bio, credentials } = await req.json();
+        // console.log(bio, credentials)
 
         await connectDB();
 
         credentials.password = await bcrypt.hash(credentials.password, 10);
 
-        // Create a new user with the verification code included
         await User.create({
             bio,
             credentials

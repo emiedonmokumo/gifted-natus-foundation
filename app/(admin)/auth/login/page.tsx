@@ -14,6 +14,7 @@ function Page() {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false); // State for loading
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -25,34 +26,25 @@ function Page() {
 
   const submitHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    setLoading(true); // Set loading to true
     try {
-      // const response = await fetch("/api/user/login", {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     username: user.email,
-      //     password: user.password,
-      //   }),
-      // });
-
       const response = await signIn('credentials', {
         email: user.email,
         password: user.password,
         redirect: false        
-      })
+      });
       
       if (response?.ok) {
         // Handle successful login
         console.log("Login successful");
-        router.push("/dashboard")
-
+        router.push("/dashboard");
       } else {
         // Handle error response
         console.error("Login failed");
+        alert("Login failed")
       }
     } catch (error) {
+      setLoading(false)
       console.error("An error occurred:", error);
     }
   };
@@ -96,9 +88,12 @@ function Page() {
             <button
               onClick={submitHandler}
               type="button"
-              className="bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              disabled={loading} // Disable button while loading
+              className={`${
+                loading ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-900"
+              } text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
             >
-              Sign in
+              {loading ? "Signing in..." : "Sign in"}
             </button>
           </div>
         </form>

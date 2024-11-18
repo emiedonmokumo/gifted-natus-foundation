@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { FaCalendar, FaEye } from 'react-icons/fa'
 
 interface Post {
     img: string;
