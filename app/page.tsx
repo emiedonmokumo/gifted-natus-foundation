@@ -89,13 +89,13 @@ export default function Home() {
             {/* Center the image on mobile by using flexbox */}
             <div className="flex justify-center">
               <img
-                src="/About1.png"
+                src="/ourMission.jpeg"
                 alt=""
-                className="top-0 sm:top-32 lg:top-44 md:top-24 w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
+                className="top-0 sm:top-32 lg:top-44 md:top-24 rounded-2xl w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
               />
             </div>
 
-            <div className="sm:py-12 sm:pt-40 bg-[url('/rectangleLeaf.png')] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
+            <div className="sm:py-12 sm:pt-40 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
               <p className="lg:w-full text-center sm:text-sm">
                 At Gifted Natus Foundation, the impact of our work is seen in
                 the transformation of lives. From providing life-changing
@@ -114,7 +114,7 @@ export default function Home() {
             <img
               src="/AboutOmission.png"
               alt=" our mission"
-              className="w-96 h-auto"
+              className="w-[300px] h-auto"
             />
             <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
               <h1 className="font-bold text-4xl font-gobold">
@@ -132,13 +132,13 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="w-[90vw] lg:h-[300px] flex items-center justify-between flex-col lg:flex-row clear-both lg:relative">
+          <div className="w-[90vw] lg:h-[500px] flex items-center justify-between flex-col lg:flex-row-reverse clear-both lg:relative">
             <img
               src="/Aboutapproach.png"
               alt=" our approach"
-              className="w-96 h-auto float-right lg:absolute lg:right-0 lg:top-0"
+              className="w-[300px] h-auto"
             />
-            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col p-10 lg:w-[60%] float-left lg:absolute lg:left-0 lg:top-0 space-y-4">
+            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col space-y-4 p-10 lg:w-[60%]">
               <h1 className="font-bold text-4xl font-gobold text-center lg:text-left ">
                 OUR <span className="text-[#0156a9]">APPROACH</span>
               </h1>
@@ -160,7 +160,7 @@ export default function Home() {
             <img
               src="/Aboutimpact.png"
               alt=" our impact"
-              className="w-96 h-auto"
+              className="w-[300px] h-auto"
             />
             <div className="flex lg:items-end items-center h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
               <h1 className="font-bold text-4xl font-gobold ">
@@ -204,10 +204,10 @@ export default function Home() {
               Every donation, big or small helps us continue our work and
               expand our reach, together we can build a brighter future
             </p>
-            <div className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
+            <Link href={"/getInvolved"} className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
               {" "}
               Donate Today!
-            </div>
+            </Link>
           </div>
         </div>
         <div className="lg:h-52 h-[400px]  leading-7 bg-[#07a034] lg:absolute top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7">

@@ -47,6 +47,9 @@ export default function Dashboard({ params }: { params: { id: string } }) {
         )}
         
         <div ref={html}></div>
+        <div className="h-[500px] overflow-x-scroll">
+    
+        </div>
       </main>
       <Footer />
     </div>

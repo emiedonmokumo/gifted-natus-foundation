@@ -101,14 +101,14 @@ export default function Nav() {
             <p className="text-white text-center">Gifted Natus Foundation</p>
           </div>
         </Link>
-        <div className="text-white flex flex-col items-center h-[60vh] justify-between">
+        <div className="text-white flex flex-col items-center h-[40vh] justify-between">
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
               className="font-medium py-2 hover:text-green-500"
               href="#about"
             >
               {" "}
-              About us
+              About Us
             </Link>
           </button>
           <button onClick={() => setIsOpen(!isOpen)}>
@@ -130,9 +130,9 @@ export default function Nav() {
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
               className="font-medium py-2 hover:text-green-500"
-              href="#donate"
+              href="/getInvolved"
             >
-              Donate &rarr;
+              getInvolved
             </Link>
           </button>
         </div>
@@ -162,11 +162,3 @@ export default function Nav() {
 //           <Link className="font-medium" href="#about">About us</Link>
 //           <Link className="font-medium" href="#contact">Contact Us</Link>
 //           <Link className="font-medium" href="#blog">Blog</Link>
-//           <Link className="font-medium text-green-300" href="#donate">
-//             Donate &rarr;
-//           </Link>
-//         </div>
-//       </nav>
-//     </>
-//   );
-// }

@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="flex space-x-8">
             <FaLocationDot className="text-green-400 sm:text-4xl text-xl" />
             <p className="text-white">
-              No 2, Old Assembly Quarters,Ekeki Housing Estate, Yenagoa, Bayelsa
+              No 2, Old Assembly Quarters, Ekeki Housing Estate, Yenagoa, Bayelsa
               State, Nigeria. 
             </p>
           </div>
@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex items-center justify-center space-x-5 mt-5">
-        <Link href="#">
+        <Link href="https://www.facebook.com/profile.php?id=100076144086383&mibextid=LQQJ4d">
           <img className="w-8" src="/facebook.png" alt="" />
         </Link>
         <Link href="#">
