@@ -35,7 +35,7 @@ export default function Nav() {
         <div className=" text-white w-full h2 flex-col md:flex-row lg:flex-row  md:w-6/12 lg:w-2/4 md:h-auto lg:h-auto  flex  items-center  justify-evenly md:items-center md:jusify-evenly lg:justify-evenly">
           {session && pathname === '/dashboard' ? (
             <>
-            <BlogLink />
+              <BlogLink />
               <Link className="font-medium" href="/#about">
                 Profile
               </Link>
@@ -45,7 +45,7 @@ export default function Nav() {
               <Link className="font-medium" href="/blog">
                 Subscribers
               </Link>
-              <button className="font-medium text-green-300" onClick={()=> signOut({ callbackUrl: '/auth/login'})}>
+              <button className="font-medium text-green-300" onClick={() => signOut({ callbackUrl: '/auth/login' })}>
                 Logout
               </button>
             </>
