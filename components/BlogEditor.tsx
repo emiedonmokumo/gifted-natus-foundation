@@ -15,9 +15,8 @@ interface MyCustomModule {
   addHandler: (eventName: string, handler: HandlerFunction) => void;
 }
 
-const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, handleSubmit }: { id: string | any; editorRef: any; quillInstanceRef: any; editBlog: any; setEditBlog: any; handleSubmit: any }) => {
+const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, handleSubmit, setPostImage }: { id: string | any; editorRef: any; quillInstanceRef: any; editBlog: any; setEditBlog: any; handleSubmit: any; setPostImage: any }) => {
 
-  // const [postImage, setPostImage] = useState<File | null>(null);
 
   const toolbarOptions = [
     ["bold", "italic", "underline", "strike"],
@@ -82,11 +81,11 @@ const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, ha
   }, []);
 
 
-  // const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   if (e.target.files && e.target.files[0]) {
-  //     setPostImage(e.target.files[0]);
-  //   }
-  // };
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setPostImage(e.target.files[0]);
+    }
+  };
 
   return (
     <div>
@@ -94,13 +93,13 @@ const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, ha
         <Nav />
       </header>
       <div className="my-4 ml-11">
-        {/* <label className="block mb-2">Post Image:</label>
+        <label className="block mb-2">Post Image:</label>
         <input
           type="file"
           accept="image/*"
           className="border border-gray-300 p-2 w-full mb-4"
           onChange={handleImageChange}
-        /> */}
+        />
         <label className="block mb-2">Title:</label>
         <input
           type="text"

@@ -12,6 +12,8 @@ const Page: React.FC = () => {
   const [editBlog, setEditBlog] = useState<any>({});
   const editorRef = useRef<HTMLDivElement | any>();
   const quillInstanceRef = useRef<Quill | any>(); // Store the instance reference
+  const [postImage, setPostImage] = useState<File | null>(null);
+
 
   const handleSubmit = async () => {
     // console.log(quillInstanceRef.current?.getText().trim() === "")
@@ -23,17 +25,27 @@ const Page: React.FC = () => {
     const editorContent = quillInstanceRef.current.root.innerHTML; // Extract content as HTML
     console.log({...editBlog, content: editorContent})
 
-    // if (postImage) {
-    //   formData.append("postImage", postImage);
-    // }
+    const formData = new FormData()
+
+    if (postImage) {
+      formData.append("postImage", postImage);
+    }
+
+    formData.append('content', editorContent)
+    formData.append('metaDescription', editBlog.metaDescription)
+    formData.append('metaTitle', editBlog.metaTitle)
+    formData.append('tags', editBlog.tags)
+    formData.append('title', editBlog.title)
+    formData.append('description', editBlog.description)
 
     try {
-      const response = await axios.post("/api/blog", {...editBlog, content: editorContent});
+      // const response = await axios.post("/api/blog", {...editBlog, content: editorContent});
+      console.log({content: editorContent, ...editBlog, img: postImage})
 
-      if (response.status == 201) {
-        console.log("Content submitted successfully:", response.data);
-        alert("Blog content submitted successfully!");
-      } 
+      // if (response.status == 201) {
+      //   console.log("Content submitted successfully:", response.data);
+      //   alert("Blog content submitted successfully!");
+      // } 
 
     } catch (error) {
       console.error("Submission failed:", error);
@@ -43,7 +55,7 @@ const Page: React.FC = () => {
 
   return (
     <div>
-      <BlogEditor id={null} editorRef={editorRef} quillInstanceRef={quillInstanceRef} editBlog={editBlog} setEditBlog={setEditBlog} handleSubmit={handleSubmit}/>
+      <BlogEditor setPostImage={setPostImage} id={null} editorRef={editorRef} quillInstanceRef={quillInstanceRef} editBlog={editBlog} setEditBlog={setEditBlog} handleSubmit={handleSubmit}/>
     </div>
   );
 };

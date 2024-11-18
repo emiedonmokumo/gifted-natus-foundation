@@ -1,3 +1,4 @@
+import cloudinary from "@/config/cloudinary";
 import connectDB from "@/config/db";
 import Blog from "@/models/Blog";
 import getSession from "@/utils/getSession";
@@ -35,9 +36,33 @@ export async function POST(req: NextRequest) {
     await connectDB()
     const session = await getSession()
 
-    const { title, content, description, tags, metaDescription, metaTitle } = await req.json()
+    const formData = await req.formData(); // Parse multipart form data
+
+    const img = formData.get('image') as File;
+    const content = formData.get('content');
+    const title = formData.get('title')
+    const metaDescription = formData.get('metaDescription')
+    const metaTitle = formData.get('metaTitle')
+    const description = formData.get('description');
+    const tags = formData.get('tags');
+
+    if (!img) {
+      return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
+    }
 
     if (!title || !content || !description || !tags || !metaDescription || !metaTitle) return NextResponse.json({ message: 'All fields are required!' }, { status: 400 })
+
+
+    // Convert the file to Base64
+    const arrayBuffer = await img.arrayBuffer();
+    const buffer = Buffer.from(new Uint8Array(arrayBuffer));
+    const imageBase64 = buffer.toString('base64');
+
+    // Upload the image to Cloudinary
+    const result = await cloudinary.uploader.upload(`data:image/png;base64,${imageBase64}`, {
+      folder: 'Gifted Natus Foundation',
+    });
+
 
     try {
         await Blog.create({
@@ -47,7 +72,8 @@ export async function POST(req: NextRequest) {
             description,
             tags,
             metaDescription,
-            metaTitle
+            metaTitle,
+            img: result.secure_url
         })
 
         return NextResponse.json({ message: 'Blog Post created successfully!' }, { status: 201 })

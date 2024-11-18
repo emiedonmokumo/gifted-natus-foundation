@@ -12,7 +12,7 @@ export interface BlogInterface extends Document {
     tags: string[];
     metaTitle?: string;
     metaDescription?: string;
-    image?: string;
+    img?: string;
     altText?: string;
     createdAt: Date;
     updatedAt: Date;
@@ -22,6 +22,7 @@ export interface BlogInterface extends Document {
 const blogSchema = new Schema<BlogInterface>(
     {
         user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+        img: { type: Number, default: 0 },
         views: { type: Number, default: 0 },
         title: { type: String, required: true },
         slug: { type: String, unique: true }, // Slug remains unique
