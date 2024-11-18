@@ -91,11 +91,11 @@ export default function Home() {
               <img
                 src="/ourMission.jpeg"
                 alt=""
-                className="top-0 sm:top-32 lg:top-44 md:top-24 w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
+                className="top-0 sm:top-32 lg:top-44 md:top-24 rounded-2xl w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
               />
             </div>
 
-            <div className="sm:py-12 sm:pt-40 bg-[url('/rectangleLeaf.png')] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
+            <div className="sm:py-12 sm:pt-40 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
               <p className="lg:w-full text-center sm:text-sm">
                 At Gifted Natus Foundation, the impact of our work is seen in
                 the transformation of lives. From providing life-changing
