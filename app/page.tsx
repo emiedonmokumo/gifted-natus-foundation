@@ -114,7 +114,7 @@ export default function Home() {
             <img
               src="/AboutOmission.png"
               alt=" our mission"
-              className="w-96 h-auto"
+              className="w-[300px] h-auto"
             />
             <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
               <h1 className="font-bold text-4xl font-gobold">
@@ -136,9 +136,9 @@ export default function Home() {
             <img
               src="/Aboutapproach.png"
               alt=" our approach"
-              className="w-96 h-auto"
+              className="w-[300px] h-auto"
             />
-            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col p-10 lg:w-[60%]">
+            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col space-y-4 p-10 lg:w-[60%]">
               <h1 className="font-bold text-4xl font-gobold text-center lg:text-left ">
                 OUR <span className="text-[#0156a9]">APPROACH</span>
               </h1>
@@ -160,7 +160,7 @@ export default function Home() {
             <img
               src="/Aboutimpact.png"
               alt=" our impact"
-              className="w-96 h-auto"
+              className="w-[300px] h-auto"
             />
             <div className="flex lg:items-end items-center h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
               <h1 className="font-bold text-4xl font-gobold ">
