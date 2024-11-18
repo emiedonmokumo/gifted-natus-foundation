@@ -4,6 +4,7 @@ import slugify from 'slugify';
 // Define the Blog interface
 export interface BlogInterface extends Document {
     user: mongoose.Schema.Types.ObjectId;
+    views: number;
     title: string;
     slug: string;
     content: string;
@@ -21,6 +22,7 @@ export interface BlogInterface extends Document {
 const blogSchema = new Schema<BlogInterface>(
     {
         user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+        views: { type: Number, default: 0 },
         title: { type: String, required: true },
         slug: { type: String, unique: true }, // Slug remains unique
         content: { type: String, required: true },

@@ -5,7 +5,7 @@ export interface NewsLetterInterface extends Document {
 }
 
 const newsletterSchema = new Schema({
-    email: { type: String, required: true }
+    email: { type: String, unique: true, required: true }
 }, { timestamps: true })
 
 
