@@ -237,7 +237,7 @@ export default function Home() {
               />
             </div>
             {/* as i merge i no see the function so i jus comment ham*/}
-            <button /*onClick={handleSubscription}*/
+            <button onClick={handleSubscription}
               id="submit"
               className="bg-slate-950 text-white flex items-center justify-center w-40 h-10 rounded-lg"
             >
