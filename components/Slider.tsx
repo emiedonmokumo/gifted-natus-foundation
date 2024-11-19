@@ -42,7 +42,7 @@ const Slider = () => {
         {/* Card 1 */}
         {post.map((article, index)=>(
             
-        <div className="min-w-[300px] bg-gray-900 text-white p-5 rounded-lg flex-shrink-0" key={article.title+index}>
+        <div className="max-w-[300px] bg-gray-900 text-white p-5 rounded-lg flex-shrink-0" key={article.title+index}>
         <img
           className="rounded-lg w-full h-40 object-cover"
           src={article.img}
@@ -51,7 +51,7 @@ const Slider = () => {
         <h3 className="mt-4 text-lg font-bold">{article.title}</h3>
         <div className="flex justify-between items-center text-sm mt-4">
           <span>{article.views}  views <FaEye className="text-[#07a034] text-1xl inline-block"/></span>
-          <span> FaStatis <FaCalendar className="text-[#07a034] text-1xl inline-block"/> {article.posted}</span>
+          <span> <FaCalendar className="text-[#07a034] text-1xl inline-block"/> {article.posted}</span>
         </div>
       </div>
         ))}

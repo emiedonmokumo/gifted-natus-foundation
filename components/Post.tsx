@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Link from "next/link";
 import { FaCalendar, FaEye } from "react-icons/fa6";
+import axios from "axios";
 
 interface Post {
   img: string;
@@ -16,63 +17,77 @@ interface Post {
 
 export default function Post() {
   const filters: string[] = ["all", "Health", "Welfare", "Youth", "Events", "Environment"];
+  const [posts , setPosts] = useState<any>([])
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const postsPerPage = 4; // Customize the number of posts per page
 
-  const posts: Post[] = [
-    {
-      img: "/post1.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Events",
-      id: 1,
-      shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post2.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Health",
-      id: 2,
-      shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post3.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Environment",
-      id: 3,
-      shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
-    },
-    {
-      img: "/post4.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Youth",
-      id: 4,
-      shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-    },
-    {
-      img: "/post1.jpg",
-      title: "Lorem ipsum dolor, sit amet consectetur.",
-      day: "3 days ago",
-      veiws: "3k",
-      category: "Welfare",
-      id: 5,
-      shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
-    },
-    // More posts...
-  ];
+useEffect(()=>{
+async function recievePost() {
+  try{
+    const blogPostFetch = await fetch("/api/blog")
+  if(blogPostFetch.status == 200) setPosts(await blogPostFetch.json())
+  }catch(error){
+    console.log(`there was an error:${error}`)
+}
+}
+
+recievePost()
+},[])
+
+  // const posts: Post[] = [
+  //   {
+  //     img: "/post1.jpg",
+  //     title: "Lorem ipsum dolor, sit amet consectetur.",
+  //     day: "3 days ago",
+  //     veiws: "3k",
+  //     category: "Events",
+  //     id: 1,
+  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
+  //   },
+  //   {
+  //     img: "/post2.jpg",
+  //     title: "Lorem ipsum dolor, sit amet consectetur.",
+  //     day: "3 days ago",
+  //     veiws: "3k",
+  //     category: "Health",
+  //     id: 2,
+  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
+  //   },
+  //   {
+  //     img: "/post3.jpg",
+  //     title: "Lorem ipsum dolor, sit amet consectetur.",
+  //     day: "3 days ago",
+  //     veiws: "3k",
+  //     category: "Environment",
+  //     id: 3,
+  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
+  //   },
+  //   {
+  //     img: "/post4.jpg",
+  //     title: "Lorem ipsum dolor, sit amet consectetur.",
+  //     day: "3 days ago",
+  //     veiws: "3k",
+  //     category: "Youth",
+  //     id: 4,
+  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
+  //   },
+  //   {
+  //     img: "/post1.jpg",
+  //     title: "Lorem ipsum dolor, sit amet consectetur.",
+  //     day: "3 days ago",
+  //     veiws: "3k",
+  //     category: "Welfare",
+  //     id: 5,
+  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
+  //   },
+  //   // More posts...
+  // ];
 
   // Filter posts based on the selected category
   const filteredPosts = selectedFilter === "all"
     ? posts
-    : posts.filter(post => post.category.toLowerCase() === selectedFilter.toLowerCase());
+    : posts.filter((post:any) => post.tag[0].toLowerCase() === selectedFilter.toLowerCase());
 
   // Get the posts for the current page
   const indexOfLastPost = currentPage * postsPerPage;
@@ -113,10 +128,10 @@ export default function Post() {
         ))}
       </div>
       <div className="flex flex-wrap justify-between  lg:w-[75%] mx-auto">
-        {currentPosts.map((post, id) => (
+        {currentPosts.map((post:any) => (
           <div
             className="flex flex-col items-center justify-evenly overflow-hidden sm:h-[500px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[360px] md:w-[500px]"
-            key={id}
+            key={post.id}
           >
            <div className="w-full h-[150px] overflow-hidden">
            <img src={post.img} alt={post.title} className="" />
@@ -126,7 +141,7 @@ export default function Post() {
                 <div className="event bg-blue-800 rounded-md w-28 h-8 text-white flex items-center justify-center">
                   {post.category}
                 </div>
-                <p><FaEye className="inline-block text-[#07a034]" /> {post.veiws} views</p>
+                <p><FaEye className="inline-block text-[#07a034]" /> {post.views} views</p>
                 <p><FaCalendar className="inline-block text-[#07a034]" /> {post.day}</p>
               </div>
               <div className="">

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import RelatedPost from "@/components/relatedPost";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import blog from "../../../../public/json/blog.json";
@@ -20,7 +21,7 @@ export default function Dashboard({ params }: { params: { id: string } }) {
     for (let i = 0; i < blog.length; i++) {
       if (blog[i].id === params.id) {
         setPost(blog[i]);
-        console.log(blog[i])
+        console.log(blog[i]);
       }
     }
   }, [params.id]);
@@ -45,10 +46,16 @@ export default function Dashboard({ params }: { params: { id: string } }) {
             }}
           ></div>
         )}
-        
+
         <div ref={html}></div>
-        <div className="h-[500px] overflow-x-scroll">
-    
+        <div className="mt-11">
+          <div className="flex items-center justify-evenly">
+          <h1 className="text-3xl">TOP <span className="text-[#07a034]">ARTICLES</span></h1>
+          <div className="w-[30vh] h-[5px] bg-black">
+
+          </div>
+          </div>
+          <RelatedPost />
         </div>
       </main>
       <Footer />

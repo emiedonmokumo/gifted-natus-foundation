@@ -68,7 +68,7 @@ const posts: Post[] = [
 export default function RelatedPost() {
   return (
     <div className="overflow-x-scroll h-[500px] ">
-      <div className=" flex ">
+      <div className=" flex justify-evenly" style={{width: `calc(360px * ${posts.length + 1})`}}>
         {posts.map((post, id) => (
           <div
             className="flex flex-col items-center justify-evenly overflow-hidden sm:h-[500px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[360px] md:w-[500px]"

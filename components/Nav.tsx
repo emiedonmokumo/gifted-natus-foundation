@@ -60,14 +60,14 @@ export default function Nav() {
               <Link className="font-medium" href="/blog">
                 Blog
               </Link>
-              <Link className="font-medium text-green-300" href="/#donate">
-                Donate &rarr;
+              <Link className="font-medium text-green-300" href="/getInvolved">
+                Get Involved &rarr;
               </Link>
             </>
           )}
         </div>
       </nav >
-      <div className="sm:pl-5 md:hidden lg:hidden flex pt-4 sm:px-5 pb-8 items-center justify-between">
+      <div className="sm:pl-5 md:hidden lg:hidden flex pt-4 sm:px-5 pb-8 w-full bg-[rgba(0,0,0,0.15)] items-center justify-between fixed top-0 left-0">
         <img src="/logo.png" alt="logo" className="w-9" />
         <button onClick={toggleMenu}>
           <img src="/menu.png" alt="menu" className="" />
@@ -101,7 +101,7 @@ export default function Nav() {
             <p className="text-white text-center">Gifted Natus Foundation</p>
           </div>
         </Link>
-        <div className="text-white flex flex-col items-center h-[40vh] justify-between">
+        <div className="text-white flex flex-col items-center h-[30vh] justify-between">
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
               className="font-medium py-2 hover:text-green-500"
@@ -122,7 +122,7 @@ export default function Nav() {
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
               className="font-medium py-2 hover:text-green-500"
-              href="#blog"
+              href="/blog"
             >
               Blog
             </Link>
@@ -132,7 +132,7 @@ export default function Nav() {
               className="font-medium py-2 hover:text-green-500"
               href="/getInvolved"
             >
-              getInvolved
+              Get Involved &rarr;
             </Link>
           </button>
         </div>
