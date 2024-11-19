@@ -11,6 +11,7 @@ const BlogEditor = dynamic(() => import("@/components/BlogEditor"), { ssr: false
 const page = ({ params }: { params: { id: string }}) => {
   const [editBlog, setEditBlog] = useState<any>({});
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [postImage, setPostImage] = useState<File | null>(null);
   const editorRef = useRef<HTMLDivElement | any>();
   const quillInstanceRef = useRef<Quill | any>(); // Store the instance reference
   const router = useRouter();
@@ -90,6 +91,7 @@ const page = ({ params }: { params: { id: string }}) => {
         editBlog={editBlog} 
         setEditBlog={setEditBlog} 
         handleSubmit={handleSubmit}
+        setPostImage={setPostImage}
       />
     </div>
   );
