@@ -4,17 +4,38 @@ import Blog from "@/models/Blog";
 import getSession from "@/utils/getSession";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: any) {
+
+interface BlogInterface {
+    _id: string;
+    user: string;
+    img: string;
+    views: number;
+    title: string;
+    description: string;
+    tags: string[];
+    metaTitle: string;
+    metaDescription: string;
+    createdAt: Date;
+    updatedAt: Date;
+    slug: string;
+    __v: number;
+    content?: string; // Optional since we'll omit it
+}
+
+export async function GET(request: Request) {
     await connectDB();
 
     try {
-        // Fetch all blog posts
-        const blogs = await Blog.find();
+        // Fetch all blog posts as plain objects
+        const blogs = await Blog.find().lean<BlogInterface[]>();
 
-        return NextResponse.json(blogs, { status: 200 });
-    } catch (error) {
-        console.log(error);
-        return NextResponse.json({ error: error }, { status: 500 });
+        // Remove the `content` field from each blog
+        const blogsWithoutContent = blogs.map(({ content, slug, user, ...rest }) => rest);
+
+        return NextResponse.json(blogsWithoutContent, { status: 200 });
+    } catch (error: any) {
+        console.error(error);
+        return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
 
