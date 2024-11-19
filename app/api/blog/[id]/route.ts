@@ -43,3 +43,30 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
+
+export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+    await connectDB();
+
+    try {
+        const blogId = params.id;
+
+        // Parse the request body
+        const updatedData: Partial<BlogInterface> = await req.json();
+
+        // Find and update the blog post
+        const updatedBlog = await Blog.findByIdAndUpdate(
+            blogId,
+            updatedData, // Fields to update
+            { new: true, runValidators: true } // Return the updated document and validate
+        );
+
+        if (!updatedBlog) {
+            return NextResponse.json({ message: "Blog not found" }, { status: 404 });
+        }
+
+        return NextResponse.json(updatedBlog, { status: 200 });
+    } catch (error: any) {
+        console.error(error);
+        return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+}
