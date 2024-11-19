@@ -6,20 +6,21 @@ const VolunteerForm = () => {
     const [volunteer, setVolunteer] = useState<any>();
 
     const handleChange = (e: any) => {
-      const { name, value } = e.target;
-      setVolunteer({
-        ...volunteer,
-        [name]: value,
-      });
+        const { name, value } = e.target;
+        setVolunteer({
+            ...volunteer,
+            [name]: value,
+        });
     };
-  
-    async function submit() {
-      const response = await axios.post('/api/volunteer', { ...volunteer })
-      try {
-        if(response.status == 201) alert(response.data.message)
-      } catch (error: any) {
-        alert(error.response.data)
-      }
+
+    async function submit(e: any) {
+        e.preventDefault()
+        const response = await axios.post('/api/volunteer', { ...volunteer })
+        try {
+            if (response.status == 201) alert(response.data.message)
+        } catch (error: any) {
+            alert(error.response.data)
+        }
     }
 
     return (
@@ -64,7 +65,7 @@ const VolunteerForm = () => {
                 onChange={handleChange}
             />
 
-            <button className="bg-[#07a034] w-32 h-9 rounded-2xl text-white">
+            <button type="submit" className="bg-[#07a034] w-32 h-9 rounded-2xl text-white">
                 JOIN NOW
             </button>
         </form>
