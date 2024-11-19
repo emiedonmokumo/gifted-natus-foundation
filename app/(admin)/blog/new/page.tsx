@@ -40,13 +40,13 @@ const Page: React.FC = () => {
     // formData.append('img', postImage)
 
     try {
-      // const response = await axios.post("/api/blog", {...editBlog, content: editorContent});
+      const response = await axios.post("/api/blog", formData);
       console.log({content: editorContent, ...editBlog, img: postImage})
 
-      // if (response.status == 201) {
-      //   console.log("Content submitted successfully:", response.data);
-      //   alert("Blog content submitted successfully!");
-      // } 
+      if (response.status == 201) {
+        console.log("Content submitted successfully:", response.data);
+        alert("Blog content submitted successfully!");
+      } 
 
     } catch (error) {
       console.error("Submission failed:", error);

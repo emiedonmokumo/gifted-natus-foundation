@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
 
     const formData = await req.formData(); // Parse multipart form data
 
-    const img = formData.get('image') as File;
+    const img = formData.get('img') as File;
     const content = formData.get('content');
     const title = formData.get('title')
     const metaDescription = formData.get('metaDescription')
