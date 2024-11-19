@@ -11,20 +11,7 @@ export async function GET(request: any) {
         // Fetch all blog posts
         const blogs = await Blog.find();
 
-        // Map through the blogs and add the first image URL (if any)
-        const blogsWithImages = blogs.map((blog: any) => {
-            // Extract the first image URL from the content
-            const imgMatch = blog.content.match(/<img [^>]*src="([^"]*)"/);
-            const imgUrl = imgMatch ? imgMatch[1] : null;
-
-            // Add the image URL to the blog object
-            return {
-                ...blog.toObject(),
-                img: imgUrl
-            };
-        });
-
-        return NextResponse.json(blogsWithImages, { status: 200 });
+        return NextResponse.json(blogs, { status: 200 });
     } catch (error) {
         console.log(error);
         return NextResponse.json({ error: error }, { status: 500 });
