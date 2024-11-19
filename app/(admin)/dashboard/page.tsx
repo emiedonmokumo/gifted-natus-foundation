@@ -270,7 +270,7 @@ export default function Dashboard() {
       <div className=" bg-white mx-auto flex items-center justify-between my-9 rounded-xl px-24 sm:flex-col-reverse sm:absolute sm:top-[100px] sm:left-0 sm:right-0 sm:mx-5 sm:p-5">
         <div className="flex items-center justify-evenly flex-col">
           <h2 className="text-slate-800 text-3xl text-center sm:text-xl sm:mt-3">Welcome back</h2>
-          <h1 className="text-[#07a034] text-5xl text-center md:text-3xl font-semibold sm:text-xl">{`${session?.user.firstName} ${session?.user.lastName} ${session?.user.othernames}`}</h1>
+          <h1 className="text-[#07a034] text-5xl text-center md:text-3xl font-semibold sm:text-xl">{`${session?.user.firstName} ${session?.user.lastName} ${session?.user?.othernames || ''}`}</h1>
         </div>
         <img src="/team1.png" alt="" className="rounded-full sm:h-36 sm:w-36" />
       </div>
