@@ -17,19 +17,20 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ message: 'Subscription successful' }, { status: 201 })
     } catch (error) {
         console.log(error)
-        return NextResponse.json({ message: error }, { status: 400 })
+        return NextResponse.json({ message: error }, { status: 500 })
     }
 }
 
 export async function GET(req: NextRequest) {
     await connectDB()
     const session = await getSession()
-    if (!session || session.user.role !== "Admin") return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+    if (!session || !session.user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
 
     try {
         const newsletter = await Newsletter.find()
         return NextResponse.json(newsletter, { status: 200 })
     } catch (error) {
         console.log(error)
+        return NextResponse.json({ message: error }, { status: 500 })
     }
 }
