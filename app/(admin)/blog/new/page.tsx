@@ -37,7 +37,6 @@ const Page: React.FC = () => {
     formData.append('tags', editBlog.tags)
     formData.append('title', editBlog.title)
     formData.append('description', editBlog.description)
-    formData.append('img', postImage)
 
     try {
       // const response = await axios.post("/api/blog", {...editBlog, content: editorContent});
