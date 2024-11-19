@@ -27,6 +27,7 @@ async function recievePost() {
   try{
     const blogPostFetch = await fetch("/api/blog")
   if(blogPostFetch.status == 200) setPosts(await blogPostFetch.json())
+    console.log(posts)
   }catch(error){
     console.log(`there was an error:${error}`)
 }
@@ -34,55 +35,6 @@ async function recievePost() {
 
 recievePost()
 },[])
-
-  // const posts: Post[] = [
-  //   {  1xz68JNuIHcehdrG
-  //     img: "/post1.jpg",
-  //     title: "Lorem ipsum dolor, sit amet consectetur.",
-  //     day: "3 days ago",
-  //     veiws: "3k",
-  //     category: "Events",
-  //     id: 1,
-  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-  //   },
-  //   {
-  //     img: "/post2.jpg",
-  //     title: "Lorem ipsum dolor, sit amet consectetur.",
-  //     day: "3 days ago",
-  //     veiws: "3k",
-  //     category: "Health",
-  //     id: 2,
-  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-  //   },
-  //   {
-  //     img: "/post3.jpg",
-  //     title: "Lorem ipsum dolor, sit amet consectetur.",
-  //     day: "3 days ago",
-  //     veiws: "3k",
-  //     category: "Environment",
-  //     id: 3,
-  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
-  //   },
-  //   {
-  //     img: "/post4.jpg",
-  //     title: "Lorem ipsum dolor, sit amet consectetur.",
-  //     day: "3 days ago",
-  //     veiws: "3k",
-  //     category: "Youth",
-  //     id: 4,
-  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam",
-  //   },
-  //   {
-  //     img: "/post1.jpg",
-  //     title: "Lorem ipsum dolor, sit amet consectetur.",
-  //     day: "3 days ago",
-  //     veiws: "3k",
-  //     category: "Welfare",
-  //     id: 5,
-  //     shortText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto numquam ",
-  //   },
-  //   // More posts...
-  // ];
 
   // Filter posts based on the selected category
   const filteredPosts = selectedFilter === "all"
@@ -108,6 +60,10 @@ recievePost()
       setCurrentPage(currentPage - 1);
     }
   };
+
+  for(let i=0; i < posts.length; i++){
+    console.log(posts[i].tags[0])
+  }
 
   return (
     <div className="space-y-16 mt-12 overflow-scroll">
@@ -139,14 +95,14 @@ recievePost()
             <div>
               <div className="flex items-center justify-between w-full sm:space-x-10 lg:space-x-20">
                 <div className="event bg-blue-800 rounded-md w-28 h-8 text-white flex items-center justify-center">
-                  {post.category}
+                  {post.tags[0]}
                 </div>
                 <p><FaEye className="inline-block text-[#07a034]" /> {post.views} views</p>
                 <p><FaCalendar className="inline-block text-[#07a034]" /> {post.day}</p>
               </div>
               <div className="">
                 <h1 className="font-gobold text-4xl">{post.title}</h1>
-                <p>{post.shortText} <Link href="#" className="text-[#07a034]">see more &rarr;</Link></p>
+                <p>{post.shortText} <Link href={`/blog/${post.id}`} className="text-[#07a034]">see more &rarr;</Link></p>
               </div>
             </div>
           </div>
