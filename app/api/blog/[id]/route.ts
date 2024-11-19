@@ -44,6 +44,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     }
 }
 
+
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
     await connectDB();
 
@@ -65,6 +66,24 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
         }
 
         return NextResponse.json(updatedBlog, { status: 200 });
+    } catch (error: any) {
+        console.error(error);
+        return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+}
+
+export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+    await connectDB();
+
+    try {
+        // Find and update the blog views
+        const blog = await Blog.findByIdAndDelete(params.id)
+
+        if (!blog) {
+            return NextResponse.json({ message: "Blog not found" }, { status: 404 });
+        }
+
+        return NextResponse.json({ message: "Blog Deleted Successfully!"}, { status: 200 });
     } catch (error: any) {
         console.error(error);
         return NextResponse.json({ error: error.message }, { status: 500 });
