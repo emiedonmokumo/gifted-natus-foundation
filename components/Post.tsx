@@ -36,7 +36,7 @@ recievePost()
 },[])
 
   // const posts: Post[] = [
-  //   {
+  //   {  1xz68JNuIHcehdrG
   //     img: "/post1.jpg",
   //     title: "Lorem ipsum dolor, sit amet consectetur.",
   //     day: "3 days ago",
