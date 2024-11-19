@@ -1,4 +1,5 @@
-'use client'
+"use client";
+import Link from "next/link"
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { FaRegCopy } from "react-icons/fa6";
@@ -18,11 +19,13 @@ export default function GetInvoved() {
             difference <div className="w-[180px] h-[5px] bg-[#07a034]"></div>
           </span>
         </h1>
-        <p className="w-[650px] text-center mx-auto my-[50px] sm:hidden md:hidden">
+        <p className="w-[80vw] text-center mx-auto my-[50px] ">
           every contribution you make helps us fund critical programs that
           changes lifes and create lasting impact on those who needs it the
-          most.
+          most.  <Link href={"#donate"} className="text-blue-700"> click here </Link> to donate
         </p>
+
+       
 
         <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
           <div className="relative w-[250px] h-[650px]">
@@ -90,13 +93,13 @@ export default function GetInvoved() {
           </div>
         </div>
         {/*donate section*/}
-        <div className="relative h-[600px] mb-11 md:h-[900px] sm:h-[700px]">
+        <div className="relative h-[600px] mb-11 md:h-[300px] sm:h-[300px]" id="donate">
           <img
             src="/background.png"
             alt=""
             className="absolute left-0 bottom-0 h-[60%] w-full  md:hidden sm:hidden"
           />
-          <div className="bg-[#113152] text-white space-y-6 w-[400px] h-[100%] absolute top-0 right-[100px] md:w-full sm:w-full md:relative sm:relative md:right-0 sm:right-0 ">
+          <div className="bg-[#113152] text-white space-y-6 w-[400px] h-[100%] absolute top-0 right-[200px] md:w-full sm:w-full md:relative sm:relative md:right-0 sm:right-0 ">
             <h1 className="text-4xl text-center mt-8">
               Donate <span className="text-[#07a034]">Today</span>
             </h1>
@@ -109,50 +112,21 @@ export default function GetInvoved() {
                   className="rounded-full w-[50px] h-[50px]"
                 />
                 <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">
-                  <h1 className="text-md">Acc. No: 0000048493</h1>
+                  <h1 className="text-md">Acc. No: 0040155182</h1>
                   <p className="text-xs">Acc. Name: Gifted natus foundation</p>
                 </div>
-                <FaRegCopy className="text-xl"  onClick={() => window.navigator.clipboard.writeText("Account Numebr: 0000048493, Account Name: Gifted Natus Foundation")}/>
-              </div>
-              <div className="h-[1px] bg-gray-400 w-[60%] mx-auto my-7"></div>
-              <div className="flex items-center justify-evenly">
-                <img
-                  src="/bank wema.png"
-                  alt="fcmb bank logo"
-                  className="rounded-full w-[50px] h-[50px]"
+                <FaRegCopy
+                  className="text-xl"
+                  onClick={() =>
+                    window.navigator.clipboard.writeText(
+                      "Account Numebr: 0000048493, Account Name: Gifted Natus Foundation Bank: Premium Trust Bank"
+                    )
+                  }
                 />
-                <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">
-                  <h1 className="text-md">Acc. No: 0000048493</h1>
-                  <p className="text-xs">Acc. Name: Gifted natus foundation</p>
-                </div>
-                <FaRegCopy className="text-xl" onClick={() => window.navigator.clipboard.writeText("Account Numebr: 0000048493, Account Name: Gifted Natus Foundation")}/>
               </div>
-              <div className="h-[1px] bg-gray-400 w-[60%] mx-auto my-7"></div>
-              <div className="flex items-center justify-evenly">
-                <img
-                  src="/bank firstbank.png"
-                  alt="fcmb bank logo"
-                  className="rounded-full w-[50px] h-[50px]"
-                />
-                <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">
-                  <h1 className="text-md">Acc. No: 0000048493</h1>
-                  <p className="text-xs">Acc. Name: Gifted natus foundation</p>
-                </div>
-                <FaRegCopy className="text-xl" onClick={() => window.navigator.clipboard.writeText("Account Numebr: 0000048493, Account Name: Gifted Natus Foundation")}/>
-              </div>
-              <div className="h-[1px] bg-gray-400 w-[60%] mx-auto my-7"></div>
-              <div className="flex items-center justify-evenly">
-                <img
-                  src="/bank gtb.png"
-                  alt="fcmb bank logo"
-                  className="rounded-full w-[50px] h-[50px]"
-                />
-                <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">
-                  <h1 className="text-md">Acc. No: 0000048493</h1>
-                  <p className="text-xs">Acc. Name: Gifted natus foundation</p>
-                </div>
-                <FaRegCopy className="text-xl" onClick={() => window.navigator.clipboard.writeText("Account Numebr: 0000048493, Account Name: Gifted Natus Foundation")}/>
-              </div>
+              
+              
+              
             </div>
           </div>
           <img
