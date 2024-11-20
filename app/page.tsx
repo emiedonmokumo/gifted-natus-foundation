@@ -34,7 +34,7 @@ export default function Home() {
     <div>
         <header
           className="p-0 m-0 h-screen  "
-          style={{ backgroundSize: "cover", backgroundPosition: "center" ,backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(hero.jpeg)"}}
+          style={{ backgroundSize: "cover", backgroundPosition: "center" ,backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(hero2.jpeg)"}}
         >
           <Nav />
           <div className="lg:mt-20 md:mt-20 sm:pt-48 pl-5">
