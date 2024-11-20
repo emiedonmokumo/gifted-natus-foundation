@@ -124,7 +124,7 @@ export default function Home() {
           id="statement"
           className="mt-0 mb-0 flex items-center space-y-36 justify-between flex-col md:h-auto md:mt-[200px] lg:mt-0 lg:h-auto h-[calc(500px * 3)]"
         >
-          <div className="flex items-center justify-evenly flex-col mb-44 lg:flex-row mx-auto">
+          <div className="flex justify-evenly flex-col mb-44 lg:flex-row mx-auto">
             <img
               src="/aboutmission.png"
               alt=" our mission"
