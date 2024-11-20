@@ -33,11 +33,11 @@ export default function Home() {
   return (
     <div>
         <header
-          className="p-0 m-0 h-screen bg-[url('./assets/headerBG.png')]"
+          className="p-0 m-0 h-screen bg-[url('./assets/headerBG.png')] sm:bg-[url('/hero.jpeg')]"
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}
         >
           <Nav />
-          <div className="lg:mt-20 md:mt-20 sm:pt-16 pl-5">
+          <div className="lg:mt-20 md:mt-20 sm:pt-48 pl-5">
             <div className=" md:w-[70%] lg:w-[70%]">
               <h1 className="sm:flex sm:flex-wrap text-white w-full md:text-5xl sm:text-4xl lg:text-6xl pb-3 font-gobold px-">
                 TOGETHER WE{" "}
@@ -77,7 +77,7 @@ export default function Home() {
 
         <div id="aboutus">
           <div className="title lg:mt-32" id="aboutus">
-            <h1 className="text-2xl md:text-4xl lg:text-4xl flex flex-wrap items-center justify-center font-gobold">
+            <h1 className="text-3xl md:text-4xl lg:text-4xl flex flex-wrap items-center justify-center font-gobold">
               <span className="text-[#0156a9]">WELCOME &nbsp;</span>
               <span>TO</span> &nbsp;
               <span className="text-[#07a034]">GIFTED </span>&nbsp;
@@ -85,18 +85,18 @@ export default function Home() {
               <span>FOUNDATION</span>
             </h1>
           </div>
-          <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center sm:h-[800px]">
+          <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center sm:h-[600px]">
             {/* Center the image on mobile by using flexbox */}
             <div className="flex justify-center">
               <img
                 src="/ourMission.jpeg"
                 alt=""
-                className="top-0 sm:top-32 lg:top-44 md:top-24 rounded-2xl w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
+                className="top-0 sm:top-10  lg:top-44 md:top-24 rounded-2xl w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
               />
             </div>
-
-            <div className="sm:py-12 sm:pt-40 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
+            <div className="sm:py-12 sm:pt-10 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
               <p className="lg:w-full text-center sm:text-sm">
+                <br className="lg:hidden md:hidden"/>
                 At Gifted Natus Foundation, the impact of our work is seen in
                 the transformation of lives. From providing life-changing
                 opportunities to individuals in need, to building stronger,
@@ -121,10 +121,10 @@ export default function Home() {
                 OUR <span className="text-[#07a034]">MISSION</span>
               </h1>
               <h2 className="font-bold text-center lg:text-right">
-                Making a difference, Ever day
+                Making A Difference Everyday
               </h2>
               <p className="lg:text-right text-center">
-                Gifted Natus foundation is a non-profit Organization with a
+                Gifted Natus Foundation is a non-profit Organization with a
                 vision to create lasting change through community and human
                 capacity development. At the heart of our mission is our
                 belief in empowering individuals and communities, helping them
@@ -132,30 +132,27 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-between flex-col lg:flex-row-reverse">
-            <img
-              src="/aboutapproach.png"
-              alt=" our approach"
-              className="w-[300px] h-auto"
-            />
-            <div className="flex items-center lg:items-start h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
-              <h1 className="font-bold text-4xl font-gobold">
-              OUR <span className="text-[#0156a9]">APPROACH</span>
-              </h1>
-              <h2 className="font-bold text-center lg:text-right">
-              Comprehensive Solutions for Lasting Impact
-              </h2>
-              <p className="lg:text-left text-center">
-                We take a holistic approach to development, understanding that
-                true change requires addressing multiple facets of human life.
-                Our initiative span across education, healthcare, sports,
-                economic empowerment with local communities, we implement
-                programs that noe only meet immediate programs that not only
-                meet immediate programs that not only meet immediate needs but
-                also create pathways for sustainable growth
+          <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center sm:h-[800px]">
+            {/* Center the image on mobile by using flexbox */}
+            <div className="flex justify-center">
+              <img
+                src="/ourMission.jpeg"
+                alt=""
+                className="top-0 sm:top-32 lg:top-44 md:top-24 rounded-2xl w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
+              />
+            </div>
+
+            <div className="sm:pt-12 sm:pt-40 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0 sm:h-[400px]">
+              <p className="lg:w-full text-center sm:text-sm">
+                At Gifted Natus Foundation, the impact of our work is seen in
+                the transformation of lives. From providing life-changing
+                opportunities to individuals in need, to building stronger,
+                more resilient communities, our initiatives have been
+                recognized for their far-reaching effects.
               </p>
             </div>
-          </div><div className="h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
+          </div>
+          <div className="h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
             <img
               src="/aboutimpact.png"
               alt=" our impact"

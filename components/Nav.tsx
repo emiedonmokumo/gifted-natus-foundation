@@ -67,7 +67,7 @@ export default function Nav() {
           )}
         </div>
       </nav >
-      <div className="sm:pl-5 md:hidden lg:hidden flex pt-4 sm:px-5 pb-8 w-full bg-[rgb(0,0,0)] z-50 items-center justify-between fixed top-0 left-0">
+      <div className="sm:pl-5 md:hidden lg:hidden flex pt-4 sm:px-5 pb-8 w-full bg-[rgb(16,23,54)] z-50 items-center justify-between fixed top-0 left-0">
         <img src="/logo.png" alt="logo" className="w-9" />
         <button onClick={toggleMenu}>
           <img src="/menu.png" alt="menu" className="" />
@@ -101,6 +101,23 @@ export default function Nav() {
             <p className="text-white text-center">Gifted Natus Foundation</p>
           </div>
         </Link>
+        {session && pathname === '/dashboard' ? (
+            <>
+              <BlogLink />
+              <Link className="font-medium" href="/#about">
+                Profile
+              </Link>
+              {/* <Link className="font-medium" href="/#contact">
+                
+              </Link> */}
+              <Link className="font-medium" href="/blog">
+                Subscribers
+              </Link>
+              <button className="font-medium text-green-300" onClick={() => signOut({ callbackUrl: '/auth/login' })}>
+                Logout
+              </button>
+            </>
+          ):(
         <div className="text-white flex flex-col items-center h-[30vh] justify-between">
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link
@@ -135,7 +152,7 @@ export default function Nav() {
               Get Involved &rarr;
             </Link>
           </button>
-        </div>
+        </div>)}
       </nav>
     </div >
   );
