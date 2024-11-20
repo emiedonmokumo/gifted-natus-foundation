@@ -142,7 +142,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="sm:pt-12 sm:pt-40 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0 sm:h-[400px]">
+            <div className="sm:pt-12 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0 sm:h-[400px]">
               <p className="lg:w-full text-center sm:text-sm">
                 At Gifted Natus Foundation, the impact of our work is seen in
                 the transformation of lives. From providing life-changing
