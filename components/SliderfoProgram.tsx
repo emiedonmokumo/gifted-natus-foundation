@@ -37,12 +37,12 @@ const Programs = () => {
 
   return (
     <div
-      className=" mx-auto mt-8 overflow-x-scroll relative w-full p-1 m-0 flex lg:items-center flex-col"
+      className=" mx-auto mt-8 relative w-full p-1 m-0 flex lg:items-center flex-col"
       id="programs"
       style={{ marginTop: 0 }}
     >
       {/* Slider Container */}
-      <div className="overflow-x-scroll w-full">
+      <div className="overflow-x-scroll sm:w-full md:w-full lg:w-[60%] mx-auto">
         <div
           className="flex space-x-4 no-scrollbar"
           style={{ width: `300px * 3` }}

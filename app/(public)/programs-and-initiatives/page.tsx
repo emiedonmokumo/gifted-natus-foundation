@@ -25,7 +25,7 @@ export default function GetInvoved() {
         </p>
 
         <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
-          <div className=" lg:w-[250px] sm:w-[80%] h-[1500px]">
+          <div className=" lg:w-[250px] sm:w-[80%] lg:h-[1500px] h-[1100px]">
             <img
               src= "education.jpeg"
               alt=""

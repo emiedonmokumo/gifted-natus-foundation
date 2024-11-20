@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         gobold: ['Gobold', 'sans-serif'],
+        low:['low']
       },
       screens: {
         sm: { 'max': '500px' },

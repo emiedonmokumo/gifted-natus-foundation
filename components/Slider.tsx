@@ -35,7 +35,7 @@ useEffect(()=>{
   return (
     <div className="max-w-6xl mx-auto py-10" id="blog">
       {/* Slider Container */}
-      <div className="flex overflow-x-scroll space-x-4 no-scrollbar">
+      <div className="flex overflow-x-scroll space-x-4 lg:w-[80%] mx-auto no-scrollbar">
         {/* Card 1 */}
         {post && post.map((article:Post, index)=>(
             
