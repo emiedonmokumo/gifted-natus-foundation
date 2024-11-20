@@ -24,6 +24,10 @@
 
  @layer utilities {
 
+  .content > img{
+    max-width: 60vh;
+  }
+
   .spinner-wrapper {
     position: fixed;
     top: 0;

@@ -10,6 +10,7 @@ import { useSession } from "next-auth/react";
 import { SubscriberInterface } from "@/models/Subscriber";
 import axios from "axios";
 import BlogPost from "@/components/BlogPost";
+import { div } from "framer-motion/client";
 // import posts from "@/utils/blogPosts";
 
 interface Post {
@@ -34,176 +35,39 @@ export default function Dashboard() {
   // Get session of user
   const { data: session } = useSession();
 
+  const [subcribers, setSubcribers] = useState<SubscriberInterface[]>([]);
+  const [views, setViews] = useState<string>("");
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [volunteers, setVolunteers] = useState<Ivolunteer[]>([]);
 
-  const [subcribers, setSubcribers] = useState<SubscriberInterface[]>([])
-  const [views, setViews] = useState<string>("34k");
-  const [shares, setShares] = useState<string>("39k");
-  const [growthRate, setGrowthrate] = useState<string>("28%");
   const blog = useRef<HTMLDivElement | null>(null);
-
   const subcribe = useRef<HTMLDivElement | null>(null);
   const volunt = useRef<HTMLDivElement | null>(null);
 
-  useEffect(()=>{
-    const fetchSubscribers = async () =>{
-      const response = await axios.get('/api/subscriber')
-      
-      if(response.status == 200) setSubcribers(response.data)
-    }
+  useEffect(() => {
+    const fetchSubscribers = async () => {
+      const response = await axios.get("/api/newsletter");
 
-    fetchSubscribers()
-  },[session])
+      if (response.status == 200) setSubcribers(response.data);
+    };
 
-  // const subcribers: string[] = [
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  //   "joe@gmail.com",
-  // ];
+    const fetchPost = async () => {
+      const response = await axios.get("/api/blog");
 
-  const volunteers: Ivolunteer[] = [
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-    {
-      firstName: "Tonware-emi",
-      lastName: "zakana",
-      address: "new yorks, chevon, boston street, no 4, peters compound",
-      phone: "09078777000",
-      email: "tonwareemizakana@gmail.com",
-    },
-  ];
+      if (response.status == 200) setPosts(response.data);
+    };
 
+    const fetchvolunteer = async () => {
+      const response = await axios.get("/api/volunteer");
+
+      if (response.status == 200) setVolunteers(response.data);
+    };
+
+    fetchPost();
+    fetchSubscribers();
+  }, [session]);
   function subs() {
-    window.navigator.clipboard.writeText(subcribers.join(", "))
+    window.navigator.clipboard.writeText(subcribers.join(", "));
   }
 
   function showSubcriber(e: any) {
@@ -269,8 +133,12 @@ export default function Dashboard() {
       {/*welcome section*/}
       <div className=" bg-white mx-auto flex items-center justify-between my-9 rounded-xl px-24 sm:flex-col-reverse sm:absolute sm:top-[100px] sm:left-0 sm:right-0 sm:mx-5 sm:p-5">
         <div className="flex items-center justify-evenly flex-col">
-          <h2 className="text-slate-800 text-3xl text-center sm:text-xl sm:mt-3">Welcome back</h2>
-          <h1 className="text-[#07a034] text-5xl text-center md:text-3xl font-semibold sm:text-xl">{`${session?.user.firstName} ${session?.user.lastName} ${session?.user?.othernames || ''}`}</h1>
+          <h2 className="text-slate-800 text-3xl text-center sm:text-xl sm:mt-3">
+            Welcome back
+          </h2>
+          <h1 className="text-[#07a034] text-5xl text-center md:text-3xl font-semibold sm:text-xl">{`${
+            session?.user.firstName
+          } ${session?.user.lastName} ${session?.user?.othernames || ""}`}</h1>
         </div>
         <img src="/team1.png" alt="" className="rounded-full sm:h-36 sm:w-36" />
       </div>
@@ -321,13 +189,20 @@ export default function Dashboard() {
             style={{ height: `calc(50px * ${subcribers.length + 1})` }}
           >
             {subcribers.map((subscriber, id) => (
-              <p key={id} className="h-[50px] flex items-center justify-evenly">
-                {subscriber.email}{" "}
+              <div key={id} className="h-[50px] flex items-center justify-evenly ">
+                <p
+                  
+                  className="w-[80%] overflow-x-scroll"
+                >
+                  {subscriber.email}{" "}
+                </p>
                 <FaRegCopy
-                  onClick={() => window.navigator.clipboard.writeText(subscriber.email)}
+                  onClick={() =>
+                    window.navigator.clipboard.writeText(subscriber.email)
+                  }
                   className="hover:text-slate-700"
                 />
-              </p>
+              </div>
             ))}
           </div>
         </div>
@@ -359,7 +234,7 @@ export default function Dashboard() {
 
           {/* Blog Posts */}
           <BlogPost blog={blog} />
-          
+
           {/*SUBCRIBERS MOBILE */}
           <div
             className="bg-white h-[780px] w-full overflow-y-scroll hidden "
@@ -380,7 +255,9 @@ export default function Dashboard() {
                 >
                   <p className="w-[70%] overflow-hidden">{sub.email}</p>{" "}
                   <FaRegCopy
-                    onClick={() => window.navigator.clipboard.writeText(sub.email)}
+                    onClick={() =>
+                      window.navigator.clipboard.writeText(sub.email)
+                    }
                     className="hover:text-slate-700"
                   />
                 </div>

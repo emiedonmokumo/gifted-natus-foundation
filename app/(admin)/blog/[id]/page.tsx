@@ -8,9 +8,9 @@ import { useEffect, useState, useRef } from "react";
 
 interface IBlog {
   title: string;
-  image: string;
-  id: string;
-  text: string;
+  img: string;
+  _id: string;
+  content: string;
 }
 
 export default function Dashboard({ params }: { params: { id: string } }) {
@@ -18,17 +18,22 @@ export default function Dashboard({ params }: { params: { id: string } }) {
   const html = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    for (let i = 0; i < blog.length; i++) {
-      if (blog[i].id === params.id) {
-        setPost(blog[i]);
-        console.log(blog[i]);
-      }
+    async function recievePost() {
+      try{
+        const blogPostFetch = await fetch(`/api/blog/${params.id}`)
+      if(blogPostFetch.status == 200) setPost(await blogPostFetch.json())
+        console.log(post)
+      }catch(error){
+        console.log(`there was an error:${error}`)
     }
+    }
+    
+    recievePost()
   }, [params.id]);
 
   useEffect(() => {
     if (html.current && post) {
-      html.current.innerHTML = post.text;
+      html.current.innerHTML = post.content;
     }
   }, [post]); // Ensure this runs whenever `post` changes.
 
@@ -40,17 +45,17 @@ export default function Dashboard({ params }: { params: { id: string } }) {
       <main>
         {post && (
           <div
-            className="h-[50vh] bg-cover bg-no-repeat"
+            className="h-[70vh] bg-cover bg-no-repeat"
             style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${post.image})`,
+              backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${post.img})`,
             }}
           ></div>
         )}
-
-        <div ref={html}></div>
+        <h1 className="text-4xl text-center font-gobold my-11">{post?.title}</h1>
+        <div ref={html} className="px-6 text-justify content"></div>
         <div className="mt-11">
           <div className="flex items-center justify-evenly">
-          <h1 className="text-3xl">TOP <span className="text-[#07a034]">ARTICLES</span></h1>
+          <h1 className="text-3xl">Other <span className="text-[#07a034]">ARTICLES</span></h1>
           <div className="w-[30vh] h-[5px] bg-black">
 
           </div>

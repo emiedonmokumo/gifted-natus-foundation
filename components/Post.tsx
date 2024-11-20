@@ -16,7 +16,7 @@ interface Post {
 }
 
 export default function Post() {
-  const filters: string[] = ["all", "Health", "Welfare", "Youth", "Events", "Environment"];
+  const filters: string[] = ["all", "Health", "Welfare", "Youth", "Event", "Environment"];
   const [posts , setPosts] = useState<any>([])
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -39,7 +39,7 @@ recievePost()
   // Filter posts based on the selected category
   const filteredPosts = selectedFilter === "all"
     ? posts
-    : posts.filter((post:any) => post.tag[0].toLowerCase() === selectedFilter.toLowerCase());
+    : posts.filter((post:any) => post.tags[0].toLowerCase() === selectedFilter.toLowerCase());
 
   // Get the posts for the current page
   const indexOfLastPost = currentPage * postsPerPage;
@@ -102,7 +102,7 @@ recievePost()
               </div>
               <div className="">
                 <h1 className="font-gobold text-4xl">{post.title}</h1>
-                <p>{post.shortText} <Link href={`/blog/${post.id}`} className="text-[#07a034]">see more &rarr;</Link></p>
+                <p>{post.description} <Link href={`/blog/${post._id}`} className="text-[#07a034]">see more &rarr;</Link></p>
               </div>
             </div>
           </div>
@@ -127,3 +127,4 @@ recievePost()
     </div>
   );
 }
+//Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolores, iure voluptate quam assumenda est explicabo suscipit voluptas error, illum eveniet vero in dolorem. Blanditiis necessitatibus possimus rerum sapiente ut!
