@@ -128,7 +128,7 @@ export default function Home() {
             <img
               src="/aboutmission.png"
               alt=" our mission"
-              className="w-[300px] h-auto"
+              className="w-[300px] h-auto mb-16"
             />
             <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
               <h1 className="font-bold text-4xl font-gobold">
