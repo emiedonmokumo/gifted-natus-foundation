@@ -104,6 +104,11 @@
     -webkit-animation-delay: 0.9s;
     animation-delay: 0.9s;
    }
+
+   .size img{
+    max-width: 500px;
+    display: inline-block;
+   }
    
    @-webkit-keyframes sk-foldCubeAngle {
     0%,

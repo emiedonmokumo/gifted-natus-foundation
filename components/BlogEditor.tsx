@@ -137,7 +137,7 @@ const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, ha
       {/* Rich text editor */}
       <div
         ref={editorRef}
-        className="mt-4 border border-gray-300 rounded-md shadow-md"
+        className="mt-4 border border-gray-300 rounded-md shadow-md size"
         style={{ height: "500px" }}
         onFocus={handleLoad}
       ></div>

@@ -83,10 +83,10 @@ recievePost()
           </div>
         ))}
       </div>
-      <div className="flex flex-wrap justify-between  lg:w-[75%] mx-auto">
+      <div className="flex flex-wrap justify-evenly lg:w-[75%]  mx-auto">
         {currentPosts.map((post:any) => (
           <div
-            className="flex flex-col items-center justify-evenly overflow-hidden sm:h-[500px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[360px] md:w-[500px]"
+            className="flex flex-col items-center justify-evenly overflow-hidden sm:h-[700px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[360px] md:w-[500px]"
             key={post.id}
           >
            <div className="w-full h-[150px] overflow-hidden">
@@ -98,10 +98,9 @@ recievePost()
                   {post.tags[0]}
                 </div>
                 <p><FaEye className="inline-block text-[#07a034]" /> {post.views} views</p>
-                <p><FaCalendar className="inline-block text-[#07a034]" /> {post.day}</p>
               </div>
               <div className="">
-                <h1 className="font-gobold text-4xl">{post.title}</h1>
+                <h1 className="font-gobold text-3xl">{post.title}</h1>
                 <p>{post.description} <Link href={`/blog/${post._id}`} className="text-[#07a034]">see more &rarr;</Link></p>
               </div>
             </div>

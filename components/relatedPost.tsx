@@ -7,7 +7,7 @@ interface Post {
   title: string;
   day: string;
   views: string;
-  id: number;
+  _id: string;
   description: string;
   tags: string[];
 }
@@ -86,10 +86,10 @@ export default function RelatedPost() {
   return (
     <div className="overflow-x-scroll h-[500px] ">
       <div className=" flex justify-evenly" style={{width: `calc(360px * ${posts.length + 1})`}}>
-        {posts.map((post, id) => (
+        {posts.map((post) => (
           <div
             className="flex flex-col items-center justify-evenly overflow-hidden sm:h-[500px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[360px] md:w-[500px]"
-            key={id}
+            key={post._id}
           >
             <div className="w-full h-[150px] overflow-hidden">
               <img src={post.img} alt={post.title} className="" />
@@ -112,7 +112,7 @@ export default function RelatedPost() {
                 <h1 className="font-gobold text-4xl">{post.title}</h1>
                 <p>
                   {post.description}{" "}
-                  <Link href="#" className="text-[#07a034]">
+                  <Link href={`/blog/${post._id}`} className="text-[#07a034]">
                     see more &rarr;
                   </Link>
                 </p>

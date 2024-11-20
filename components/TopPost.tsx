@@ -7,7 +7,7 @@ interface Post {
   img: string;
   title: string;
   day: string;
-  veiws: number;
+  views: number;
   _id: string;
   description:string;
   shortText: string;
@@ -84,7 +84,7 @@ export default function TopPost() {
   //   // More posts...
   // ];
   return (
-    <div className="overflow-scroll h-[500px] w-screen flex items-center">
+    <div className="overflow-scroll h-[500px] w-screen flex items-center mt-[80px]">
       {/* Top post slider track */}
       {posts && <div
         className={`w-[calc(30vw * ${
@@ -113,13 +113,12 @@ export default function TopPost() {
               </p>
               <div className="flex items-center justify-evenly lg:hidden">
                 <p>
-                  <FaEye className="inline-block text-[#07a034]" /> {post.veiws}{" "}
+                  <FaEye className="inline-block text-[#07a034]" /> {post.views}{" "}
                   views
                 </p>
-                <p>
-                  <FaCalendar className="inline-block text-[#07a034]" />{" "}
-                  {post.day}
-                </p>
+                <Link href={`/blog/${post._id}`} className="text-[#07a034]">
+                  see more &rarr;
+                </Link>
               </div>
             </div>
           </div>

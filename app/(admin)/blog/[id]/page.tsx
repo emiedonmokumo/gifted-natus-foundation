@@ -43,6 +43,7 @@ export default function Dashboard({ params }: { params: { id: string } }) {
         <Nav />
       </header>
       <main>
+      <h1 className="text-4xl text-center font-gobold mt-[100px] my-11">{post?.title}</h1>
         {post && (
           <div
             className="h-[70vh] bg-cover bg-no-repeat"
@@ -51,8 +52,8 @@ export default function Dashboard({ params }: { params: { id: string } }) {
             }}
           ></div>
         )}
-        <h1 className="text-4xl text-center font-gobold my-11">{post?.title}</h1>
-        <div ref={html} className="px-6 text-justify content"></div>
+        
+        <div ref={html} className="px-6 text-justify content size"></div>
         <div className="mt-11">
           <div className="flex items-center justify-evenly">
           <h1 className="text-3xl">Other <span className="text-[#07a034]">ARTICLES</span></h1>
