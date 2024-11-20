@@ -94,7 +94,7 @@ export default function TopPost() {
         {posts.map((post, index) => (
           <div
             key={post._id}
-            className="slide h-full  w-[40vw] sm:w-[80vw] relative rounded-2xl pt-[180px] pl-[10px]"
+            className="slide h-full  w-[40vw] sm:w-[80vw] relative rounded-2xl pt-[100px] pl-[10px]"
             style={{
               backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(${post.img})`,
               backgroundSize: "cover",

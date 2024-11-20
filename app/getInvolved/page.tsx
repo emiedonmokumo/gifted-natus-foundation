@@ -11,7 +11,7 @@ export default function GetInvoved() {
       <header className="bg-slate-900">
         <Nav />
       </header>
-      <main>
+      <main className="pt-[100px]">
         <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl">
           Join us and make a{" "}
           <span className="text-slate-700 flex flex-col items-center">
@@ -28,7 +28,7 @@ export default function GetInvoved() {
        
 
         <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
-          <div className="relative w-[250px] h-[650px]">
+          <div className="relative w-[250px] h-[900px]">
             <img
               src="/involved1.png"
               alt=""
@@ -39,17 +39,14 @@ export default function GetInvoved() {
             </div>
             <div className="mt-20 space-y-6">
               <h1 className="text-3xl text-center mx-auto font-gobold w-[200px]">
-                COMMUNITY DEVELOPMENT
+                EMPOWERING COMMUNITY 
               </h1>
               <p className="text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                id nisi quidem aliquid qui! Quibusdam unde eligendi perferendis
-                voluptatem officiis corrupti molestias dolorum, officia cumque
-                eveniet veniam debitis, maxime quae!
+              Transforming lives, one community at a time. Our initiatives focus on education, skill acquisition, and youth development, creating opportunities for self-reliance and sustainable growth. From providing scholarships to organizing training programs like the G-Skill series, we are building a future where every individual has the tools to thrive.
               </p>
             </div>
           </div>
-          <div className="relative w-[250px] h-[650px]">
+          <div className="relative w-[250px] h-[900px]">
             <img
               src="/involved2.png"
               alt=""
@@ -60,17 +57,14 @@ export default function GetInvoved() {
             </div>
             <div className="mt-20 space-y-6">
               <h1 className="text-3xl text-center mx-auto font-gobold w-[200px]">
-                HEALTH INTIATIVES
+                HEALTH AND WELLNESS PROGRAM
               </h1>
               <p className="text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                id nisi quidem aliquid qui! Quibusdam unde eligendi perferendis
-                voluptatem officiis corrupti molestias dolorum, officia cumque
-                eveniet veniam debitis, maxime quae!
+              Caring for the well-being of our communities. We are dedicated to addressing healthcare challenges through targeted interventions, including medical outreach programs, financial aid for medical expenses, and support for vulnerable families. Our goal is to ensure every Bayelsan has access to the care they deserve.
               </p>
             </div>
           </div>
-          <div className="relative w-[250px] h-[650px] ">
+          <div className="relative w-[250px] h-[900px] ">
             <img
               src="/involved3.png"
               alt=""
@@ -81,7 +75,7 @@ export default function GetInvoved() {
             </div>
             <div className="mt-20 space-y-6">
               <h1 className="text-3xl text-center mx-auto flex flex-wrap font-gobold w-[200px]">
-                EMERGENCY RELIEF
+                RAPID RESPONSE AND SUPPORT
               </h1>
               <p className="text-center">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
@@ -107,8 +101,8 @@ export default function GetInvoved() {
             <div className="">
               <div className="flex items-center justify-evenly">
                 <img
-                  src="/bank fcmb.png"
-                  alt="fcmb bank logo"
+                  src="/premium trust bank.png"
+                  alt="Premium trust bank logo"
                   className="rounded-full w-[50px] h-[50px]"
                 />
                 <div className=" flex items-center justify-between flex-col h-[60px] w-[40%]">

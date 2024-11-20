@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import dynamic from "next/dynamic";
 import Quill from 'quill';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 // Dynamically import BlogEditor with client-side rendering
 const BlogEditor = dynamic(() => import("@/components/BlogEditor"), { ssr: false });
@@ -13,7 +14,7 @@ const Page: React.FC = () => {
   const editorRef = useRef<HTMLDivElement | any>();
   const quillInstanceRef = useRef<Quill | any>(); // Store the instance reference
   const [postImage, setPostImage] = useState<File | null>(null);
-
+  const router = useRouter();
 
   const handleSubmit = async () => {
     // console.log(quillInstanceRef.current?.getText().trim() === "")
@@ -46,6 +47,7 @@ const Page: React.FC = () => {
       if (response.status == 201) {
         console.log("Content submitted successfully:", response.data);
         alert("Blog content submitted successfully!");
+        router.push("/blog");
       } 
 
     } catch (error) {

@@ -15,8 +15,16 @@ interface MyCustomModule {
   addHandler: (eventName: string, handler: HandlerFunction) => void;
 }
 
-const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, handleSubmit, setPostImage }: { id: string | any; editorRef: any; quillInstanceRef: any; editBlog: any; setEditBlog: any; handleSubmit: any; setPostImage: any }) => {
+interface IBlog {
+  title: string;
+  img: string;
+  _id: string;
+  content: string;
+}
 
+const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, handleSubmit, setPostImage,}: { id: string | any; editorRef: any; quillInstanceRef: any; editBlog: any; setEditBlog: any; handleSubmit: any; setPostImage: any;}) => {
+
+  const [post, setPost] = useState<IBlog>()
 
   const toolbarOptions = [
     ["bold", "italic", "underline", "strike"],
@@ -78,6 +86,7 @@ const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, ha
         }
       };
     });
+    
   }, []);
 
 
@@ -86,6 +95,12 @@ const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, ha
       setPostImage(e.target.files[0]);
     }
   };
+
+  function handleLoad(e:any){
+      if(id){
+        e.target.innerHTML = editBlog.content;
+      }
+  }
 
   return (
     <div>
@@ -124,6 +139,7 @@ const BlogEditor = ({ id, editorRef, quillInstanceRef, editBlog, setEditBlog, ha
         ref={editorRef}
         className="mt-4 border border-gray-300 rounded-md shadow-md"
         style={{ height: "500px" }}
+        onFocus={handleLoad}
       ></div>
       <div className="my-4 ml-11">
         <button

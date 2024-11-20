@@ -67,7 +67,7 @@ export default function Nav() {
           )}
         </div>
       </nav >
-      <div className="sm:pl-5 md:hidden lg:hidden flex pt-4 sm:px-5 pb-8 w-full bg-[rgba(0,0,0,0.15)] items-center justify-between fixed top-0 left-0">
+      <div className="sm:pl-5 md:hidden lg:hidden flex pt-4 sm:px-5 pb-8 w-full bg-[rgb(0,0,0)] z-50 items-center justify-between fixed top-0 left-0">
         <img src="/logo.png" alt="logo" className="w-9" />
         <button onClick={toggleMenu}>
           <img src="/menu.png" alt="menu" className="" />

@@ -63,6 +63,7 @@ export default function Dashboard() {
       if (response.status == 200) setVolunteers(response.data);
     };
 
+    fetchvolunteer()
     fetchPost();
     fetchSubscribers();
   }, [session]);
@@ -290,7 +291,7 @@ export default function Dashboard() {
           </div>
         </div>
         {/* desktop version of volunteers */}
-        <div className="bg-white absolute top-[650px] w-[20%] right-0 hidden">
+        <div className="bg-white absolute top-[650px] w-[20%] right-0 sm:hidden md:hidden">
           <h1 className="font-gobold text-3xl text-center"> Volunteers</h1>
           <div className=" h-[480px] w-full overflow-y-scroll ">
             <div

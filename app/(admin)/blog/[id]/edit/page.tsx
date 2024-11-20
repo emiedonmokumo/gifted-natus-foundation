@@ -35,7 +35,9 @@ const page = ({ params }: { params: { id: string }}) => {
             description: blogData.description,
             metadata: blogData.metadata, // Assuming metadata is part of the response
             tags: blogData.tags, // Assuming tags are part of the response
+            content:blogData.content
           });
+          
 
           // Load the editor content
           if (quillInstanceRef.current) {
@@ -46,7 +48,7 @@ const page = ({ params }: { params: { id: string }}) => {
       } catch (error) {
         console.error("Failed to fetch blog data:", error);
         alert("Failed to fetch blog data.");
-        router.push("/blogs"); // Redirect on failure
+        router.push("/blog"); // Redirect on failure
       }
     };
 

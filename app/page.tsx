@@ -108,11 +108,11 @@ export default function Home() {
         </div>
         <div
           id="statement"
-          className="mt-0 flex items-center space-y-36 justify-between flex-col md:h-auto lg:h-auto h-[calc(500px * 3)]"
+          className="mt-0 flex items-center space-y-36 justify-between flex-col md:h-auto md:mt-[200px] lg:h-auto h-[calc(500px * 3)]"
         >
           <div className="flex items-center justify-between flex-col lg:flex-row">
             <img
-              src="/AboutOmission.png"
+              src="/aboutmission.png"
               alt=" our mission"
               className="w-[300px] h-auto"
             />
@@ -134,16 +134,16 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-between flex-col lg:flex-row-reverse">
             <img
-              src="/Aboutapproach.png"
+              src="/aboutapproach.png"
               alt=" our approach"
               className="w-[300px] h-auto"
             />
-            <div className="flex lg:items-left md:items-center sm:items-center h-96 justify-evenly flex-col space-y-4 p-10 lg:w-[60%]">
-              <h1 className="font-bold text-4xl font-gobold text-center lg:text-left ">
-                OUR <span className="text-[#0156a9]">APPROACH</span>
+            <div className="flex items-center lg:items-start h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
+              <h1 className="font-bold text-4xl font-gobold">
+              OUR <span className="text-[#0156a9]">APPROACH</span>
               </h1>
-              <h2 className="font-bold w-56 text-center lg:text-left">
-                Comprehensive Solutions for Lasting Impact
+              <h2 className="font-bold text-center lg:text-right">
+              Comprehensive Solutions for Lasting Impact
               </h2>
               <p className="lg:text-left text-center">
                 We take a holistic approach to development, understanding that
@@ -155,10 +155,9 @@ export default function Home() {
                 also create pathways for sustainable growth
               </p>
             </div>
-          </div>
-          <div className="h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
+          </div><div className="h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
             <img
-              src="/Aboutimpact.png"
+              src="/aboutimpact.png"
               alt=" our impact"
               className="w-[300px] h-auto"
             />
@@ -204,7 +203,7 @@ export default function Home() {
               Every donation, big or small helps us continue our work and
               expand our reach, together we can build a brighter future
             </p>
-            <Link href={"/getInvolved"} className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
+            <Link href={"/getInvolved#donate"} className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center">
               {" "}
               Donate Today!
             </Link>

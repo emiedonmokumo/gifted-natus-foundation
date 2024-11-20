@@ -5,6 +5,7 @@ import { FaCalendar, FaEye, FaEdit } from 'react-icons/fa'
 
 const BlogPost = ({ blog }: { blog: any }) => {
     const [posts, setPosts] = useState<any[]>([])
+    
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -14,7 +15,13 @@ const BlogPost = ({ blog }: { blog: any }) => {
         }
 
         fetchPosts()
-    }, [])
+    }, [posts])
+
+    async function deletePost(id:string){
+        await axios.delete(`/api/blog/${id}`)
+    }
+
+    
 
     return (
         <>
@@ -39,7 +46,7 @@ const BlogPost = ({ blog }: { blog: any }) => {
                                 <img src={post.img} alt={post.title} className="" />
                             </div>} */}
                             <div>
-                                <div className="flex items-center justify-between w-full sm:space-x-10 lg:space-x-20 sm:text-sm">
+                                <div className="flex items-center justify-between w-full sm:space-x-10  sm:text-sm">
                                     {/* {post.tags?.map((tag: string, index: number) => (
                                         <div key={index} className="event bg-blue-800 rounded-md w-28 h-8 px-4 text-white flex items-center justify-center">
                                             {tag}
@@ -56,20 +63,22 @@ const BlogPost = ({ blog }: { blog: any }) => {
                                         <FaCalendar className="inline-block text-[#07a034]" />{" "}
                                         {new Date(post.createdAt).toLocaleString()}
                                     </p>
-                                    <p className="text-white bg-[#07a034] sm:hidden md:hidden w-[150px] text-center rounded-xl">
+                                    <Link href={`/blog/${post._id}/edit`} className="text-white bg-[#07a034] sm:hidden md:hidden w-[150px] text-center rounded-xl">
                                         <FaEdit className="inline-block" /> Edit post
-                                    </p>
+                                    </Link>
+
+                                    <div className="text-white bg-red-600 sm:hidden md:hidden w-[150px] text-center rounded-xl"
+                                    onClick={()=> deletePost(post._id)}>
+                                        Delete
+                                    </div>
                                 </div>
                                 <div className="">
                                     <h1 className="font-semibold text-xl">{post.title}</h1>
                                     <p className="text-sm py-4">
                                         {post.metaDescription}{" "}
-                                        <Link href="#" className="text-[#07a034]">
-                                            see more &rarr;
-                                        </Link>
                                     </p>
                                 </div>
-                                <Link href={`/blog`} className="text-white bg-[#07a034] lg:hidden w-[150px] text-center p-2">
+                                <Link href={`/blog/${post._id}/edit`} className="text-white bg-[#07a034] lg:hidden w-[150px] text-center p-2">
                                     <FaEdit className="inline-block" /> Edit post
                                 </Link>
                             </div>
