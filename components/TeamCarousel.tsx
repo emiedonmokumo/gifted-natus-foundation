@@ -18,7 +18,8 @@ const TeamCarousel = () => {
   const currentMember = team[memberIndex];
 
   return (
-    <div className="lg:mt-32 lg:mb-20 lg:py-16 md:mb-28 sm:my-28 bg-gray-900 text-white py-10 px-4">
+    <div className="lg:mt-32 lg:mb-8 lg:py-16 md:mb-28 sm:my-28 bg-gray-900 text-white py-10 px-4"
+    style={{marginBottom:"10px"}}>
       <h2 className="text-3xl font-bold text-center mb-8">
         Meet the <span className="text-green-500">Founder</span>
       </h2>
@@ -47,7 +48,7 @@ const TeamCarousel = () => {
             <p className="text-sm font-semibold text-green-500 sm:text-center md:text-center">
               {currentMember.role}
             </p>
-            <p className="mt-4 lg:text-gray-300 md:text-justify text-left">{currentMember.quote}</p>
+            <p className="mt-4 lg:text-gray-300 sm:text-justify md:text-justify text-left">{currentMember.quote}</p>
           </div>
         </motion.div>
         <Link href={"#"} className="text-center text-[#07a034] lg:absolute bottom-2">see more &rarr;</Link>
