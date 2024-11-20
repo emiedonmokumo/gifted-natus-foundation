@@ -12,8 +12,8 @@ const config: Config = {
         gobold: ['Gobold', 'sans-serif'],
       },
       screens: {
-        sm: { 'max': '480px' },
-        md: { 'min': '481px', 'max': '768px' },
+        sm: { 'max': '500px' },
+        md: { 'min': '501px', 'max': '768px' },
         lg: { 'min': '769px' },
       },
     },

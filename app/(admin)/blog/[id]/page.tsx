@@ -53,7 +53,7 @@ export default function Dashboard({ params }: { params: { id: string } }) {
           ></div>
         )}
         
-        <div ref={html} className="px-6 text-justify content size"></div>
+        <div ref={html} className="px-6 py-6 text-justify content size"></div>
         <div className="mt-11">
           <div className="flex items-center justify-evenly">
           <h1 className="text-3xl">Other <span className="text-[#07a034]">ARTICLES</span></h1>

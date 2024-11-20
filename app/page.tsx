@@ -1,6 +1,7 @@
 "use client"
 import Nav from "../components/Nav";
 import Slider from "../components/Slider";
+import Programs from "@/components/SliderfoProgram";
 import Link from "next/link";
 import TeamCarousel from "@/components/TeamCarousel";
 import Footer from "@/components/Footer";
@@ -33,7 +34,7 @@ export default function Home() {
   return (
     <div>
         <header
-          className="p-0 m-0 h-screen  "
+          className="lg:pt-44 m-0 h-screen  "
           style={{ backgroundSize: "cover", backgroundPosition: "center" ,backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(hero2.jpeg)"}}
         >
           <Nav />
@@ -65,7 +66,7 @@ export default function Home() {
           </div>
       </header>
       <main>
-        <div className="title mt-32" id="about">
+        <div className="title mt-32">
           <h1 className="font-bold text-2xl lg:text-4xl md:text-4xl flex  flex-wrap items-center justify-center">
             <span className="text-[#0156a9]">LATEST &nbsp;</span> NEWS&nbsp;
             AND
@@ -75,7 +76,7 @@ export default function Home() {
 
         <Slider />
 
-        <div id="aboutus">
+        <div id="about" >
           <div className="title lg:mt-32" id="aboutus">
             <h1 className="text-3xl md:text-4xl lg:text-4xl flex flex-wrap items-center justify-center font-gobold">
               <span className="text-[#0156a9]">WELCOME &nbsp;</span>
@@ -85,7 +86,7 @@ export default function Home() {
               <span>FOUNDATION</span>
             </h1>
           </div>
-          <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center sm:h-[600px]">
+          <div className="h-[500px] relative mb-0 sm:flex sm:flex-col sm:justify-center sm:h-[600px]">
             {/* Center the image on mobile by using flexbox */}
             <div className="flex justify-center">
               <img
@@ -94,7 +95,7 @@ export default function Home() {
                 className="top-0 sm:top-10  lg:top-44 md:top-24 rounded-2xl w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
               />
             </div>
-            <div className="sm:py-12 sm:pt-10 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
+            <div className="sm:py-12 sm:pt-48 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:pt-24 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
               <p className="lg:w-full text-center sm:text-sm">
                 <br className="lg:hidden md:hidden"/>
                 At Gifted Natus Foundation, the impact of our work is seen in
@@ -102,15 +103,17 @@ export default function Home() {
                 opportunities to individuals in need, to building stronger,
                 more resilient communities, our initiatives have been
                 recognized for their far-reaching effects.
+                <Link href={"#"} className="text-[#07a034] text-center block mt-8 sm:hidden md:hidden">see more &rarr;</Link>
               </p>
+              <Link href={"#"} className="text-[#07a034] text-center block mt-8 lg:hidden">see more &rarr;</Link>
             </div>
           </div>
         </div>
         <div
           id="statement"
-          className="mt-0 flex items-center space-y-36 justify-between flex-col md:h-auto md:mt-[200px] lg:h-auto h-[calc(500px * 3)]"
+          className="mt-0 mb-0 flex items-center space-y-36 justify-evenly flex-col md:h-auto md:mt-[200px] lg:mt-0 lg:h-auto h-[calc(500px * 3)]"
         >
-          <div className="flex items-center justify-between flex-col lg:flex-row">
+          <div className="flex items-center justify-evenly flex-col lg:flex-row mx-auto">
             <img
               src="/aboutmission.png"
               alt=" our mission"
@@ -132,27 +135,10 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="h-[900px] relative mb-0 sm:flex sm:flex-col sm:justify-center sm:h-[800px]">
-            {/* Center the image on mobile by using flexbox */}
-            <div className="flex justify-center">
-              <img
-                src="/ourMission.jpeg"
-                alt=""
-                className="top-0 sm:top-32 lg:top-44 md:top-24 rounded-2xl w-[80%] lg:w-96 lg:right-[550px] lg:ml-20 lg:inline-block absolute lg:z-10"
-              />
-            </div>
+          <h1 className="text-4xl font-gobold text-center">OUR PROGRAMS AND <span className="text-[#0156a9]">INITIATIVES</span></h1>
 
-            <div className="sm:pt-12 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:p-52 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0 sm:h-[400px]">
-              <p className="lg:w-full text-center sm:text-sm">
-                At Gifted Natus Foundation, the impact of our work is seen in
-                the transformation of lives. From providing life-changing
-                opportunities to individuals in need, to building stronger,
-                more resilient communities, our initiatives have been
-                recognized for their far-reaching effects.
-              </p>
-            </div>
-          </div>
-          <div className="h-[800px] mb-14 lg:h-auto  flex items-center justify-evenly flex-col lg:flex-row">
+        <Programs/>
+          <div className="h-[800px] mb-14 lg:h-auto mt-0 flex items-center justify-evenly flex-col lg:flex-row">
             <img
               src="/aboutimpact.png"
               alt=" our impact"

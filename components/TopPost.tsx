@@ -21,7 +21,6 @@ export default function TopPost() {
       try {
         const blogPostFetch = await fetch("/api/blog");
         if (blogPostFetch.status == 200) setPosts(await blogPostFetch.json());
-        console.log(posts);
       } catch (error) {
         console.log(`there was an error:${error}`);
       }

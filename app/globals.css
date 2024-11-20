@@ -106,8 +106,9 @@
    }
 
    .size img{
-    max-width: 500px;
+    max-width: 320px;
     display: inline-block;
+    margin:20px auto;
    }
    
    @-webkit-keyframes sk-foldCubeAngle {

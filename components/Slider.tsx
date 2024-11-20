@@ -1,46 +1,43 @@
 import { FaCalendar, FaEye } from "react-icons/fa6";
+import Link from "next/link";
+import { useEffect,useState } from "react";
+import Post from "./Post";
+
+
+interface Post {
+  img: string;
+  title: string;
+  day: string;
+  views: string;
+  _id: string;
+  shortText: string;
+  category: string;
+}
 
 const Slider = () => {
-
-    var post:any[] = [
-        {
-            img:"/slider.jpg",
-            title: "post 1",
-            views: "3k",
-            posted: "2 days ago"
-        },
-        {
-            img:"/slider1.jpg",
-            title: "post 2",
-            views: "3k",
-            posted: "2 days ago"
-        },
-        {
-            img:"/slider2.jpg",
-            title: "post 3",
-            views: "3k",
-            posted: "2 days ago"
-        },
-        {
-            img:"/slider3.jpg",
-            title: "post 3",
-            views: "3k",
-            posted: "2 days ago"
-        },
-        {
-            img:"/slider4.jpg",
-            title: "post 4",
-            views: "3k",
-            posted: "2 days ago"
-        }
-    ]
-    
+  const [post,setPost]=useState<Post[]>()
+  
+useEffect(()=>{
+  
+  async function recievePost() {
+    try{
+      const blogPostFetch = await fetch("/api/blog")
+    if(blogPostFetch.status == 200) setPost(await blogPostFetch.json())
+      console.log(post)
+    }catch(error){
+      console.log(`there was an error:${error}`)
+  }
+  }
+  
+  recievePost()
+  },[])
+ 
   return (
     <div className="max-w-6xl mx-auto py-10" id="blog">
       {/* Slider Container */}
       <div className="flex overflow-x-scroll space-x-4 no-scrollbar">
         {/* Card 1 */}
-        {post.map((article, index)=>(
+        {post && post.map((article:Post, index)=>(
             
         <div className="max-w-[300px] bg-gray-900 text-white p-5 rounded-lg flex-shrink-0" key={article.title+index}>
         <img
@@ -48,10 +45,9 @@ const Slider = () => {
           src={article.img}
           alt={article.title}
         />
-        <h3 className="mt-4 text-lg font-bold">{article.title}</h3>
+        <Link href={`/blog/${article._id}`} className="mt-4 text-lg font-bold">{article.title}</Link>
         <div className="flex justify-between items-center text-sm mt-4">
           <span>{article.views}  views <FaEye className="text-[#07a034] text-1xl inline-block"/></span>
-          <span> <FaCalendar className="text-[#07a034] text-1xl inline-block"/> {article.posted}</span>
         </div>
       </div>
         ))}

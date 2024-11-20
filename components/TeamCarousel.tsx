@@ -47,7 +47,7 @@ const TeamCarousel = () => {
             <p className="text-sm font-semibold text-green-500 sm:text-center md:text-center">
               {currentMember.role}
             </p>
-            <p className="mt-4 lg:text-gray-300 md:text-justify text-center">{currentMember.quote}</p>
+            <p className="mt-4 lg:text-gray-300 md:text-justify text-left">{currentMember.quote}</p>
           </div>
         </motion.div>
         <Link href={"#"} className="text-center text-[#07a034] lg:absolute bottom-2">see more &rarr;</Link>

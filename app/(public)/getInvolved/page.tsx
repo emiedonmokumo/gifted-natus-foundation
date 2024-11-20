@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link"
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { FaRegCopy } from "react-icons/fa6";
@@ -20,12 +20,24 @@ export default function GetInvoved() {
           </span>
         </h1>
         <p className="w-[80vw] text-center mx-auto my-[50px] ">
-          every contribution you make helps us fund critical programs that
-          changes lifes and create lasting impact on those who needs it the
-          most.  <Link href={"#donate"} className="text-blue-700"> click here </Link> to donate
+          At Gifted Natus Foundation, we are committed to transforming lives
+          through impactful initiatives in Education & Empowerment,Humanitarian
+          Support, Emergency Relief, and Human Capacity Development. Your
+          participation, no matter the form, can create lasting change. Join us
+          in building a brighter, more sustainable future for all.
+          <br />
+          <Link
+            href={"#donate"}
+            className="bg-[#1f5212] mt-6 h-[30px] w-[100px] flex items-center justify-center mx-auto rounded-lg text-white"
+          >
+            {" "}
+            Donate
+          </Link>
         </p>
 
-       
+        <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl">
+          Ways to Get Involved
+        </h1>
 
         <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
           <div className="relative w-[250px] h-[900px]">
@@ -38,11 +50,30 @@ export default function GetInvoved() {
               <p>01.</p>
             </div>
             <div className="mt-20 space-y-6">
-              <h1 className="text-3xl text-center mx-auto font-gobold w-[200px]">
-                EMPOWERING COMMUNITY 
-              </h1>
-              <p className="text-center">
-              Transforming lives, one community at a time. Our initiatives focus on education, skill acquisition, and youth development, creating opportunities for self-reliance and sustainable growth. From providing scholarships to organizing training programs like the G-Skill series, we are building a future where every individual has the tools to thrive.
+              <Link
+                href={"#donate"}
+                className="text-3xl text-center block mx-auto font-gobold w-[200px]"
+              >
+                DONATE
+              </Link>
+              <p className="text-justify">
+                Your financial support fuels our mission to improve education,
+                healthcare, and skill development. Every contribution goes
+                directly into funding <Link
+                  href={"/programs-and-initiatives"}
+                  className="  text-blue-800 underline"
+                >
+                  {" "}
+                  our programs and initiatives
+                </Link> that change lives.
+                <br />
+                • Support Education & Empowerment: Fund scholarships and
+                educational competitions like the Bayelsa Mathematics Quiz.
+                <br />
+                • Promote Community Health & Well-Being: Help provide free
+                health screenings, medication, and outreach programs.
+                <br />• Advance Human Capacity Development: Sponsor skill
+                acquisition programs such as the G-Skill initiative.
               </p>
             </div>
           </div>
@@ -57,10 +88,29 @@ export default function GetInvoved() {
             </div>
             <div className="mt-20 space-y-6">
               <h1 className="text-3xl text-center mx-auto font-gobold w-[200px]">
-                HEALTH AND WELLNESS PROGRAM
+                VOLUNTEER
               </h1>
-              <p className="text-center">
-              Caring for the well-being of our communities. We are dedicated to addressing healthcare challenges through targeted interventions, including medical outreach programs, financial aid for medical expenses, and support for vulnerable families. Our goal is to ensure every Bayelsan has access to the care they deserve.
+              <p className="text-justify">
+                Make a hands-on impact by volunteering with us. Whether it’s
+                mentoring students, supporting health programs, or assisting
+                with skill acquisition initiatives, your time and expertise can
+                create ripple effects.
+                <br />
+                • Education & Empowerment: Tutor or mentor young learners.
+                <br />
+                • Community Health & Well-Being: Assist during medical outreach
+                programs.
+                <br />
+                • Human Capacity Development: Share your skills with
+                participants in vocational training programs.
+                <br />
+                <Link
+                  href={"#volunteer"}
+                  className="bg-[#1f5212] mt-6 h-[30px] w-[200px] flex items-center justify-center mx-auto rounded-lg text-white"
+                >
+                  {" "}
+                  BECOME A VOLUNTEER
+                </Link>
               </p>
             </div>
           </div>
@@ -75,26 +125,43 @@ export default function GetInvoved() {
             </div>
             <div className="mt-20 space-y-6">
               <h1 className="text-3xl text-center mx-auto flex flex-wrap font-gobold w-[200px]">
-                RAPID RESPONSE AND SUPPORT
+                PARTNER WITH US
               </h1>
               <p className="text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                id nisi quidem aliquid qui! Quibusdam unde eligendi perferendis
-                voluptatem officiis corrupti molestias dolorum, officia cumque
-                eveniet veniam debitis, maxime quae!
+                Collaboration is at the heart of our success. Partner with us to
+                expand the reach of our programs in education, healthcare, and
+                capacity building.
+                <br />
+                • Corporate Sponsorship: Invest in our community-based projects.
+                <br />
+                • NGO Collaboration: Co-host events and initiatives in Bayelsa.
+                <br />• Government Partnerships: Join forces to scale impact in
+                local communities.
+                <br/>
+                <Link
+                  href={"#contact"}
+                  className="  text-blue-800 mt-5"
+                >
+                  {" "}
+                  click here 
+                </Link>
+                <span className="uppercase font-gobold"> to contact us for partnership</span>
               </p>
             </div>
           </div>
         </div>
         {/*donate section*/}
-        <div className="relative h-[600px] mb-11 md:h-[300px] sm:h-[300px]" id="donate">
+        <div
+          className="relative h-[600px] mb-11 md:h-[300px] sm:h-[300px]"
+          id="donate"
+        >
           <img
-            src="/background.png"
+            src="/background.jpeg"
             alt=""
             className="absolute left-0 bottom-0 h-[60%] w-full  md:hidden sm:hidden"
           />
-          <div className="bg-[#113152] text-white space-y-6 w-[400px] h-[100%] absolute top-0 right-[200px] md:w-full sm:w-full md:relative sm:relative md:right-0 sm:right-0 ">
-            <h1 className="text-4xl text-center mt-8">
+          <div className="bg-[#113152] text-white space-y-6 w-[500px] h-[100%] absolute top-0 left-[500px] md:w-full sm:w-full md:relative sm:relative md:right-0 sm:right-0 pt-7 ">
+            <h1 className="text-4xl text-center">
               Donate <span className="text-[#07a034]">Today</span>
             </h1>
             <p className="text-center">Your contribution makes a difference</p>
@@ -118,15 +185,12 @@ export default function GetInvoved() {
                   }
                 />
               </div>
-              
-              
-              
             </div>
           </div>
           <img
             src="/man.png"
             alt=""
-            className="absolute w-[500px] bottom-0 right-[490px] md:hidden sm:hidden"
+            className="absolute w-[500px] bottom-0 left-[0px] md:hidden sm:hidden"
           />
         </div>
         {/*volunteer*/}
@@ -136,7 +200,10 @@ export default function GetInvoved() {
             alt=""
             className="sm:hidden md:hidden w-[400px]"
           />
-          <div className="flex flex-col items-center justify-evenly space-y-7 mb-5">
+          <div
+            className="flex flex-col items-center justify-evenly space-y-7 mb-5 "
+            id="volunteer"
+          >
             <h1 className="text-center w-[350px] text-4xl sm:text-3xl sm:w-[300px]">
               JOIN OUR <span className="text-[#0156a9]">TEAM</span> OF{" "}
               <span className="text-[#07a034]">VOLUNTEERS</span>
