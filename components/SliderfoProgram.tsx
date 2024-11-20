@@ -37,7 +37,7 @@ const Programs = () => {
 
   return (
     <div
-      className=" mx-auto overflow-x-scroll relative w-full p-1 m-0 flex lg:items-center flex-col"
+      className=" mx-auto mt-8 overflow-x-scroll relative w-full p-1 m-0 flex lg:items-center flex-col"
       id="programs"
       style={{ marginTop: 0 }}
     >

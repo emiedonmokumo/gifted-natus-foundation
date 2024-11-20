@@ -135,7 +135,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <h1 className="text-4xl font-gobold text-center">OUR PROGRAMS AND <span className="text-[#0156a9]">INITIATIVES</span></h1>
+          <h1 className="text-4xl font-gobold text-center mb-7"
+          style={{marginBottom: "30px",marginTop: "45px"}}>OUR PROGRAMS AND <span className="text-[#0156a9]">INITIATIVES</span></h1>
 
         <Programs/>
           <div className="h-[800px] mb-14 lg:h-auto mt-0 flex items-center justify-evenly flex-col lg:flex-row">
