@@ -160,7 +160,7 @@ export default function GetInvoved() {
             alt=""
             className="absolute left-0 bottom-0 h-[60%] w-full  md:hidden sm:hidden"
           />
-          <div className="bg-[#113152] text-white space-y-6 w-[500px] h-[100%] absolute top-0 left-[500px] md:w-full sm:w-full md:relative sm:relative md:right-0 sm:right-0 pt-7 ">
+          <div className="bg-[#113152] text-white space-y-6 lg:w-[500px] h-[100%] absolute top-0 lg:left-[500px] md:w-full sm:w-full md:relative sm:relative md:right-0 sm:left-0 pt-7 ">
             <h1 className="text-4xl text-center">
               Donate <span className="text-[#07a034]">Today</span>
             </h1>

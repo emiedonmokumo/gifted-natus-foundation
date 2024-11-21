@@ -24,8 +24,134 @@ export default function GetInvoved() {
           Bayelsa State and beyond.
         </p>
 
+        
+      <div className="slider-container">
+        <div className="slider-track">
+          <div className="slide">
+            <img src={"silder (1).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (2).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (3).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (4).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (5).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (6).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (7).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (8).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (9).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (10).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (11).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (12).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (13).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (14).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (15).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (16).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (17).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (18).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (19).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (20).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (21).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (22).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (23).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (24).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (25).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (26).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (27).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (28).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (29).jpeg"} alt="" />
+          </div>
+          
+          <div className="slide">
+            <img src={"silder (30).jpeg"} alt="" />
+          </div>
+        </div>
+      </div>
+
+
         <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
-          <div className=" lg:w-[250px] sm:w-[80%] lg:h-[1500px] h-[1100px]">
+          <div className=" lg:w-[250px] sm:w-[80%] lg:h-[1500px] h-[1300px]">
             <img
               src= "education.jpeg"
               alt=""

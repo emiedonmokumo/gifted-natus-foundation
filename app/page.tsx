@@ -124,14 +124,14 @@ export default function Home() {
           id="statement"
           className="mt-0 mb-0 flex items-center space-y-36 justify-between flex-col md:h-auto md:mt-[200px] lg:mt-0 lg:h-auto h-[calc(500px * 3)]"
         >
-          <div className="flex justify-evenly flex-col mb-44 lg:flex-row mx-auto">
+          <div className="flex items-center justify-evenly flex-col mb-44 lg:flex-row mx-auto">
             <img
               src="/aboutmission.png"
               alt=" our mission"
               className="w-[300px] h-auto mb-16"
             />
             <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
-              <h1 className="font-bold text-4xl font-gobold">
+              <h1 className="font-bold text-4xl font-gobold sm:text-2xl">
                 OUR <span className="text-[#07a034]">MISSION</span>/<span className="text-[#0156a9]">VISION</span>
               </h1>
               <h2 className="font-bold text-center lg:text-right">
@@ -160,7 +160,7 @@ export default function Home() {
           </div>
           <h1
             className="text-4xl font-gobold text-center mb-7"
-            style={{ marginBottom: "30px", marginTop: "45px" }}
+            style={{ marginBottom: "30px", marginTop: "85px" }}
           >
             OUR PROGRAMS AND <span className="text-[#0156a9]">INITIATIVES</span>
           </h1>
