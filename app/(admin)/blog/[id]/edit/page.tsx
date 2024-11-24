@@ -85,7 +85,7 @@ const page = ({ params }: { params: { id: string }}) => {
   }
 
   return (
-    <div>
+    <div className='pt-36'>
       <BlogEditor 
         id={blogId} 
         editorRef={editorRef} 

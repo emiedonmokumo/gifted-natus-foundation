@@ -57,7 +57,7 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='pt-32'>
       <BlogEditor setPostImage={setPostImage} id={null} editorRef={editorRef} quillInstanceRef={quillInstanceRef} editBlog={editBlog} setEditBlog={setEditBlog} handleSubmit={handleSubmit}/>
     </div>
   );

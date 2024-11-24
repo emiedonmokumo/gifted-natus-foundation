@@ -39,7 +39,7 @@ export default function Dashboard({ params }: { params: { id: string } }) {
 
   return (
     <div className="">
-      <header className="bg-slate-950">
+      <header className="bg-slate-950 pt-36">
         <Nav />
       </header>
       <main>

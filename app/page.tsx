@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div>
       <header
-        className="lg:pt-44 m-0 h-screen  pt-1"
+        className="lg:pt-44 m-0 min-h-screen  pt-1"
         style={{
           backgroundSize: "cover",
           backgroundPosition: "center",
