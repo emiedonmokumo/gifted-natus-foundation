@@ -51,7 +51,7 @@ const TeamCarousel = () => {
             <p className="mt-4 lg:text-gray-300 sm:text-justify md:text-justify text-left">{currentMember.quote}</p>
           </div>
         </motion.div>
-        <Link href={"#"} className="text-center text-[#07a034] lg:absolute bottom-2">see more &rarr;</Link>
+        <Link href={"/aboutus#founder"} className="text-center text-[#07a034] lg:absolute bottom-2">see more &rarr;</Link>
       </div>
     </div>
   );
