@@ -44,26 +44,22 @@
     place-items: center;
   }
 
-  main .slider-container:hover{
-    overflow-x: scroll;
-  }
-
   main .slider-container .slider-track {
     display: flex;
-    width: 7500px;
+    width: 15700px;
     animation: scroll 40s linear infinite;
   }
 
   
-
   main .slider-container .slider-track .slide {
     height: 200px;
-    width: 250px;
+    width: 350px;
     display: flex;
     align-items: center;
     padding: 15px;
     perspective: 100px;
   }
+
   main .slider-container .slider-track .slide img {
     height: inherit;
     width: 100%;
