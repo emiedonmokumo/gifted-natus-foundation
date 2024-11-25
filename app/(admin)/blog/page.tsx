@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 export default function Blog(){
     return(
         <>
-            <header className="w-screen bg-black pt-48">
+            <header className="w-screen bg-black pt-[100px]">
                 <Nav/>
             </header>
             <TopPost/>

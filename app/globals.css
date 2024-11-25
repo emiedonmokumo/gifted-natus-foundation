@@ -43,14 +43,19 @@
     display: grid;
     place-items: center;
   }
+
+  main .slider-container:hover{
+    overflow-x: scroll;
+  }
+
   main .slider-container .slider-track {
     display: flex;
     width: 7500px;
     animation: scroll 40s linear infinite;
   }
-  main .slider-container .slider-track:hover {
-    animation-play-state: paused;
-  }
+
+  
+
   main .slider-container .slider-track .slide {
     height: 200px;
     width: 250px;
@@ -63,16 +68,13 @@
     height: inherit;
     width: 100%;
   }
-  main .slider-container .slider-track .slide img:hover {
-    transform: translateZ(20px);
-  }
   
   @keyframes scroll {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-3750px);
+      transform: translateX(-2750px);
     }
   }
 

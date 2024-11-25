@@ -115,7 +115,7 @@ export default function Aboutus() {
       </p>
       <div className="flex items-center justify-evenly md:flex-col sm:flex-col space-y-16">
         <img
-          src="/gifted.jfif"
+          src="/gifted.jpeg"
           alt="gifted mayeh natus"
           className="lg:w-[45%] md:w-[80%] sm:w-[80%] mx-auto"
         />
