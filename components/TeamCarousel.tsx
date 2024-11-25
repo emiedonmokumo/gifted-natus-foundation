@@ -38,7 +38,7 @@ const TeamCarousel = () => {
         >
           <div className="lg:flex-shrink-0">
             <img
-              className="lg:w-56 md:w-96 md:h-60 h-56 sm:h-80 sm:w-full rounded-lg object-cover"
+              className="lg:w-56 md:w-96 md:h-60 h-56 sm:h-[400px] sm:w-full rounded-lg object-cover"
               src={currentMember.image}
               alt={currentMember.name}
             />
