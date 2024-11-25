@@ -13,7 +13,8 @@ export default function GetInvoved() {
       </header>
       <main className="pt-[100px]">
         <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl">
-          Our <span className="text-[#0156a9]">Programs</span> & <span className="text-[#07a034]">Initiatives</span>
+          Our <span className="text-[#0156a9]">Programs</span> &{" "}
+          <span className="text-[#07a034]">Initiatives</span>
         </h1>
         <p className="w-[80vw] text-center mx-auto my-[50px] ">
           The Gifted Natus Foundation is committed to driving meaningful change
@@ -24,136 +25,134 @@ export default function GetInvoved() {
           Bayelsa State and beyond.
         </p>
 
-        
-      <div className="slider-container">
-        <div className="slider-track">
-          <div className="slide">
-            <img src={"silder (1).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (2).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (3).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (4).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (5).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (6).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (7).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (8).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (9).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (10).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (11).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (12).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (13).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (14).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (15).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (16).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (17).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (18).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (19).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (20).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (21).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (22).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (23).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (24).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (25).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (26).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (27).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (28).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (29).jpeg"} alt="" />
-          </div>
-          
-          <div className="slide">
-            <img src={"silder (30).jpeg"} alt="" />
+        <div className="slider-container">
+          <div className="slider-track">
+            <div className="slide">
+              <img src={"silder (1).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (2).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (3).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (4).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (5).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (6).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (7).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (8).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (9).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (10).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (11).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (12).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (13).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (14).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (15).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (16).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (17).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (18).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (19).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (20).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (21).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (22).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (23).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (24).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (25).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (26).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (27).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (28).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (29).jpeg"} alt="" />
+            </div>
+
+            <div className="slide">
+              <img src={"silder (30).jpeg"} alt="" />
+            </div>
           </div>
         </div>
-      </div>
-
 
         <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
           <div className=" lg:w-[250px] sm:w-[80%] lg:h-[1500px] h-[1300px]">
             <img
-              src= "education.jpeg"
+              src="education.jpeg"
               alt=""
               className="w-full h-[250px] rounded-t-xl z-0"
             />
@@ -253,6 +252,36 @@ export default function GetInvoved() {
           </div>
         </div>
       </main>
+      <div
+        className="w-screen h-96 flex items-center justify-start relative "
+        id="donate"
+      >
+        <img
+          src="/supportImage.png"
+          alt=" "
+          className="w-96 h-full top-10 hidden lg:inline-block"
+        />
+        <div
+          className="flex lg:items-end lg:justify-start items-center justify-evenly flex-col lg:w-6/12 lg:h-2/4 w-full h-full"
+          id="donate"
+        >
+          <h1 className="font-bold text-4xl font-gobold lg:text-right text-center">
+            <span className="text-[#0156a9]">SUPPORT </span>OUR{" "}
+            <span className="text-[#07a034]">MISSION</span>
+          </h1>
+          <p className="lg:text-right text-center w-2/4">
+            Every donation, big or small helps us continue our work and expand
+            our reach, together we can build a brighter future
+          </p>
+          <Link
+            href={"/getInvolved#donate"}
+            className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center"
+          >
+            {" "}
+            Donate Today!
+          </Link>
+        </div>
+      </div>
       <Footer />
     </div>
   );

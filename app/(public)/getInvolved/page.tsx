@@ -225,6 +225,7 @@ export default function GetInvoved() {
           </div>
         </div>
       </main>
+      
       <Footer />
     </div>
   );
