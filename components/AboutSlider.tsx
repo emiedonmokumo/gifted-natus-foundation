@@ -7,7 +7,9 @@ interface occasion {
   img: string;
   title: string;
   _id: string;
-  writeup: string;
+  writeup1: string;
+  writeup2:(string|null);
+  writeup3: (string|null)
 }
 
 const AboutSlider = () => {
@@ -16,28 +18,34 @@ const AboutSlider = () => {
       img: "education.jpeg",
       title: "Education & Empowerment",
       _id: "education",
-      writeup:
-        "•	Awarding full scholarships to underprivileged children from nursery to university \n •	Organizing academic competitions like the Bayelsa Mathematics Quiz to inspire excellence in STEM education. \n •	Providing skill acquisition training through programs like G-Skill, creating a generation of self-reliant entrepreneurs.",
+      writeup1:
+        "•	Awarding full scholarships to underprivileged children from nursery to university \n  \n ",
+      writeup2:"•	Organizing academic competitions like the Bayelsa Mathematics Quiz to inspire excellence in STEM education.",
+      writeup3: "•	Providing skill acquisition training through programs like G-Skill, creating a generation of self-reliant entrepreneurs."
     },
     {
       img: "community.jpeg",
       title: "Humanitarian Support & Emergency Relief",
       _id: "support",
-      writeup:
-        "•	Delivering food, shelter, and essential supplies to families affected by natural disasters, such as the Bayelsa floods. \n \n•	Supporting women and children with resources to rebuild their lives. \n \n •	Championing initiatives that provide hope and stability during challenging times.",
+      writeup1:
+        "•	Delivering food, shelter, and essential supplies to families affected by natural disasters, such as the Bayelsa floods. \n \n \n \n ",
+        writeup2: "•	Supporting women and children with resources to rebuild their lives.",
+        writeup3:"•	Championing initiatives that provide hope and stability during challenging times."
     },
     {
       img: "support.jpeg",
       title: "Human Capacity Development",
       _id: "capacity",
-      writeup:
+      writeup1:
         "Commitment to equipping individuals with the skills and knowledge needed to thrive in a competitive world.",
+      writeup2: null,
+      writeup3: null
     },
   ];
 
   return (
     <div
-      className=" mx-auto mt-8 relative w-full p-1 m-0 flex lg:items-center flex-col"
+      className=" mx-auto mt-8 relative w-full p-1 m-0 mb-[200px] flex lg:items-center flex-col"
       id="programs"
       style={{ marginTop: 0 }}
     >
@@ -61,7 +69,9 @@ const AboutSlider = () => {
                 />
                 <div className="mt-4 text-lg font-bold">{article.title}</div>
 
-                <p>{article.writeup}</p>
+                <p>{article.writeup1}</p>
+                <p>{article.writeup2}</p>
+                <p>{article.writeup3}</p>
 
                 
               </div>

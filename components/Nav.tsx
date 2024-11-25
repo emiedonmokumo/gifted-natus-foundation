@@ -109,7 +109,7 @@ export default function Nav() {
             <p className="text-white text-center">Gifted Natus Foundation</p>
           </div>
         </Link>
-        {session && pathname === "/dashboard" ? (
+        {session && pathname === "/dashboard" || pathname === "/blog/new" ? (
           <>
             <BlogLink />
             <Link className="font-medium" href="/#about">

@@ -128,7 +128,7 @@ export default function Dashboard() {
 
   return (
     <div className="bg-slate-200">
-      <header className="bg-slate-800 sm:h-[300px]">
+      <header className="bg-slate-800 sm:h-[300px] pt-[150px]">
         <Nav />
       </header>
       {/*welcome section*/}

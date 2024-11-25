@@ -34,36 +34,18 @@ const BlogLink = () => {
       {/* Dropdown Menu */}
       {isOpen && (
         <div
-          className="absolute z-10 mt-2 bg-white divide-y divide-gray-100 rounded-md shadow-lg w-44 ring-1 ring-black ring-opacity-5"
+          className="absolute z-10 mt-1 bg-white divide-y divide-gray-100 rounded-md shadow-lg w-44 ring-1 ring-black ring-opacity-5"
           onMouseLeave={closeDropdown}
         >
           <ul className="py-1 text-gray-700">
             {/* {items.map((item, index) => ( */}
               <li>
                 <a
-                  href={'/blog'}
-                  className="block px-4 py-2 text-sm hover:bg-gray-100"
-                  onClick={closeDropdown}
-                >
-                  Blogs
-                </a>
-              </li>
-              <li>
-                <a
-                  href={'#'}
-                  className="block px-4 py-2 text-sm hover:bg-gray-100"
-                  onClick={closeDropdown}
-                >
-                  My Blog
-                </a>
-              </li>
-              <li>
-                <a
                   href={'/blog/new'}
                   className="block px-4 py-2 text-sm hover:bg-gray-100"
                   onClick={closeDropdown}
                 >
-                  New Blog
+                  Blogs new
                 </a>
               </li>
             {/* ))} */}

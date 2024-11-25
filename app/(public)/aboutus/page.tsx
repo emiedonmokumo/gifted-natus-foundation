@@ -68,7 +68,6 @@ export default function Aboutus() {
         what <span className="text-[#07a034]">we</span>{" "}
         <span className="text-[#0156a9]">do</span>
       </h1>
-      c
       <AboutusSlider />
       {/* our impact */}
       <h1 className="text-4xl w-[80%] mx-auto text-center my-12 uppercase">
@@ -78,8 +77,8 @@ export default function Aboutus() {
         Since our inception, the Gifted Natus Foundation has touched countless
         lives:
       </p>
-      <div className="flex items-center justify-evenly sm:overflow-x-scroll ">
-        <div className="sm:w-[500px]">
+      <div className="flex items-center justify-evenly sm:overflow-x-scroll mb-[200px]">
+        <div className="sm:w-[500px] lg:flex">
           <div className="flex flex-col  items-center justify-evenly mt-7 space-y-5 mx-auto">
             <div className="w-20 h-20 rounded-full  bg-white shadow-black shadow-2xl flex items-center justify-center ">
               1
@@ -107,7 +106,7 @@ export default function Aboutus() {
         </div>
       </div>
       {/* our founder */}
-      <h1 className="text-4xl w-[80%] mx-auto text-center my-12 capitalize" id="founder">
+      <h1 className="text-4xl w-[80%] mx-auto text-center mt-12 capitalize" id="founder">
         meet <span className="text-[#07a034]">our</span>{" "}
         <span className="text-[#0156a9]">founder</span>
       </h1>
