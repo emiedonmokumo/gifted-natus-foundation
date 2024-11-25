@@ -41,12 +41,12 @@ export default function GetInvoved() {
 
         <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
           <div className="relative w-[250px] h-[900px]">
-            <img
+            {/* <img
               src="/involved1.png"
               alt=""
               className="w-full h-[250px] rounded-t-xl z-0"
-            />
-            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl bg-white shadow-black shadow-2xl absolute top-[180px] left-[60px] z-30">
+            /> */}
+            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl bg-white shadow-black shadow-2xl mx-auto z-30">
               <p>01.</p>
             </div>
             <div className="mt-20 space-y-6">
@@ -59,13 +59,15 @@ export default function GetInvoved() {
               <p className="text-justify">
                 Your financial support fuels our mission to improve education,
                 healthcare, and skill development. Every contribution goes
-                directly into funding <Link
+                directly into funding{" "}
+                <Link
                   href={"/programs-and-initiatives"}
                   className="  text-blue-800 underline"
                 >
                   {" "}
                   our programs and initiatives
-                </Link> that change lives.
+                </Link>{" "}
+                that change lives.
                 <br />
                 • Support Education & Empowerment: Fund scholarships and
                 educational competitions like the Bayelsa Mathematics Quiz.
@@ -75,15 +77,22 @@ export default function GetInvoved() {
                 <br />• Advance Human Capacity Development: Sponsor skill
                 acquisition programs such as the G-Skill initiative.
               </p>
+              <Link
+                href={"#donate"}
+                className="bg-[#1f5212] mt-6 h-[30px] w-[100px] flex items-center justify-center mx-auto rounded-lg text-white"
+              >
+                {" "}
+                Donate
+              </Link>
             </div>
           </div>
           <div className="relative w-[250px] h-[900px]">
-            <img
+            {/* <img
               src="/involved2.png"
               alt=""
               className="w-full h-[250px] rounded-t-xl z-0"
-            />
-            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl bg-white shadow-black shadow-2xl absolute top-[180px] left-[60px] z-30">
+            /> */}
+            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl mx-auto bg-white shadow-black shadow-2xl z-30">
               <p>02.</p>
             </div>
             <div className="mt-20 space-y-6">
@@ -106,7 +115,7 @@ export default function GetInvoved() {
                 <br />
                 <Link
                   href={"#volunteer"}
-                  className="bg-[#1f5212] mt-6 h-[30px] w-[200px] flex items-center justify-center mx-auto rounded-lg text-white"
+                  className="bg-[#1f5212] mt-6 h-[30px] w-[250px] flex items-center justify-center mx-auto rounded-lg text-white"
                 >
                   {" "}
                   BECOME A VOLUNTEER
@@ -115,12 +124,12 @@ export default function GetInvoved() {
             </div>
           </div>
           <div className="relative w-[250px] h-[900px] ">
-            <img
+            {/* <img
               src="/involved3.png"
               alt=""
               className="w-full h-[250px] rounded-t-xl z-0"
-            />
-            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl bg-white shadow-black shadow-2xl absolute top-[180px] left-[60px] z-30">
+            /> */}
+            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl mx-auto bg-white shadow-black shadow-2xl z-30">
               <p>03.</p>
             </div>
             <div className="mt-20 space-y-6">
@@ -137,15 +146,15 @@ export default function GetInvoved() {
                 • NGO Collaboration: Co-host events and initiatives in Bayelsa.
                 <br />• Government Partnerships: Join forces to scale impact in
                 local communities.
-                <br/>
-                <Link
-                  href={"#contact"}
-                  className="  text-blue-800 mt-5"
-                >
+                <br />
+                <Link href={"#contact"} className="  text-blue-800 mt-5">
                   {" "}
-                  click here 
+                  click here
                 </Link>
-                <span className="uppercase font-gobold"> to contact us for partnership</span>
+                <span className="uppercase font-gobold">
+                  {" "}
+                  to contact us for partnership
+                </span>
               </p>
             </div>
           </div>
@@ -155,11 +164,11 @@ export default function GetInvoved() {
           className="relative h-[600px] mb-11 md:h-[300px] sm:h-[300px]"
           id="donate"
         >
-          <img
+          {/* <img
             src="/background.jpeg"
             alt=""
             className="absolute left-0 bottom-0 h-[60%] w-full  md:hidden sm:hidden"
-          />
+          /> */}
           <div className="bg-[#113152] text-white space-y-6 lg:w-[500px] h-[100%] absolute top-0 lg:left-[500px] md:w-full sm:w-full md:relative sm:relative md:right-0 sm:left-0 pt-7 ">
             <h1 className="text-4xl text-center">
               Donate <span className="text-[#07a034]">Today</span>
