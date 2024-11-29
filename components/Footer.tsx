@@ -35,13 +35,13 @@ export default function Footer() {
         <Link href="https://www.facebook.com/profile.php?id=100076144086383&mibextid=LQQJ4d">
           <img className="w-8" src="/facebook.png" alt="" />
         </Link>
-        <Link href="#">
+        <Link href="https://x.com/giftednatusfdn?s=11">
           <img className="w-8" src="/tweeter.png" alt="" />
         </Link>
-        <Link href="#">
+        <Link href="https://www.instagram.com/giftednatusfdn?igsh=OGQ5ZDc2ODk2ZA==">
           <img className="w-8" src="/instggram.png" alt="" />
         </Link>
-        <Link href="#">
+        <Link href="https://wa.link/lyrgtz">
           <img className="w-8" src="/WA.png" alt="" />
         </Link>
       </div>
