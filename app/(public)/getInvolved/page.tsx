@@ -4,6 +4,13 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { FaRegCopy } from "react-icons/fa6";
 import VolunteerForm from "@/components/VolunteerForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: " Gifted Natus Foundation: get involved in the change",
+  description:
+    "At Gifted Natus Foundation, we are committed to transforming lives through impactful initiatives in Education & Empowerment,Humanitarian Support, Emergency Relief, and Human Capacity Development. Your participation, no matter the form, can create lasting change. Join us in building a brighter, more sustainable future for all.",
+};
 
 export default function GetInvoved() {
   return (
@@ -225,7 +232,7 @@ export default function GetInvoved() {
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

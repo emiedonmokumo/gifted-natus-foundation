@@ -2,8 +2,13 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { FaRegCopy } from "react-icons/fa6";
-import VolunteerForm from "@/components/VolunteerForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: " Gifted Natus Foundation: Progams and Initiative",
+  description:
+    "The Gifted Natus Foundation is committed to driving meaningful change through innovative programs and initiatives categorized under three core areas: Education & Empowerment, Community Health & Well-Being, and Human Capacity Development. Each category represents our dedication to transforming lives and building a sustainable future for Bayelsa State and beyond.",
+};
 
 export default function GetInvoved() {
   return (
@@ -150,7 +155,7 @@ export default function GetInvoved() {
             <div className="slide">
               <img src={"silder (31).jpeg"} alt="" />
             </div>
-            
+
             <div className="slide">
               <img src={"silder (32).jpeg"} alt="" />
             </div>

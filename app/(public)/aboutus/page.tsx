@@ -4,6 +4,13 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 // import CountUpComponent from "@/components/countup";
 import AboutusSlider from "@/components/AboutSlider";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "about Gifted Natus Foundation",
+  description:
+    "Welcome to the Gifted Natus Foundation, a beacon of hope and empowerment for the people of Bayelsa State and beyond. Founded with a vision to inspire, uplift, and transform lives, our organization is driven by the belief that everyone deserves the opportunity to thrive.",
+};
 export default function Aboutus() {
   return (
     <>
@@ -107,7 +114,10 @@ export default function Aboutus() {
         </div>
       </div>
       {/* our founder */}
-      <h1 className="text-4xl w-[80%] mx-auto text-center mt-12 capitalize" id="founder">
+      <h1
+        className="text-4xl w-[80%] mx-auto text-center mt-12 capitalize"
+        id="founder"
+      >
         meet <span className="text-[#07a034]">our</span>{" "}
         <span className="text-[#0156a9]">founder</span>
       </h1>
@@ -151,35 +161,35 @@ export default function Aboutus() {
         </p>
       </div>
       <div
-          className="w-screen h-96 flex items-center justify-start relative "
+        className="w-screen h-96 flex items-center justify-start relative "
+        id="donate"
+      >
+        <img
+          src="/supportImage.png"
+          alt=" "
+          className="w-96 h-full top-10 hidden lg:inline-block"
+        />
+        <div
+          className="flex lg:items-end lg:justify-start items-center justify-evenly flex-col lg:w-6/12 lg:h-2/4 w-full h-full"
           id="donate"
         >
-          <img
-            src="/supportImage.png"
-            alt=" "
-            className="w-96 h-full top-10 hidden lg:inline-block"
-          />
-          <div
-            className="flex lg:items-end lg:justify-start items-center justify-evenly flex-col lg:w-6/12 lg:h-2/4 w-full h-full"
-            id="donate"
+          <h1 className="font-bold text-4xl font-gobold lg:text-right text-center">
+            <span className="text-[#0156a9]">SUPPORT </span>OUR{" "}
+            <span className="text-[#07a034]">MISSION</span>
+          </h1>
+          <p className="lg:text-right text-center w-2/4">
+            Every donation, big or small helps us continue our work and expand
+            our reach, together we can build a brighter future
+          </p>
+          <Link
+            href={"/getInvolved#donate"}
+            className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center"
           >
-            <h1 className="font-bold text-4xl font-gobold lg:text-right text-center">
-              <span className="text-[#0156a9]">SUPPORT </span>OUR{" "}
-              <span className="text-[#07a034]">MISSION</span>
-            </h1>
-            <p className="lg:text-right text-center w-2/4">
-              Every donation, big or small helps us continue our work and expand
-              our reach, together we can build a brighter future
-            </p>
-            <Link
-              href={"/getInvolved#donate"}
-              className="bg-[#07a034] rounded-xl h-10 w-40 text-white font-bold flex items-center justify-center"
-            >
-              {" "}
-              Donate Today!
-            </Link>
-          </div>
+            {" "}
+            Donate Today!
+          </Link>
         </div>
+      </div>
       <Footer />
     </>
   );
