@@ -1,4 +1,3 @@
-"use client"
 import Nav from "@/components/Nav";
 import Post from "@/components/Post"
 import TopPost from "@/components/TopPost";
