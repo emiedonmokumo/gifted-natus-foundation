@@ -3,7 +3,7 @@ import Link from "next/link";
 import RelatedPost from "@/components/relatedPost";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import blog from "../../../../public/json/blog.json";
+import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
 
 interface IBlog {
@@ -11,6 +11,8 @@ interface IBlog {
   img: string;
   _id: string;
   content: string;
+  metaDescription: string;
+  metaTitle: string;
 }
 
 export default function Dashboard({ params }: { params: { id: string } }) {
@@ -39,6 +41,32 @@ export default function Dashboard({ params }: { params: { id: string } }) {
 
   return (
     <div className="">
+      <Head>
+        <meta
+        property="og:image"
+        content= {post?.img} 
+        />
+        <meta
+        property="og:description"
+        content={post?.metaDescription} 
+        />
+        <meta
+        property="og:title"
+        content={post?.metaTitle} 
+        />
+        <meta
+        property="twitter:image"
+        content={post?.img} 
+        />
+        <meta
+        property="twitter:description"
+        content={post?.metaDescription} 
+        />
+        <meta
+        property="twitter:title"
+        content={post?.metaTitle} 
+        />
+      </Head>
       <header className="bg-slate-950 pt-36">
         <Nav />
       </header>
