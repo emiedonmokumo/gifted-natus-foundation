@@ -10,7 +10,7 @@ interface Post {
   title: string;
   day: string;
   veiws: string;
-  id: number;
+  _id: string;
   shortText: string;
   category: string;
 }
@@ -83,11 +83,11 @@ recievePost()
           </div>
         ))}
       </div>
-      <div className="flex flex-wrap justify-evenly lg:w-[75%]  mx-auto">
+      <div className="grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mx-auto w-[90%] gap-10">
         {currentPosts.map((post:any) => (
           <div
             className="flex flex-col items-center justify-evenly overflow-hidden sm:h-[700px] h-[400px] sm:w-[300px] md:mx-auto sm:mx-auto lg:w-[360px] md:w-[500px]"
-            key={post.id}
+            key={post._id}
           >
            <div className="w-full h-[150px] overflow-hidden">
            <img src={post.img} alt={post.title} className="" />
@@ -100,7 +100,7 @@ recievePost()
                 <p><FaEye className="inline-block text-[#07a034]" /> {post.views} views</p>
               </div>
               <div className="">
-                <h1 className="font-gobold text-3xl">{post.title}</h1>
+                <Link href={`/blog/${post._id}`} className="font-gobold text-3xl">{post.title}</Link>
                 <p>{post.description} <Link href={`/blog/${post._id}`} className="text-[#07a034]">see more &rarr;</Link></p>
               </div>
             </div>

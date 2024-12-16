@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <title>Gifted Natus foundation - Home</title>
-        <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/logo.jpeg" type="image/x-icon" />
       </Head>
       <body
         className={`${montserrat.className} antialiased`}

@@ -13,20 +13,25 @@ type props =  {
     }
 }
 
-export const generateMetadata= async ({params}:props): Promise<Metadata> =>{
+export const generateMetadata= async ({params}:props)=>{
     try{
         const blogPostFetch = await fetch(`/api/blog/${params.id}`)
       if(blogPostFetch.status == 200){
         var metaPost = await blogPostFetch.json()
-      } 
+        return{
+          title: metaPost.metaTitle,
+          description:metaPost.metaDescription
+        }
+      }else{
+        return{
+          title:"gifted natus blog",
+          description: "this was a blog post in the gifed natus"
+        }
+      }
       }catch(error){
         console.log(`there was an error:${error}`)
     }
- return{
-    title: metaPost.metaTitle,
-    description: metaPost.metaDescription
-    
- }
+
 }
 
 export default function RootLayout({
@@ -36,17 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <title>Gifted Natus foundation - Home</title>
-        <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
-      </Head>
-      <body
-        className={`${montserrat.className} antialiased`}
-      >
         <Session>
           {children}
         </Session>
-      </body>
     </html>
   );
 }

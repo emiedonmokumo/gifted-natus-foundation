@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Gifted Natus Foundation",
   description: "Empowering individuals for a future of hope, opportunity, and sustainable growth.",
   icons: {
-    icon: '/logo.png'
+    icon: '/logo.jpeg'
   }
 };
 
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <title>Gifted Natus foundation - Home</title>
-        <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/logo.jpeg" type="image/x-icon" />
       </Head>
       <body
         className={`${montserrat.className} antialiased`}

@@ -1,17 +1,12 @@
 "use client";
-import { FaCalendar, FaEye, FaRegCopy } from "react-icons/fa6";
-import { FaEdit } from "react-icons/fa";
-import Link from "next/link";
+import {FaEye, FaRegCopy} from "react-icons/fa6";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { useEffect, useRef, useState } from "react";
-import getSession from "@/utils/getSession";
 import { useSession } from "next-auth/react";
 import { SubscriberInterface } from "@/models/Subscriber";
 import axios from "axios";
 import BlogPost from "@/components/BlogPost";
-import { div } from "framer-motion/client";
-// import posts from "@/utils/blogPosts";
 
 interface Post {
   img: string;

@@ -1,6 +1,10 @@
 import type { MetadataRoute } from 'next'
- 
-export default function sitemap(): MetadataRoute.Sitemap {
+
+export async function generateSitemap() {
+
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
       url: 'https://giftednatusfoundation.org/',
@@ -21,17 +25,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-        url: 'https://giftednatusfoundation.org/getInvolved',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.5,
-      },
-      
+      url: 'https://giftednatusfoundation.org/getInvolved',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
     {
-        url: 'https://www.giftednatusfoundation.org/programs-and-initiatives',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.5,
-      },
+      url: 'https://www.giftednatusfoundation.org/programs-and-initiatives',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
   ]
+
+
 }
