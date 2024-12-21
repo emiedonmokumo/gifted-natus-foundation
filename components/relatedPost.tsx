@@ -10,6 +10,7 @@ interface Post {
   _id: string;
   description: string;
   tags: string[];
+  slug: string;
 }
 
 // const posts: Post[] = [
@@ -112,7 +113,7 @@ export default function RelatedPost() {
                 <h1 className="font-gobold text-4xl">{post.title}</h1>
                 <p>
                   {post.description}{" "}
-                  <Link href={`/blog/${post._id}`} className="text-[#07a034]">
+                  <Link href={`/blog/${post.slug}`} className="text-[#07a034]">
                     see more &rarr;
                   </Link>
                 </p>

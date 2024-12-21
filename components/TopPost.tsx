@@ -12,6 +12,7 @@ interface Post {
   description: string;
   shortText: string;
   tags: string[];
+  slug: string;
 }
 
 export default function TopPost() {
@@ -69,7 +70,7 @@ export default function TopPost() {
                 </h1>
                 <p className="sm:hidden md:hidden overflow-y-hidden w-[95%] h-[70%]">
                   {post.description}{" "}
-                  <Link href={`/blog/${post._id}`} className="text-[#07a034]">
+                  <Link href={`/blog/${post.slug}`} className="text-[#07a034]">
                     see more &rarr;
                   </Link>
                 </p>
@@ -78,7 +79,7 @@ export default function TopPost() {
                     <FaEye className="inline-block text-[#07a034]" /> {post.views}{" "}
                     views
                   </p>
-                  <Link href={`/blog/${post._id}`} className="text-[#07a034]">
+                  <Link href={`/blog/${post.slug}`} className="text-[#07a034]">
                     see more &rarr;
                   </Link>
                 </div>

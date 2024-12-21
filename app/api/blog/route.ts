@@ -30,7 +30,7 @@ export async function GET(request: Request) {
         const blogs = await Blog.find().lean<BlogInterface[]>();
 
         // Remove the `content` field from each blog
-        const blogsWithoutContent = blogs.map(({ content, slug, user, ...rest }) => rest);
+        const blogsWithoutContent = blogs.map(({ content, user, ...rest }) => rest);
 
         return NextResponse.json(blogsWithoutContent, { status: 200 });
     } catch (error: any) {

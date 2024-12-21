@@ -9,10 +9,11 @@ interface Post {
   img: string;
   title: string;
   day: string;
-  veiws: string;
+  views: string;
   _id: string;
   shortText: string;
   category: string;
+  slug: string;
 }
 
 export default function Post() {
@@ -100,8 +101,8 @@ recievePost()
                 <p><FaEye className="inline-block text-[#07a034]" /> {post.views} views</p>
               </div>
               <div className="">
-                <Link href={`/blog/${post._id}`} className="font-gobold text-3xl">{post.title}</Link>
-                <p>{post.description} <Link href={`/blog/${post._id}`} className="text-[#07a034]">see more &rarr;</Link></p>
+                <Link href={`/blog/${post.slug}`} className="font-gobold text-3xl">{post.title}</Link>
+                <p>{post.description} <Link href={`/blog/${post.slug}`} className="text-[#07a034]">see more &rarr;</Link></p>
               </div>
             </div>
           </div>
