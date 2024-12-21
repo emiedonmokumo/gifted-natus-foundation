@@ -3,7 +3,7 @@ import Blog from '@/models/Blog';
 import { NextResponse } from 'next/server';
 
 export const GET = async () => {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
     await connectDB();
 
     const blogs = await Blog.find({}).select('slug updatedAt').exec();
