@@ -16,8 +16,8 @@ const BlogPost = ({ blog }: { blog: any }) => {
     fetchPosts();
   }, [posts]);
 
-  async function deletePost(id: string) {
-    await axios.delete(`/api/blog/${id}`);
+  async function deletePost(slug: string) {
+    await axios.delete(`/api/blog/${slug}`);
   }
 
   return (
@@ -68,7 +68,7 @@ const BlogPost = ({ blog }: { blog: any }) => {
 
                   <div
                     className="text-white bg-red-600 sm:hidden md:hidden w-[150px] text-center rounded-xl"
-                    onClick={() => deletePost(post._id)}
+                    onClick={() => deletePost(post.slug)}
                   >
                     Delete
                   </div>
@@ -86,7 +86,7 @@ const BlogPost = ({ blog }: { blog: any }) => {
                 </Link>
                 <div
                   className="text-white bg-red-600 lg:hidden w-[150px] text-center rounded-xl"
-                  onClick={() => deletePost(post._id)}
+                  onClick={() => deletePost(post.slug)}
                 >
                   Delete
                 </div>
