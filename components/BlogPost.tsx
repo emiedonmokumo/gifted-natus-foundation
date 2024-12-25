@@ -60,7 +60,7 @@ const BlogPost = ({ blog }: { blog: any }) => {
                     {new Date(post.createdAt).toLocaleString()}
                   </p>
                   <Link
-                    href={`/blog/${post._id}/edit`}
+                    href={`/blog/${post.slug}/edit`}
                     className="text-white bg-[#07a034] sm:hidden md:hidden w-[150px] text-center rounded-xl"
                   >
                     <FaEdit className="inline-block" /> Edit post
@@ -79,7 +79,7 @@ const BlogPost = ({ blog }: { blog: any }) => {
                 </div>
                <div className="flex items-center justify-evenly">
                <Link
-                  href={`/blog/${post._id}/edit`}
+                  href={`/blog/${post.slug}/edit`}
                   className="text-white bg-[#07a034] lg:hidden w-[150px] text-center p-2"
                 >
                   <FaEdit className="inline-block" /> Edit post
