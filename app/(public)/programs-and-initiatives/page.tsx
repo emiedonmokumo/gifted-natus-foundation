@@ -1,22 +1,54 @@
+"use client"
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import type { Metadata } from "next";
+import {useRef, useEffect} from "react"
 
-export const metadata: Metadata = {
-  title: " Gifted Natus Foundation: Progams and Initiative",
-  description:
-    "The Gifted Natus Foundation is committed to driving meaningful change through innovative programs and initiatives categorized under three core areas: Education & Empowerment, Community Health & Well-Being, and Human Capacity Development. Each category represents our dedication to transforming lives and building a sustainable future for Bayelsa State and beyond.",
-};
+
 
 export default function GetInvoved() {
+
+  const heroRef = useRef(null);
+  const unboardingRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entry) => {
+        entry.forEach((element) => {
+          if (element.isIntersecting) {
+            element.target.classList.add("in-view");
+          } else {
+            element.target.classList.remove("in-view");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elementsToObserve = [heroRef.current, unboardingRef.current]; // Add more elements as needed
+
+    elementsToObserve.forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+    return () => {
+      elementsToObserve.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
+
   return (
     <div className="">
       <header className="bg-slate-900">
         <Nav />
       </header>
       <main className="pt-[100px]">
-        <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl">
+       <div ref={heroRef}>
+       <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl opacity-0 translate-x-[-100px]">
           Our <span className="text-[#0156a9]">Programs</span> &{" "}
           <span className="text-[#07a034]">Initiatives</span>
         </h1>
@@ -28,6 +60,7 @@ export default function GetInvoved() {
           dedication to transforming lives and building a sustainable future for
           Bayelsa State and beyond.
         </p>
+       </div>
 
         <div className="slider-container">
           <div className="slider-track">
@@ -325,7 +358,7 @@ export default function GetInvoved() {
           </div>
         </div>
 
-        <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
+        <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col"  ref={unboardingRef}>
           <div className=" lg:w-[250px] sm:w-[80%] lg:h-[1500px] h-[1300px]">
             <img
               src="education.jpeg"
@@ -333,10 +366,10 @@ export default function GetInvoved() {
               className="w-full h-[250px] rounded-t-xl z-0"
             />
             <div className="mt-20 space-y-6">
-              <h1 className="text-3xl text-center mx-auto font-gobold w-[200px]">
+              <h1 className="text-3xl text-center mx-auto font-gobold w-[200px] opacity-0 translate-x-[-100px]">
                 Education & Empowerment
               </h1>
-              <p className="text-justify sm:w-full">
+              <p className="text-justify sm:w-full opacity-0 translate-x-[-100px]">
                 We believe education is the most powerful tool for change.
                 Through our programs, we provide opportunities for academic
                 excellence, skills acquisition, and empowerment to ensure
@@ -368,10 +401,10 @@ export default function GetInvoved() {
               className="w-full h-[250px] rounded-t-xl z-0"
             />
             <div className="mt-20 space-y-6">
-              <h1 className="text-3xl text-center mx-auto font-gobold w-[200px]">
+              <h1 className="text-3xl text-center mx-auto font-gobold w-[200px] opacity-0 translate-x-[-100px]">
                 Humanitarian Support and Emergency Relief
               </h1>
-              <p className="text-justify sm:w-full">
+              <p className="text-justify sm:w-full opacity-0 translate-x-[-100px]">
                 In times of need, we stand by vulnerable communities to provide
                 relief and support, addressing critical challenges with
                 compassion.
@@ -401,10 +434,10 @@ export default function GetInvoved() {
               className="w-full h-[250px] rounded-t-xl z-0"
             />
             <div className="mt-20 space-y-6">
-              <h1 className="text-3xl text-center mx-auto font-gobold w-[200px]">
+              <h1 className="text-3xl text-center mx-auto font-gobold w-[200px] opacity-0 translate-x-[-100px]">
                 Human Capacity Development
               </h1>
-              <p className="text-justify sm:w-full">
+              <p className="text-justify sm:w-full opacity-0 translate-x-[-100px]">
                 We aim to foster self-reliance and entrepreneurship by equipping
                 individuals with the knowledge, skills, and tools to succeed.
                 <br />

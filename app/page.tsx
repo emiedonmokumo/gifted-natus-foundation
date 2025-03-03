@@ -5,7 +5,7 @@ import Programs from "@/components/SliderfoProgram";
 import Link from "next/link";
 import TeamCarousel from "@/components/TeamCarousel";
 import Footer from "@/components/Footer";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Home() {
@@ -29,6 +29,53 @@ export default function Home() {
     }
   };
   const loading = useRef<HTMLDivElement | undefined>();
+
+  //Animation code
+  const heroRef = useRef(null);
+  const newRef = useRef(null);
+  const aboutRef = useRef(null);
+  const statementRef = useRef(null);
+  const supportRef = useRef(null);
+  const stayUpdatedRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entry) => {
+        entry.forEach((element) => {
+          if (element.isIntersecting) {
+            element.target.classList.add("in-view");
+          } else {
+            element.target.classList.remove("in-view");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elementsToObserve = [
+      heroRef.current,
+      newRef.current,
+      aboutRef.current,
+      statementRef.current,
+      supportRef.current,
+      stayUpdatedRef.current,
+    ]; // Add more elements as needed
+
+    elementsToObserve.forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+    return () => {
+      elementsToObserve.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+       }
+      });
+    };
+  }, []);
+
+
   return (
     <div>
       <header
@@ -39,16 +86,17 @@ export default function Home() {
           backgroundImage:
             "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(hero2.jpeg)",
         }}
+        ref={heroRef}
       >
         <Nav />
         <div className="lg:mt-20 md:mt-44 sm:pt-48 pl-5">
           <div className=" md:w-[70%] lg:w-[70%]">
-            <h1 className="sm:flex sm:flex-wrap text-white w-full md:text-5xl sm:text-4xl lg:text-6xl pb-3 font-gobold px-">
+            <h1 className="sm:flex sm:flex-wrap text-white w-full md:text-5xl sm:text-4xl lg:text-6xl pb-3 font-gobold opacity-0 translate-x-[-100px]">
               TOGETHER WE <span className="text-[#07a034] sm:pl-2">BUILD</span>{" "}
               <span className="lg:my-2 h-1 block"></span>{" "}
               <span className="text-[#0156a9]">STRONGER</span> COMMUNITIES{" "}
             </h1>
-            <p className="w-[80%] text-white text-lg lg:text-justify md:text-left sm:text-sm sm:text-justify mr-5 sm:leading-6">
+            <p className="w-[80%] text-white text-lg lg:text-justify md:text-left sm:text-sm sm:text-justify mr-5 sm:leading-6 opacity-0 translate-x-[-100px]">
               Empowering individuals through education, healthcare, and economic
               development to create a future filled with hope, opporturnity, and
               sustainable growth
@@ -68,8 +116,8 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <div className="title mt-32">
-          <h1 className="font-bold text-2xl lg:text-4xl md:text-4xl flex  flex-wrap items-center justify-center">
+        <div className="title mt-32" ref={newRef}>
+          <h1 className="font-bold text-2xl lg:text-4xl md:text-4xl flex  flex-wrap items-center justify-center opacity-0 translate-x-[-100px]">
             <span className="text-[#0156a9]">LATEST &nbsp;</span> NEWS&nbsp; AND
             <span className="text-[#07a034]">&nbsp; UPDATE</span>&nbsp;
           </h1>
@@ -77,9 +125,9 @@ export default function Home() {
 
         <Slider />
 
-        <div id="about">
+        <div id="about" ref={aboutRef}>
           <div className="title lg:mt-32" id="aboutus">
-            <h1 className="text-3xl md:text-4xl lg:text-4xl flex flex-wrap items-center justify-center font-gobold">
+            <h1 className="text-3xl md:text-4xl lg:text-4xl flex flex-wrap items-center justify-center font-gobold opacity-0 translate-x-[-100px]">
               <span className="text-[#0156a9]">WELCOME &nbsp;</span>
               <span>TO</span> &nbsp;
               <span className="text-[#07a034]">GIFTED </span>&nbsp;
@@ -97,7 +145,7 @@ export default function Home() {
               />
             </div>
             <div className="sm:py-12 sm:pt-48 bg-[#0d1c38] text-white md:mt-[400px] w-full lg:w-[600px] lg:h-[200px] p-5 md:pt-24 lg:p-14 inline-block lg:absolute md:top-72 lg:top-52 lg:right-0 lg:z-0">
-              <p className="lg:w-full text-center sm:text-sm">
+              <p className="lg:w-full text-center sm:text-sm opacity-0 translate-x-[-100px]">
                 <br className="lg:hidden md:hidden" />
                 Welcome to the Gifted Natus Foundation, a beacon of hope and
                 empowerment for the society. Founded
@@ -123,6 +171,7 @@ export default function Home() {
         <div
           id="statement"
           className="mt-0 mb-0 flex items-center space-y-44 justify-evenly flex-col md:h-auto md:mt-[200px] lg:mt-0 lg:h-auto h-[calc(600px * 3)]"
+          ref={statementRef}
         >
           <div className="flex items-center justify-evenly flex-col mb-44 lg:flex-row mx-auto">
             <img
@@ -131,13 +180,13 @@ export default function Home() {
               className="w-[300px] h-auto mb-16"
             />
             <div className="flex items-center lg:items-end h-80 justify-evenly flex-col p-10 lg:w-[60%] space-y-4">
-              <h1 className="font-bold text-4xl font-gobold sm:text-2xl">
+              <h1 className="font-bold text-4xl font-gobold sm:text-2xl opacity-0 translate-x-[-100px]">
                 OUR <span className="text-[#07a034]">MISSION</span>/<span className="text-[#0156a9]">VISION</span>
               </h1>
-              <h2 className="font-bold text-center lg:text-right">
+              <h2 className="font-bold text-center lg:text-right opacity-0 translate-x-[-100px]">
                 Making A Difference Everyday
               </h2>
-              <p className="lg:text-right text-center">
+              <p className="lg:text-right text-center opacity-0 translate-x-[-100px]">
                 Gifted Natus Foundation is a non-profit organization with a
                 mission to empower individuals and communities through
                 education, humanitarian support, and capacity-building
@@ -159,7 +208,7 @@ export default function Home() {
             </div>
           </div>
           <h1
-            className="text-4xl font-gobold text-center mb-7"
+            className="text-4xl font-gobold text-center mb-7 opacity-0 translate-x-[-100px]"
             style={{ marginBottom: "30px", marginTop: "85px" }}
           >
             OUR PROGRAMS AND <span className="text-[#0156a9]">INITIATIVES</span>
@@ -174,6 +223,7 @@ export default function Home() {
         <div
           className="w-screen h-96 flex items-center justify-start relative "
           id="donate"
+        ref={supportRef}
         >
           <img
             src="/supportImage.png"
@@ -184,11 +234,11 @@ export default function Home() {
             className="flex lg:items-end lg:justify-start items-center justify-evenly flex-col lg:w-6/12 lg:h-2/4 w-full h-full"
             id="donate"
           >
-            <h1 className="font-bold text-4xl font-gobold lg:text-right text-center">
+            <h1 className="font-bold text-4xl font-gobold lg:text-right text-center opacity-0 translate-x-[-100px]">
               <span className="text-[#0156a9]">SUPPORT </span>OUR{" "}
               <span className="text-[#07a034]">MISSION</span>
             </h1>
-            <p className="lg:text-right text-center w-2/4">
+            <p className="lg:text-right text-center w-2/4 opacity-0 translate-x-[-100px]">
               Every donation, big or small helps us continue our work and expand
               our reach, together we can build a brighter future
             </p>
@@ -201,13 +251,13 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="lg:h-52 h-[400px]  leading-7 bg-[#07a034] lg:absolute top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7">
+        <div className="lg:h-52 h-[400px]  leading-7 bg-[#07a034] lg:absolute top-80 lg:w-[70%] lg:left-[15%] w-full flex items-center flex-col lg:flex-row justify-evenly p-7" ref={stayUpdatedRef}>
           <div className="w-full lg:w-2/4 md:w-2/4">
-            <h1 className="font-gobold text-3xl text-center lg:text-5xl font-bold mb-5 ">
+            <h1 className="font-gobold text-3xl text-center lg:text-5xl font-bold mb-5 opacity-0 translate-x-[-100px]">
               <span className="text-white">STAY</span>{" "}
               <span className="to-blue-950">UPDATED!</span>
             </h1>
-            <p className="text-white w-full text-center">
+            <p className="text-white w-full text-center opacity-0 translate-x-[-100px]">
               be the first to hear about our latest initiatives, success
               stories, and ways you can get involved
             </p>

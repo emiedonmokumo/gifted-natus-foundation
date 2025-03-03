@@ -1,161 +1,206 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { useRef, useEffect } from "react";
 import { FaRegCopy } from "react-icons/fa6";
 import VolunteerForm from "@/components/VolunteerForm";
 
 export default function GetInvoved() {
+  const heroRef = useRef(null);
+  const unboardingRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entry) => {
+        entry.forEach((element) => {
+          if (element.isIntersecting) {
+            element.target.classList.add("in-view");
+          } else {
+            element.target.classList.remove("in-view");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elementsToObserve = [heroRef.current, unboardingRef.current]; // Add more elements as needed
+
+    elementsToObserve.forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+    return () => {
+      elementsToObserve.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
+
   return (
     <div className="">
       <header className="bg-slate-900">
         <Nav />
       </header>
       <main className="pt-[100px]">
-        <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl">
-          Join us and make a{" "}
-          <span className="text-slate-700 flex flex-col items-center">
-            {" "}
-            difference <div className="w-[180px] h-[5px] bg-[#07a034]"></div>
-          </span>
-        </h1>
-        <p className="w-[80vw] text-center mx-auto my-[50px] ">
-          At Gifted Natus Foundation, we are committed to transforming lives
-          through impactful initiatives in Education & Empowerment,Humanitarian
-          Support, Emergency Relief, and Human Capacity Development. Your
-          participation, no matter the form, can create lasting change. Join us
-          in building a brighter, more sustainable future for all.
-          <br />
-          <Link
-            href={"#donate"}
-            className="bg-[#1f5212] mt-6 h-[30px] w-[100px] flex items-center justify-center mx-auto rounded-lg text-white"
-          >
-            {" "}
-            Donate
-          </Link>
-        </p>
+        {/* JOIN US */}
+        <div ref={heroRef}>
+          <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl opacity-0 translate-x-[-100px]">
+            Join us and make a{" "}
+            <span className="text-slate-700 flex flex-col items-center">
+              {" "}
+              difference <div className="w-[180px] h-[5px] bg-[#07a034]"></div>
+            </span>
+          </h1>
+          <p className="w-[80vw] text-center mx-auto my-[50px] opacity-0 translate-x-[-100px]">
+            At Gifted Natus Foundation, we are committed to transforming lives
+            through impactful initiatives in Education &
+            Empowerment,Humanitarian Support, Emergency Relief, and Human
+            Capacity Development. Your participation, no matter the form, can
+            create lasting change. Join us in building a brighter, more
+            sustainable future for all.
+            <br />
+            <Link
+              href={"#donate"}
+              className="bg-[#1f5212] mt-6 h-[30px] w-[100px] flex items-center justify-center mx-auto rounded-lg text-white"
+            >
+              {" "}
+              Donate
+            </Link>
+          </p>
+        </div>
 
-        <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl">
-          Ways to Get Involved
-        </h1>
+        {/* WAYS TO GET INVOLVED */}
+        <div ref={unboardingRef}>
+          <h1 className="text-4xl text-center lg:w-[500px] mx-auto my-8 font-gobold sm:text-2xl opacity-0 translate-x-[-100px]">
+            Ways to Get Involved
+          </h1>
 
-        <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
-          <div className="relative w-[250px] h-[900px]">
-            {/* <img
+          <div className=" mx-auto flex items-center justify-evenly sm:flex-col md:flex-col">
+            <div className="relative w-[250px] h-[900px]">
+              {/* <img
               src="/involved1.png"
               alt=""
               className="w-full h-[250px] rounded-t-xl z-0"
             /> */}
-            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl bg-white shadow-black shadow-2xl mx-auto z-30">
-              <p>01.</p>
-            </div>
-            <div className="mt-20 space-y-6">
-              <Link
-                href={"#donate"}
-                className="text-3xl text-center block mx-auto font-gobold w-[200px]"
-              >
-                DONATE
-              </Link>
-              <p className="text-justify">
-                Your financial support fuels our mission to improve education,
-                healthcare, and skill development. Every contribution goes
-                directly into funding{" "}
+              <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl bg-white shadow-black shadow-2xl mx-auto z-30">
+                <p>01.</p>
+              </div>
+              <div className="mt-20 space-y-6">
+                <h1 className="opacity-0 translate-x-[-100px]">
+                  <Link
+                    href={"#donate"}
+                    className="text-3xl text-center block mx-auto font-gobold w-[200px]"
+                  >
+                    DONATE
+                  </Link>
+                </h1>
+                <p className="text-justify opacity-0 translate-x-[-100px]">
+                  Your financial support fuels our mission to improve education,
+                  healthcare, and skill development. Every contribution goes
+                  directly into funding{" "}
+                  <Link
+                    href={"/programs-and-initiatives"}
+                    className="  text-blue-800 underline"
+                  >
+                    {" "}
+                    our programs and initiatives
+                  </Link>{" "}
+                  that change lives.
+                  <br />
+                  • Support Education & Empowerment: Fund scholarships and
+                  educational competitions like the Bayelsa Mathematics Quiz.
+                  <br />
+                  • Promote Community Health & Well-Being: Help provide free
+                  health screenings, medication, and outreach programs.
+                  <br />• Advance Human Capacity Development: Sponsor skill
+                  acquisition programs such as the G-Skill initiative.
+                </p>
                 <Link
-                  href={"/programs-and-initiatives"}
-                  className="  text-blue-800 underline"
+                  href={"#donate"}
+                  className="bg-[#1f5212] mt-6 h-[30px] w-[100px] flex items-center justify-center mx-auto rounded-lg text-white"
                 >
                   {" "}
-                  our programs and initiatives
-                </Link>{" "}
-                that change lives.
-                <br />
-                • Support Education & Empowerment: Fund scholarships and
-                educational competitions like the Bayelsa Mathematics Quiz.
-                <br />
-                • Promote Community Health & Well-Being: Help provide free
-                health screenings, medication, and outreach programs.
-                <br />• Advance Human Capacity Development: Sponsor skill
-                acquisition programs such as the G-Skill initiative.
-              </p>
-              <Link
-                href={"#donate"}
-                className="bg-[#1f5212] mt-6 h-[30px] w-[100px] flex items-center justify-center mx-auto rounded-lg text-white"
-              >
-                {" "}
-                Donate
-              </Link>
+                  Donate
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="relative w-[250px] h-[900px]">
-            {/* <img
+            <div className="relative w-[250px] h-[900px]">
+              {/* <img
               src="/involved2.png"
               alt=""
               className="w-full h-[250px] rounded-t-xl z-0"
             /> */}
-            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl mx-auto bg-white shadow-black shadow-2xl z-30">
-              <p>02.</p>
+              <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl mx-auto bg-white shadow-black shadow-2xl z-30">
+                <p>02.</p>
+              </div>
+              <div className="mt-20 space-y-6">
+                <h1 className="text-3xl text-center mx-auto font-gobold w-[200px] opacity-0 translate-x-[-100px]">
+                  VOLUNTEER
+                </h1>
+                <p className="text-justify opacity-0 translate-x-[-100px]">
+                  Make a hands-on impact by volunteering with us. Whether it’s
+                  mentoring students, supporting health programs, or assisting
+                  with skill acquisition initiatives, your time and expertise
+                  can create ripple effects.
+                  <br />
+                  • Education & Empowerment: Tutor or mentor young learners.
+                  <br />
+                  • Community Health & Well-Being: Assist during medical
+                  outreach programs.
+                  <br />
+                  • Human Capacity Development: Share your skills with
+                  participants in vocational training programs.
+                  <br />
+                  <Link
+                    href={"#volunteer"}
+                    className="bg-[#1f5212] mt-6 h-[30px] w-[250px] flex items-center justify-center mx-auto rounded-lg text-white"
+                  >
+                    {" "}
+                    BECOME A VOLUNTEER
+                  </Link>
+                </p>
+              </div>
             </div>
-            <div className="mt-20 space-y-6">
-              <h1 className="text-3xl text-center mx-auto font-gobold w-[200px]">
-                VOLUNTEER
-              </h1>
-              <p className="text-justify">
-                Make a hands-on impact by volunteering with us. Whether it’s
-                mentoring students, supporting health programs, or assisting
-                with skill acquisition initiatives, your time and expertise can
-                create ripple effects.
-                <br />
-                • Education & Empowerment: Tutor or mentor young learners.
-                <br />
-                • Community Health & Well-Being: Assist during medical outreach
-                programs.
-                <br />
-                • Human Capacity Development: Share your skills with
-                participants in vocational training programs.
-                <br />
-                <Link
-                  href={"#volunteer"}
-                  className="bg-[#1f5212] mt-6 h-[30px] w-[250px] flex items-center justify-center mx-auto rounded-lg text-white"
-                >
-                  {" "}
-                  BECOME A VOLUNTEER
-                </Link>
-              </p>
-            </div>
-          </div>
-          <div className="relative w-[250px] h-[900px] ">
-            {/* <img
+            <div className="relative w-[250px] h-[900px] ">
+              {/* <img
               src="/involved3.png"
               alt=""
               className="w-full h-[250px] rounded-t-xl z-0"
             /> */}
-            <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl mx-auto bg-white shadow-black shadow-2xl z-30">
-              <p>03.</p>
-            </div>
-            <div className="mt-20 space-y-6">
-              <h1 className="text-3xl text-center mx-auto flex flex-wrap font-gobold w-[200px]">
-                PARTNER WITH US
-              </h1>
-              <p className="text-center">
-                Collaboration is at the heart of our success. Partner with us to
-                expand the reach of our programs in education, healthcare, and
-                capacity building.
-                <br />
-                • Corporate Sponsorship: Invest in our community-based projects.
-                <br />
-                • NGO Collaboration: Co-host events and initiatives in Bayelsa.
-                <br />• Government Partnerships: Join forces to scale impact in
-                local communities.
-                <br />
-                <Link href={"#contact"} className="  text-blue-800 mt-5">
-                  {" "}
-                  click here
-                </Link>
-                <span className="uppercase font-gobold">
-                  {" "}
-                  to contact us for partnership
-                </span>
-              </p>
+              <div className="w-[130px] h-[130px] rounded-full flex items-center justify-center text-4xl mx-auto bg-white shadow-black shadow-2xl z-30">
+                <p>03.</p>
+              </div>
+              <div className="mt-20 space-y-6">
+                <h1 className="text-3xl text-center mx-auto flex flex-wrap font-gobold w-[200px] opacity-0 translate-x-[-100px]">
+                  PARTNER WITH US
+                </h1>
+                <p className="text-center opacity-0 translate-x-[-100px]">
+                  Collaboration is at the heart of our success. Partner with us
+                  to expand the reach of our programs in education, healthcare,
+                  and capacity building.
+                  <br />
+                  • Corporate Sponsorship: Invest in our community-based
+                  projects.
+                  <br />
+                  • NGO Collaboration: Co-host events and initiatives in
+                  Bayelsa.
+                  <br />• Government Partnerships: Join forces to scale impact
+                  in local communities.
+                  <br />
+                  <Link href={"#contact"} className="  text-blue-800 mt-5">
+                    {" "}
+                    click here
+                  </Link>
+                  <span className="uppercase font-gobold">
+                    {" "}
+                    to contact us for partnership
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -16,8 +16,16 @@
 .font-low{
   font-family: 'low';
 }
+
 *{
   box-sizing: border-box;
+}
+
+
+.in-view h1 , .in-view p, .in-view ul, .in-view h2,.in-view span{
+  transition: all 1.5s;
+  opacity: 1;
+  transform: translateX(0);
 }
 
  body {

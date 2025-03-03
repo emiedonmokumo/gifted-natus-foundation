@@ -1,16 +1,54 @@
+"use client";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { useRef, useEffect } from "react";
 // import CountUpComponent from "@/components/countup";
 import AboutusSlider from "@/components/AboutSlider";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "about Gifted Natus Foundation",
-  description:
-    "Welcome to the Gifted Natus Foundation, a beacon of hope and empowerment for the people of Bayelsa State and beyond. Founded with a vision to inspire, uplift, and transform lives, our organization is driven by the belief that everyone deserves the opportunity to thrive.",
-};
 export default function Aboutus() {
+  const heroRef = useRef(null);
+  const unboardingRef = useRef(null);
+  const whatWeDoRef = useRef(null);
+  const ourImpactRef = useRef(null);
+  const ourFounderRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entry) => {
+        entry.forEach((element) => {
+          if (element.isIntersecting) {
+            element.target.classList.add("in-view");
+          } else {
+            element.target.classList.remove("in-view");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elementsToObserve = [
+      heroRef.current,
+      unboardingRef.current,
+      whatWeDoRef.current,
+      ourImpactRef.current,
+      ourFounderRef.current,
+    ]; // Add more elements as needed
+
+    elementsToObserve.forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+    return () => {
+      elementsToObserve.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
+
   return (
     <>
       <header
@@ -21,12 +59,13 @@ export default function Aboutus() {
           backgroundImage:
             "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(hero2.jpeg)",
         }}
+        ref={heroRef}
       >
         <Nav />
-        <h1 className="text-[6rem] sm:text-6xl text-white font-low text-center">
+        <h1 className="text-[6rem] sm:text-6xl text-white font-low text-center opacity-0 translate-x-[-100px]">
           ABOUT US
         </h1>
-        <p className="text-green-400 text-center lg:w-[60%] mx-auto md:w-[80%] sm:w-[80%]">
+        <p className="text-green-400 text-center lg:w-[60%] mx-auto md:w-[80%] sm:w-[80%] opacity-0 translate-x-[-100px]">
           Welcome to the Gifted Natus Foundation, a beacon of hope and
           empowerment for the people of Bayelsa State and beyond. Founded with a
           vision to inspire, uplift, and transform lives, our organization is
@@ -34,13 +73,13 @@ export default function Aboutus() {
         </p>
       </header>
       {/*onboarding section */}
-      <div>
-        <h1 className="text-4xl w-[80%] mx-auto text-center my-5 uppercase">
+      <div ref={unboardingRef}>
+        <h1 className="text-4xl w-[80%] mx-auto text-center my-5 uppercase  opacity-0 translate-x-[-100px]">
           Who <span className="text-[#07a034]">We</span>{" "}
           <span className="text-[#0156a9]">are</span>
         </h1>
         <div className="flex items-center justify-evenly my-16 sm:justify-center md:justify-center sm:flex-col-reverse md:flex-col-reverse px-5">
-          <p className="w-[80%] sm:mx-auto sm:my-12 md:mx-auto md:my-12 text-justify lg:w-[45%] flex flex-col justify-evenly">
+          <p className="w-[80%] sm:mx-auto sm:my-12 md:mx-auto md:my-12 text-justify lg:w-[45%] flex flex-col justify-evenly  opacity-0 translate-x-[-100px]">
             <span>
               The Gifted Natus Foundation is a humanitarian and
               development-focused nonprofit dedicated to fostering sustainable
@@ -71,56 +110,62 @@ export default function Aboutus() {
       </div>
       {/**stat section */}
       {/* <CountUpComponent start={1} end={400}/> */}
-      <h1 className="text-4xl w-[80%] mx-auto text-center my-12 uppercase">
-        what <span className="text-[#07a034]">we</span>{" "}
-        <span className="text-[#0156a9]">do</span>
-      </h1>
-      <AboutusSlider />
+      <div className="" ref={whatWeDoRef}>
+        <h1 className="text-4xl w-[80%] mx-auto text-center my-12 uppercase  opacity-0 translate-x-[-100px]">
+          what <span className="text-[#07a034]">we</span>{" "}
+          <span className="text-[#0156a9]">do</span>
+        </h1>
+        <AboutusSlider />
+      </div>
+
       {/* our impact */}
-      <h1 className="text-4xl w-[80%] mx-auto text-center my-12 uppercase">
-        our <span className="text-[#07a034]">impact</span>{" "}
-      </h1>
-      <p className="w-[80%] text-center mx-auto">
-        Since our inception, the Gifted Natus Foundation has touched countless
-        lives:
-      </p>
-      <div className="flex items-center justify-evenly sm:overflow-x-scroll mb-[200px]">
-        <div className="sm:w-[500px] lg:flex">
-          <div className="flex flex-col  items-center justify-evenly mt-7 space-y-5 mx-auto">
-            <div className="w-20 h-20 rounded-full  bg-white shadow-black shadow-2xl flex items-center justify-center ">
-              1
+      <div ref={ourImpactRef}>
+        <h1 className="text-4xl w-[80%] mx-auto text-center my-12 uppercase opacity-0 translate-x-[-100px]">
+          our <span className="text-[#07a034]">impact</span>{" "}
+        </h1>
+        <p className="w-[80%] text-center mx-auto opacity-0 translate-x-[-100px]">
+          Since our inception, the Gifted Natus Foundation has touched countless
+          lives:
+        </p>
+        <div className="flex items-center justify-evenly sm:overflow-x-scroll mb-[200px]">
+          <div className="sm:w-[500px] lg:flex">
+            <div className="flex flex-col  items-center justify-evenly mt-7 space-y-5 mx-auto">
+              <div className="w-20 h-20 rounded-full  bg-white shadow-black shadow-2xl flex items-center justify-center ">
+                1
+              </div>
+              <p className="text-center w-[60%]">
+                Over 300 beneficiaries trained in life-changing skills.
+              </p>
             </div>
-            <p className="text-center w-[60%]">
-              Over 300 beneficiaries trained in life-changing skills.
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-5 mt-7">
-            <div className="w-20 h-20 rounded-full  bg-white shadow-black shadow-2xl flex items-center justify-center ">
-              2
+            <div className="flex flex-col items-center space-y-5 mt-7">
+              <div className="w-20 h-20 rounded-full  bg-white shadow-black shadow-2xl flex items-center justify-center ">
+                2
+              </div>
+              <p className="text-center w-[60%]">
+                Multiple scholarships awarded to promising young minds.
+              </p>
             </div>
-            <p className="text-center w-[60%]">
-              Multiple scholarships awarded to promising young minds.
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-5 mt-7">
-            <div className="w-20 h-20 rounded-full  bg-white shadow-black shadow-2xl flex items-center justify-center ">
-              3
+            <div className="flex flex-col items-center space-y-5 mt-7">
+              <div className="w-20 h-20 rounded-full  bg-white shadow-black shadow-2xl flex items-center justify-center ">
+                3
+              </div>
+              <p className="text-center w-[60%]">
+                Timely interventions in times of disaster and hardship.
+              </p>
             </div>
-            <p className="text-center w-[60%]">
-              Timely interventions in times of disaster and hardship.
-            </p>
           </div>
         </div>
       </div>
       {/* our founder */}
+      <div ref={ourFounderRef}>
       <h1
-        className="text-4xl w-[80%] mx-auto text-center mt-12 capitalize"
+        className="text-4xl w-[80%] mx-auto text-center mt-12 capitalize opacity-0 translate-x-[-100px]"
         id="founder"
       >
         meet <span className="text-[#07a034]">our</span>{" "}
         <span className="text-[#0156a9]">founder</span>
       </h1>
-      <p className="text-2xl mx-auto text-center uppercase my-10">
+      <p className="text-2xl mx-auto text-center uppercase my-10 opacity-0 translate-x-[-100px]">
         gifted meyah natus
       </p>
       <div className="flex items-center justify-evenly md:flex-col sm:flex-col space-y-16">
@@ -129,7 +174,7 @@ export default function Aboutus() {
           alt="gifted mayeh natus"
           className="lg:w-[45%] md:w-[80%] sm:w-[80%] mx-auto"
         />
-        <p className="text-justify sm:w-[80%] md:w-[80%] lg:w-[45%] mx-auto">
+        <p className="text-justify sm:w-[80%] md:w-[80%] lg:w-[45%] mx-auto opacity-0 translate-x-[-100px]">
           Hon. Comr. Gifted Meyah Natus is a visionary leader, philanthropist,
           and social innovator dedicated to creating lasting impact in Bayelsa
           State and beyond. As the Founder and CEO of the Gifted Natus
@@ -158,6 +203,7 @@ export default function Aboutus() {
           empathy, resilience, and an unwavering belief in the power of positive
           change.
         </p>
+      </div>
       </div>
       <div
         className="w-screen h-96 flex items-center justify-start relative "
